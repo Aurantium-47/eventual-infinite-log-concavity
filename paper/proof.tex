@@ -1,0 +1,747 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=25mm]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+ pdftitle={Eventual infinite log-concavity of positive polynomial powers},
+ pdfauthor={Aurantium},
+ pdfsubject={Fixed positive full-support polynomials, sufficiently large integer powers and all iterations}}
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+\title{Eventual infinite log-concavity\ of positive polynomial powers}
+\author{Aurantium}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every fixed polynomial whose coefficients are strictly positive throughout its degree range, we prove that the coefficient sequence of every sufficiently large integer power is strictly infinitely log-concave on its original support. The threshold may depend on the polynomial but is independent of the subsequent iteration count. The proof combines uniform exponentially tilted Gaussian interpolation in the bulk with strict Poisson certificates and continuity at the endpoints. We use the established local stopping and shrinking-disk framework, deriving the estimates needed here with explicit conservative constants. For trinomial powers we also obtain an explicit cofinite exponent threshold and a uniform logarithmic-curvature estimate through a growing number of iterations. The sharper assertion that every trinomial exponent at least ten has the property remains unresolved.
+\end{abstract}
+
+\section{Introduction and main results}
+
+For a zero-extended sequence \(a=(a_k)\), the log-concavity operator is
+\[
+ (\mathcal L a)_k=a_k^2-a_{k-1}a_{k+1}.
+\]
+A sequence is infinitely log-concave if all its iterates under \(\mathcal L\) are entrywise nonnegative. We say that the iterates are strictly positive on the original support when every coefficient in that support is positive at every stage; the prescribed exterior zeros remain zero.
+
+Medina and Straub formulate a sufficiently-large-power conjecture for polynomials with positive coefficients throughout their degree range \cite[Conjecture~5.2]{MS}. The result here addresses its integer-exponent formulation. The polynomial is fixed, its coefficients may be arbitrary positive real numbers, and no threshold uniform over all polynomials is asserted.
+
+\textbf{Theorem B (eventual positive-polynomial convolution theorem).}
+Let \[
+ p(x)=\sum_{i=0}^d c_i x^i,\qquad c_i>0\quad(0\leq i\leq d).
+\] There exists \(N(p)\) such that, for every integer \(n\geq N(p)\),
+the coefficient sequence of \(p(x)^n\), with zero extension, is strictly
+infinitely log-concave on its positive support.
+
+This is the main result of the paper. Its threshold \(N(p)\) works simultaneously for every subsequent iteration; it is not a threshold chosen separately for each iteration. Degree zero is included as the positive singleton case. No claim about noninteger powers, internal zero coefficients or arbitrary coefficient signs is made.
+
+The analytic tools are the local stopping and shrinking-disk framework developed by Xie, Zhang and Zhang \cite[Section~2]{XZZ}, which also credits related earlier work of Liu and Mao. Sections~2--3 give complete proofs of the forms used here, with conservative explicit constants. The application to polynomial powers requires a tilted interpolation uniform near the endpoints and a transfer of finite strict Poisson certificates. General convolution closure for infinite log-concavity is not assumed; Medina--Straub's product example shows why that shortcut is unavailable \cite[Example~5.1]{MS}. The factor-cone and determinant background for the accompanying finite computations is discussed in \cite{MCS}.
+
+The trinomial polynomial \(1+x+x^2\) supplies an explicit companion result. We retain the following notation and distinguish the eventual conclusion from the sharper threshold problem.
+
+For integers \(n\geq0\) and \(k\in\mathbb Z\), put \[
+ T(n,k)=[x^k](1+x+x^2)^n,
+ \qquad T(n,k)=0\quad(k<0\text{ or }k>2n),
+\] and define, retaining this zero extension, \[
+ a^{(0)}_{n,k}=T(n,k),\qquad
+ a^{(j+1)}_{n,k}=(a^{(j)}_{n,k})^2-a^{(j)}_{n,k-1}a^{(j)}_{n,k+1}.
+\] The original target remains \[
+ \boxed{\forall n\in\mathbb Z_{\geq10}\;\forall j\in\mathbb Z_{\geq0}\;
+        \forall k\in\mathbb Z:\ a^{(j)}_{n,k}\geq0.} \tag{T}
+\]
+This is the explicit-threshold assertion of Medina--Straub \cite[Example~5.3]{MS}. It retains every integer exponent \(n\geq10\), every iteration and every coefficient, with zero extension and weak inequalities. It remains unresolved in this paper.
+
+\textbf{Theorem A (explicit cofinite-exponent theorem).} Define \[
+ \mathcal N=2^{\,2^{40100}}.
+\] For every integer \(n\geq\mathcal N\), every iterate is strictly
+positive on the original support: \[
+ a^{(j)}_{n,k}>0\qquad(j\geq0,\ 0\leq k\leq2n).
+\] Moreover, at the common stage \[
+ J(n)=\left\lceil\log_2(8n)\right\rceil
+\] the entire row is 3-factor log-concave, and this remains true at
+every later stage. A smaller explicit cutoff \(N_0\), defined in Section
+7, also works.
+
+The bound \(\mathcal N\) is derived symbolically from analytic and
+polynomial inequalities. \textbf{It was neither evaluated as an integer
+nor verified by enumerating exponents up to it.} The proof controls
+growing iteration depth, not a fixed number of iterations followed by an
+unjustified limit.
+
+Theorem~C, stated and proved in Section~9, gives uniform normalized curvature through the growing horizon \(\lceil\log_2(6V)\rceil\) for trinomial rows, where \(V\) is the tilted variance of Section~5. At the center this horizon is proportional to \(\log n\). The result also gives local cone-entry bounds; its positivity statements concern the required local dependency intervals. The proof of the main Theorem~B is in Section~8, following the analytic and Poisson ingredients in Sections~2--7.
+
+\section{Ratios, curvature, and a local-to-global stopping argument}\label{ratios-curvature-and-a-local-to-global-stopping-argument}
+
+
+For a positive sequence on a finite interval or on
+\(\mathbb Z_{\geq0}\), define its interior ratios and logarithmic
+curvatures by \[
+ q_j(k)=\frac{a^{(j)}_{k-1}a^{(j)}_{k+1}}{(a^{(j)}_k)^2},
+ \qquad h_j(k)=-\log q_j(k).
+\] At an original zero-extension endpoint set \(q_j=0\). Curvatures are
+used only at interior indices with positive neighbors. If all needed
+ratios lie in \([0,1)\), direct substitution gives \[
+ q_{j+1}(k)=
+ \frac{q_j(k)^2(1-q_j(k-1))(1-q_j(k+1))}{(1-q_j(k))^2}. \tag{1}
+\] Let \(\Delta f(z)=f(z-1)-2f(z)+f(z+1)\). Then the curvature
+recurrence is \[
+ h_{j+1}=2h_j-\Delta g(h_j),\qquad
+ g(w)=\operatorname{Log}(1-e^{-w}). \tag{2}
+\] On \(\operatorname{Re}w>0\), \(g\) is holomorphic and
+\(|\operatorname{Im}g(w)|<\pi/2\): indeed,
+\(\operatorname{Re}(1-e^{-w})>0\).
+
+\textbf{Lemma 1 (local stopping implies global positivity).} Suppose
+that for each interior index \(k\) there is a finite \(T(k)\) such that
+its actual coefficient iterates are positive through \(T(k)\) and its
+ratio at that time is defined using positive neighbors and satisfies \[
+ q_{T(k)}(k)\leq\frac13.
+\] The local statements may be established on separate finite dependency
+intervals. Then all coefficient iterates are positive everywhere on the
+original support. Each attained ratio bound persists at every later
+stage. On finite support, the entire row satisfies the bound at stage
+\(\max_kT(k)\).
+
+\textbf{Proof.} When the ratios needed in (1) lie in \([0,1)\), \[
+ q_j(k)\leq\tfrac13
+ \quad\Longrightarrow\quad
+ q_{j+1}(k)\leq\frac{q_j(k)^2}{(1-q_j(k))^2}
+ \leq\tfrac14<\tfrac13. \tag{3}
+\] Suppose a first nonpositive layer \(r\) exists and contains a
+nonpositive entry at \(k\). Endpoints are repeatedly squared, so \(k\)
+is interior. Its local certificate gives \(T(k)<r\). All entire layers
+before \(r\) are positive, so all ratios needed to propagate (3) through
+layer \(r-1\) lie in \([0,1)\). Thus \(q_{r-1}(k)\leq1/3\), and \[
+ a^{(r)}_k=(a^{(r-1)}_k)^2(1-q_{r-1}(k))>0,
+\] a contradiction. This least-layer argument also works on the
+half-line; it does not require taking a maximum over infinitely many
+stopping times. Persistence then follows from (3). \(\square\)
+
+This is a specialization of the local criterion in Xie--Zhang--Zhang
+{[}2, Lemma 2.1{]}. It is important that no convolution-closure property
+for infinite log-concavity is assumed.
+
+Positive global and geometric rescaling preserves all ratios.
+Explicitly, if \(b_k=AB^ka_k\) with \(A,B>0\), then \[
+ (\mathcal L^j b)_k=A^{2^j}B^{k2^j}(\mathcal L^j a)_k. \tag{4}
+\]
+
+\section{Holomorphic control through growing iteration depth}\label{holomorphic-control-through-growing-iteration-depth}
+
+
+The next lemma is a conservative, self-contained version of the
+shrinking-disk estimates in {[}2, Section 2{]}. Its constants are chosen
+for transparent arithmetic rather than sharpness.
+
+\textbf{Lemma 2 (holomorphic amplification).} Let \(h_0\) be holomorphic
+on a neighborhood of the closed disk \(|z-k|\leq R\), real on its real
+diameter, and suppose \[
+ \operatorname{Re}h_0\geq\mu,\qquad
+ 0<\mu\leq1,\qquad \mu R^2\geq256. \tag{5}
+\] Put \[
+ K=\left\lceil\log_2(4/\mu)\right\rceil,
+ \qquad R_j=R(3/4)^j\quad(0\leq j\leq K).
+\] The recurrence (2) defines holomorphic functions with positive real
+part on the corresponding disks. For \(1\leq j\leq K\), \[
+ \left|2^{-j}h_j(z)-h_0(z)\right|<\frac{56}{R^2}
+ \quad (|z-k|\leq R_j), \tag{6}
+\] and \[
+ h_K(k)>\frac{25}{8}>\log3. \tag{7}
+\] If \(h_0\) agrees with the curvature of positive initial coefficients
+at all required integer samples, these functions agree with the
+curvatures of positive local coefficient iterates; thus \(q_K(k)<1/3\).
+
+\textbf{Proof.} First let \(F\) be holomorphic on a radius-\(d\) disk
+about \(z\), with \(|\operatorname{Im}F|\leq\pi/2\). If
+\(F(z+w)=\sum_{m\geq0}c_mw^m\), Fourier coefficients on smaller circles
+give, for \(m\geq1\), \[
+ c_m\rho^m=\frac{i}{\pi}\int_0^{2\pi}
+ \operatorname{Im}F(z+\rho e^{it})e^{-imt}\,dt.
+\] After rotating to extract the absolute value, the identity
+\(\int_0^{2\pi}|\cos(mt+\alpha)|\,dt=4\) shows \(|c_m|\leq2/d^m\) by
+passage to the boundary. Consequently, for \(d>1\), \[
+ |\Delta F(z)|\leq2\sum_{m\geq1}|c_{2m}|
+ \leq\frac4{d^2-1}. \tag{8}
+\]
+
+Whenever the earlier curvatures have positive real part, telescoping (2)
+and applying (8) on the nested disks yields \[
+ |2^{-j}h_j-h_0|\leq E_j,
+ \qquad
+ E_j=\sum_{i=0}^{j-1}
+ \frac{2^{1-i}}{(R_i-R_j)^2-1}. \tag{9}
+\] We verify that all denominators are positive and \(E_j<56/R^2\)
+without assuming the induction conclusion.
+
+Write \(\beta=\log_2(4/3)<1/2\). The smallest successive radius gap is
+\(d_{\min}=(R/4)(3/4)^{K-1}\). Since \(K-1<\log_2(4/\mu)\), (5) gives \[
+ d_{\min}^2>
+ \frac{R^2}{16}(\mu/4)^{2\beta}
+ \geq16\mu^{2\beta-1}4^{-2\beta}
+ \geq\frac{81}{16}>4. \tag{10}
+\] For \(b=8/9\), it follows that \[
+ E_j<\frac{8}{3R^2}
+ \sum_{r=1}^j\frac{b^{j-r}}{(1-(3/4)^r)^2}.
+\] The reciprocal denominators are at most \(16,6,3,7/3\) for
+\(r=1,2,3,r\geq4\), respectively. The sum is less than 21: check the
+first three cases using \(16b^2+6b+3<21\), and then use its recurrence
+and \((7/3)/(1-b)=21\). Therefore \(E_j<56/R^2\).
+
+Induction in (9) now gives \[
+ \operatorname{Re}h_j>
+ 2^j(\mu-56/R^2)\geq\frac{25}{32}2^j\mu>0.
+\] Since \(2^K\mu\geq4\), (7) follows. Holomorphic logarithms are
+legitimate at every step because these real parts are positive.
+
+For the sequence interpretation, every radius gap exceeds two. The real
+integer samples and their unit shifts needed for a new curvature
+therefore lie in the previous domain. Positive initial entries and
+positive real curvatures give positive next coefficients by
+\(a^{(j+1)}=(a^{(j)})^2(1-e^{-h_j})\). Induction identifies the
+recurrence with the actual coefficient iterates on successively smaller
+index intervals, including positive neighboring entries at the final
+center. No artificial boundary values are assigned. \(\square\)
+
+The key feature is the uniform normalized error in (6), despite \(K\)
+increasing as \(\mu\) decreases. Merely applying a fixed-depth normal
+approximation would not give this conclusion.
+
+\section{A completely certified Poisson boundary model}\label{a-completely-certified-poisson-boundary-model}
+
+
+Let \(u_k=1/k!\) for \(k\geq0\), and \(u_k=0\) for \(k<0\).
+
+\textbf{Lemma 3 (strict local cone entry for the Poisson seed).} For
+each \(k\geq1\) there is a local certificate with a stopping time \[
+ T_P(k)\leq\left\lceil\log_2(8k)\right\rceil
+\] such that the required iterates are positive through that time and
+\(q_{T_P(k)}(k)<1/3\). Consequently all iterates of \(u\) are strictly
+positive on the half-line.
+
+\textbf{Proof for \(k\geq2048\).} Its initial curvature has the
+interpolation \[
+ h_0(z)=\operatorname{Log}(1+1/z)=\int_0^1\frac{dt}{z+t}.
+\] On \(|z-k|\leq k/2\), inversion of the real-centered disk gives \[
+ \operatorname{Re}\frac1{z+t}\geq\frac1{3k/2+t}.
+\] For completeness, if \(w\) belongs to \(|w-a|\leq b<a\), the image
+under \(w\mapsto1/w\) is a disk whose leftmost real point is
+\(1/(a+b)\); this proves the displayed inequality with \(a=k+t\),
+\(b=k/2\). Hence \[
+ \operatorname{Re}h_0(z)\geq\frac1{3k/2+1}\geq\frac1{2k}.
+\] Apply Lemma 2 with \(\mu=1/(2k)\) and \(R=k/2\), since
+\(\mu R^2=k/8\geq256\). The disks and all needed initial unit shifts lie
+in the positive half-line. This gives the stated time bound and a strict
+terminal gap.
+
+\textbf{Exact finite certificate for \(1\leq k\leq2047\).} Initially
+\(q_0(k)=k/(k+1)\), including \(q_0(0)=0\). The verifier uses
+denominator \(D=2^{256}\) and outward-rounded dyadic intervals. If
+\(l_k\leq Dq_k\leq v_k<D\), the next bounds are \[
+\begin{split}
+ l'_k&=\left\lfloor
+ \frac{l_k^2(D-v_{k-1})(D-v_{k+1})}{D(D-l_k)^2}
+ \right\rfloor,\\
+ v'_k&=\left\lceil
+ \frac{v_k^2(D-l_{k-1})(D-l_{k+1})}{D(D-v_k)^2}
+ \right\rceil.
+\end{split} \tag{11}
+\] They are valid because (1) increases with its central argument and
+decreases with either neighbor on \([0,1)\). All denominator and
+positivity inequalities are checked with integers.
+
+The initial ratio prefix ends at index 2064. The last available index is
+discarded at each step, never declared to have a zero neighbor. Every
+index \(1\leq k\leq2047\) obtains a strict certificate \(3v_k<D\) by
+depth 12. The numbers certified by stages \(0,\ldots,12\) are \[
+ 0,0,2,6,13,27,56,115,231,464,930,1862,2047.
+\] Each first certified time also satisfies
+\(T_P(k)\leq\lceil\log_2(8k)\rceil\). Every strict gap and its exact
+dyadic bounds are in \texttt{data/poisson\_certificates.json.gz}.
+
+An independent check starts with the integer prefix \(64!/k!\), applies
+the coefficient definition of \(\mathcal L\) directly, again discarding
+the artificial right edge, and compares its exact ratios with the
+interval bounds through eight iterations. All 540 comparisons pass. The
+computed finite certificates and the analytic certificates for
+\(k\geq2048\), followed by Lemma 1, finish the proof. \(\square\)
+
+The finite computations here are proof certificates, not extrapolation
+from experiments. They are reconstructed from the displayed rational
+formulas when the verifier is run.
+
+\section{Uniform exponentially tilted Gaussian approximation}\label{uniform-exponentially-tilted-gaussian-approximation}
+
+
+For \(1\leq k\leq n\), let \(\rho\in(0,1]\) be the unique solution of \[
+ m(\rho)=\frac{\rho+2\rho^2}{1+\rho+\rho^2}=\frac{k}{n}.
+\] Set \(p(\rho)=1+\rho+\rho^2\) and \[
+ v(\rho)=\frac{\rho(1+4\rho+\rho^2)}{p(\rho)^2},\qquad V=nv(\rho).
+\] Existence and uniqueness follow because \(m\) increases continuously
+from 0 to 1 on \((0,1]\) and \(\rho m'(\rho)=v(\rho)>0\).
+
+The elementary variance bounds used below are \[
+ \frac23k\leq V\leq\frac98k. \tag{12}
+\] Indeed, \(v/m=(1+4\rho+\rho^2)/(p(\rho)(1+2\rho))\). For the lower
+inequality the numerator difference is \[
+ 3(1+4\rho+\rho^2)-2p(\rho)(1+2\rho)
+ =(1-\rho)(4\rho^2+7\rho+1)\geq0.
+\] For the upper inequality it is \[
+ 9p(\rho)(1+2\rho)-8(1+4\rho+\rho^2)
+ =1-5\rho+19\rho^2+18\rho^3>0,
+\] since \(1-5\rho+19\rho^2=19(\rho-5/38)^2+51/76>0\).
+
+Let \(X_\rho\) have probabilities \((1,\rho,\rho^2)/p(\rho)\) at
+\(0,1,2\). Its mean and variance are \(m(\rho)\) and \(v(\rho)\). Put \[
+ \phi_\rho(t)=\mathbb E e^{it(X_\rho-m(\rho))}
+ =e^{-im(\rho)t}\frac{p(\rho e^{it})}{p(\rho)}
+\] and introduce the entire function \[
+ F_{n,k}(z)=\frac{\sqrt V}{2\pi}\int_{-\pi}^{\pi}
+ \phi_\rho(t)^n e^{-i\sqrt Vzt}\,dt. \tag{13}
+\] At every integer \(s\), Fourier orthogonality gives the exact
+sampling identity \[
+ F_{n,k}(s/\sqrt V)=
+ \frac{\sqrt V\,\rho^{k+s}}{p(\rho)^n}\,T(n,k+s). \tag{14}
+\] The factors on the right are positive global and geometric factors;
+by (4) they do not change iterated ratios. The tilt \(\rho\) and
+variance \(V\) are held fixed across this entire local interval and all
+its subsequent local iterations.
+
+\textbf{Lemma 4 (explicit uniform analytic normal bound).} For every
+\(A\geq0\), \[
+ \sup_{|z|\leq A}
+ \left|F_{n,k}(z)-G(z)\right|
+ \leq\frac{64e^{8A^2}}{\sqrt V},
+ \qquad G(z)=\frac1{\sqrt{2\pi}}e^{-z^2/2}. \tag{15}
+\] The bound is uniform in all the allowed \(n,k,\rho\), including
+\(\rho\to0\).
+
+\textbf{Proof.} Write \(\pi_i=\mathbb P(X_\rho=i)\). The contribution of
+adjacent pairs gives \[
+ |\phi_\rho(t)|^2\leq
+ 1-2(\pi_0\pi_1+\pi_1\pi_2)(1-\cos t).
+\] Since \[
+ \pi_0\pi_1+\pi_1\pi_2
+ =\frac{\rho(1+\rho^2)}{p(\rho)^2}\geq\frac{v(\rho)}3,
+\] we get, for \(|t|\leq\pi\), \[
+ |\phi_\rho(t)|\leq
+ \exp\{-v(\rho)(1-\cos t)/3\}
+ \leq e^{-v(\rho)t^2/16}. \tag{16}
+\] The last inequality uses \(1-\cos t\geq2t^2/\pi^2\) and \(\pi^2<10\).
+
+For \(Y=X_\rho-m(\rho)\), \(|Y|\leq2\), \(\mathbb E|Y|^3\leq2v\), and
+\(v\leq1\). Taylor's formula on the real axis gives \[
+ \phi_\rho(t)=1-vt^2/2+R(t),\qquad |R(t)|\leq v|t|^3/3.
+\] For \(|t|\leq1/4\), let \(w=\phi_\rho(t)-1\). Then
+\(|w|\leq(7/12)vt^2\leq7/192\). The logarithm series remainder satisfies
+\[
+ |\operatorname{Log}(1+w)-w|
+ \leq\frac{|w|^2}{2(1-|w|)}
+ \leq\tfrac15v^2t^4.
+\] Consequently, \[
+ |\operatorname{Log}\phi_\rho(t)+vt^2/2|\leq v|t|^3. \tag{17}
+\]
+
+Change variables to \(u=\sqrt Vt\) in (13), extending its integrand by
+zero outside \([-\pi\sqrt V,\pi\sqrt V]\). When \(|u|\leq\sqrt V/4\),
+(17) gives an error at most \(|u|^3/\sqrt V\) in the exponent, and both
+real parts in the exponential comparison are at most \(-u^2/4\). Thus \[
+ |\phi_\rho(u/\sqrt V)^n-e^{-u^2/2}|
+ \leq\frac{|u|^3}{\sqrt V}e^{-u^2/4}. \tag{18}
+\] When \(|u|>\sqrt V/4\), (16) and the Gaussian bound instead give \[
+ |\phi_\rho(u/\sqrt V)^n\mathbf1_{|u|\leq\pi\sqrt V}-e^{-u^2/2}|
+ \leq\frac{8|u|}{\sqrt V}e^{-u^2/16}. \tag{19}
+\] For complex \(|z|\leq A\), multiply these bounds by \(e^{A|u|}\).
+Young's inequality and direct integration yield \[
+ \int_{\mathbb R}|u|^3e^{-u^2/4+A|u|}\,du\leq64e^{2A^2},
+\] \[
+ \int_{\mathbb R}8|u|e^{-u^2/16+A|u|}\,du\leq256e^{8A^2}.
+\] The Fourier integral of \(e^{-u^2/2}\) is \(\sqrt{2\pi}e^{-z^2/2}\);
+the identity extends to complex \(z\) by holomorphy. Dividing the last
+two bounds by \(2\pi\sqrt V\) proves (15), since \(320/(2\pi)<64\).
+\(\square\)
+
+\section{Uniform bulk certificates for all iterations}\label{uniform-bulk-certificates-for-all-iterations}
+
+
+\textbf{Proposition 5 (a local certificate at every large-variance
+position).} If \(V\geq2^{20000}\), then the actual trinomial iterates
+near \(k\) have a strict local 3-factor certificate at stage \[
+ T(n,k)=\left\lceil\log_2(6V)\right\rceil
+ \leq\left\lceil\log_2(8k)\right\rceil. \tag{20}
+\] The positivity statement includes the entire finite dependency
+interval needed to define this local ratio. It requires no assumption
+about positivity of distant entries at these stages.
+
+\textbf{Proof.} Apply Lemma 4 on \(|z|\leq24\). Since
+\(|G(z)|\geq(2\pi)^{-1/2}e^{-288}\) there, \[
+ |F_{n,k}/G-1|
+ \leq\frac{192e^{4896}}{\sqrt V}<2^{-200}<\tfrac14. \tag{21}
+\] For the strict inequality, use \(192<2^8\), \(e<4\), and
+\(\sqrt V\geq2^{10000}\); then \(10000-2\cdot4896-8=200\).
+
+The function \(\eta=\operatorname{Log}(F_{n,k}/G)\) is holomorphic near
+that disk and satisfies \(|\eta|<1/2\). It is real on the real diameter,
+because the integral defining \(F_{n,k}\) is real there and (21) makes
+\(F_{n,k}/G\) positive. By Cauchy's estimate on radius-three disks, \[
+ |\eta''(z)|\leq1/9\qquad(|z|\leq21).
+\] Put \(\delta=1/\sqrt V\) and, for \(w=k+\sqrt Vz\), define the
+physical-index curvature interpolation \[
+ H_0(w)=2\log F_{n,k}(z)-\log F_{n,k}(z-\delta)
+                       -\log F_{n,k}(z+\delta).
+\] Use the logarithm \(\log G+\eta\) here. The Gaussian contributes
+exactly \(\delta^2\), and the integral formula for a symmetric second
+difference gives \[
+ |VH_0(w)-1|\leq\frac19
+ \quad\text{when }|w-k|\leq20\sqrt V. \tag{22}
+\] Thus (5) holds with \[
+ R=20\sqrt V,\qquad \mu=\frac2{3V},\qquad
+ \mu R^2=\frac{800}{3}>256.
+\] Lemma 2 proves the certificate at \(K=\lceil\log_2(6V)\rceil\).
+
+There is no support problem: (12) implies \(k\geq V/2\), and
+\(V\geq2^{20000}>6400\) implies \(20\sqrt V\leq k/2\). The initial disk
+and its required unit shifts lie strictly inside \([0,2n]\) for these
+parameters. Equation (14) identifies its integer values with positive
+scaled trinomial coefficients, so Lemma 2 applies to the actual row.
+Finally \(6V\leq27k/4<8k\), proving the time bound. \(\square\)
+
+By symmetry, the same conclusion holds near \(2n-k\). In particular, set
+\[
+ B=2^{20001}.
+\] Every position with \[
+ \min(k,2n-k)\geq B \tag{23}
+\] has a certificate as in Proposition 5, uniformly in \(n\), because
+\(V\geq(2/3)B>2^{20000}\). The remaining problem is a fixed-width
+boundary, not an uncontrolled region growing proportionally to \(n\).
+
+\section{Effective boundary control and proof of Theorem A}\label{effective-boundary-control-and-proof-of-theorem-a}
+
+
+For \(m\geq0\) define the rational polynomial \[
+ P_{0,m}(x)=\sum_{j=0}^{\lfloor m/2\rfloor}
+ \frac{(x)_{\underline{m-j}}}{j!(m-2j)!}. \tag{24}
+\] For every nonnegative integer \(n\), \(P_{0,m}(n)=T(n,m)\), including
+\(m>2n\), when the polynomial evaluates to zero. This follows by
+counting the terms with \(j\) choices of \(x^2\) and \(m-2j\) choices of
+\(x\).
+
+Set \(P_{\ell,-1}=0\) and recursively define \[
+ P_{\ell+1,m}=P_{\ell,m}^2-P_{\ell,m-1}P_{\ell,m+1}. \tag{25}
+\] These are exactly the trinomial iterate polynomials evaluated at
+\(n\).
+
+\textbf{Lemma 6 (leading coefficients).} If
+\(u^{(\ell)}=\mathcal L^\ell(1/m!)_{m\geq0}\), then \[
+ P_{\ell,m}(x)=u^{(\ell)}_m x^{m2^\ell}+\text{lower-degree terms}. \tag{26}
+\] In particular, the leading coefficient is strictly positive.
+
+\textbf{Proof.} The leading coefficient of (24) is \(1/m!\). Both terms
+in (25) have degree at most \(m2^{\ell+1}\), and their
+leading-coefficient difference is exactly \(u^{(\ell+1)}_m\). Lemma 3
+shows this number is positive, so it cannot cancel. Induction proves
+(26). \(\square\)
+
+We make all dependence on the finite boundary explicit. Let \[
+ J=20004,\qquad M=B+J+1=B+20005,\qquad
+ S=M!,\qquad H=2^{M+1}S,
+\] and define \[
+ \boxed{N_0=2H^{\,2^{20005}}.} \tag{27}
+\] Only polynomial indices \(m\leq M-\ell\) will be used at layer
+\(\ell\). This convention discards insufficiently supported right-edge
+calculations rather than treating their missing neighbors as zero.
+
+Write \(\|f\|_1\) for the sum of the absolute values of the coefficients
+of a polynomial. In (24), the norm of \((x)_{\underline t}\) is \(t!\)
+(including \(t=0\)). Hence \[
+ \|P_{0,m}\|_1\leq
+ \sum_{j=0}^{\lfloor m/2\rfloor}\binom{m-j}{j}\leq2^m\leq2^M. \tag{28}
+\] The middle sum is bounded by \(2^m\) directly from the recurrence of
+these binomial sums, or by counting compositions of \(m\) with parts 1
+and 2. Since \(\|fg\|_1\leq\|f\|_1\|g\|_1\), (25) gives \[
+ \|P_{\ell,m}\|_1\leq
+ 2^{(M+1)2^\ell-1}. \tag{29}
+\] Also \(S^{2^\ell}P_{\ell,m}\in\mathbb Z[x]\): each denominator in
+(24) divides \(M!\), and induction in (25) proves the claim. Thus every
+positive leading coefficient in (26) is at least \(S^{-2^\ell}\).
+
+For each \(1\leq k<B\), choose the Poisson certificate time
+\(T=T_P(k)\leq J\) from Lemma 3 and put \[
+ G_k(x)=P_{T,k}(x)^2-3P_{T,k-1}(x)P_{T,k+1}(x). \tag{30}
+\] Its leading coefficient is positive, since it is exactly
+\((u_k^{(T)})^2-3u_{k-1}^{(T)}u_{k+1}^{(T)}>0\). Its denominator divides
+\(S^{2^{T+1}}\), and \[
+ \|G_k\|_1\leq4\left(2^{(M+1)2^T-1}\right)^2
+ =2^{(M+1)2^{T+1}}. \tag{31}
+\] All polynomials needed to define (30), and all its local coefficient
+iterates through time \(T\), are among the retained indices:
+\(k+T+1\leq M\).
+
+For every required \(P_{\ell,m}\) or \(G_k\), (29)--(31) show \[
+ \frac{\|f\|_1}{\text{positive leading coefficient of }f}
+ \leq H^{2^{J+1}}. \tag{32}
+\] An elementary polynomial sign bound completes the boundary proof. If
+\(f(x)=cx^d+\sum_{i<d}c_ix^i\), \(c>0\), and \(x\geq1\), then \[
+ f(x)\geq x^{d-1}\left(cx-\sum_{i<d}|c_i|\right)>0
+ \quad\text{when }x>\|f\|_1/c.
+\] Positive constant polynomials need no bound. Therefore every integer
+\(n\geq N_0\) makes all the required boundary entries and all strict
+gaps (30) positive. Here \(N_0>M\), so every retained boundary index
+lies inside the original support. This gives local certificates at every
+\(1\leq k<B\) and, by reflection, at the other boundary. Proposition 5
+handles the remaining positions; endpoints are fixed at 1. Lemma 1
+proves strict positivity for \textbf{all iterations}.
+
+Every chosen boundary time is at most \(\lceil\log_2(8k)\rceil\), and
+every bulk time satisfies (20). After reflection all are at most
+\(J(n)=\lceil\log_2(8n)\rceil\). Lemma 1 therefore gives the common
+3-factor stage asserted in Theorem A.
+
+Finally, the convenient cutoff \(\mathcal N\) is indeed larger than
+\(N_0\). Since \(M<2^{20002}\), \[
+ \log_2 H=M+1+\log_2(M!)
+ \leq M+1+M\log_2M<2^{20018}.
+\] Here one may use \(20003<2^{15}\); the slack is more than sufficient.
+Thus \[
+ \log_2N_0=1+2^{20005}\log_2H<2^{40024}<2^{40100},
+\] so \(N_0<\mathcal N\). This completes the proof of Theorem A. No
+enormous polynomial or exponent interval has been enumerated.
+\(\square\)
+
+\section{Proof of the main theorem for positive polynomial powers}\label{proof-of-the-general-positive-polynomial-consequence}
+
+
+We give the proof to separate a genuinely complete unspecified-threshold
+result from the unresolved sharper threshold in (T).
+
+\textbf{Proof of Theorem B.} Degree zero is the positive singleton case.
+Suppose \(d\geq1\) and \(c_i>0\) for every \(i\) in the degree range.
+For \(\rho>0\), let \[
+ \mathbb P(X_\rho=i)=\pi_i(\rho)
+ =\frac{c_i\rho^i}{p(\rho)},\qquad
+ m(\rho)=\mathbb E X_\rho,\qquad v(\rho)=\operatorname{Var}X_\rho.
+\] Then \(v(\rho)>0\) and \(\rho m'(\rho)=v(\rho)\), so \(m\) maps
+\((0,\infty)\) bijectively onto \((0,d)\). For each interior index \(k\)
+choose \(nm(\rho)=k\), and put \(V=nv(\rho)\).
+
+The ratio \[
+ \frac{v(\rho)}{\min(m(\rho),d-m(\rho))}
+\] is continuous and positive, and tends to 1 at both ends \(\rho\to0\)
+and \(\rho\to\infty\). The endpoint limits use
+\(c_0,c_1,c_{d-1},c_d>0\); for instance, near zero,
+\(m(\rho)=(c_1/c_0)\rho+O_p(\rho^2)\) and
+\(v(\rho)=(c_1/c_0)\rho+O_p(\rho^2)\). Compactness after adjoining the
+endpoints gives constants \(0<c_p\leq C_p<\infty\) with \[
+ c_p b\leq V\leq C_p b,
+ \qquad b=\min(k,nd-k). \tag{33}
+\]
+
+There is also a uniform characteristic-function bound \[
+ |\mathbb E e^{it(X_\rho-m(\rho))}|
+ \leq e^{-c'_pv(\rho)t^2},\qquad |t|\leq\pi, \tag{34}
+\] where \(c'_p>0\). To prove it for \(0<\rho\leq1\), note that
+\(\pi_0(\rho)\pi_1(\rho)/v(\rho)\) is positive continuous and extends to
+the positive limit 1 at zero. The adjacent pair \((0,1)\) in the
+modulus-squared identity therefore gives (34), using
+\(1-\cos t\geq2t^2/\pi^2\). For \(\rho\geq1\), apply the same argument
+to the reversed polynomial \(x^dp(1/x)\) with tilt \(1/\rho\). Reversal
+leaves the variance and the characteristic-function modulus unchanged.
+
+Furthermore \(|X_\rho-m(\rho)|\leq d\), so its third absolute centered
+moment is at most \(d v(\rho)\). The Taylor-logarithm argument used for
+(17), with a fixed sufficiently small \(t_p>0\), gives \[
+ \left|\log\phi_\rho(t)+v(\rho)t^2/2\right|
+ \leq C'_pv(\rho)|t|^3\qquad(|t|\leq t_p), \tag{35}
+\] uniformly in \(\rho\). The variance is bounded by \(d^2\), which
+makes the logarithm neighborhood uniform. In the scaled variable
+\(u=\sqrt Vt\), take \(|u|\leq\min(t_p,1/(4C'_p))\sqrt V\); then (35)
+gives an integrable comparison by a constant times
+\(|u|^3e^{-u^2/4}/\sqrt V\). On the complement, (34) and the Gaussian
+bound give a constant times \(|u|e^{-c''_pu^2}/\sqrt V\) for a fixed
+\(c''_p>0\). Multiplication by \(e^{A|u|}\) remains integrable for each
+fixed \(A\).
+
+Consequently the tilted Fourier interpolation, defined exactly as in
+(13) with this \(p\), satisfies \[
+ \sup_{|z|\leq A}|F_{n,k}(z)-G(z)|\leq C_{p,A}/\sqrt V \tag{36}
+\] for some finite \(C_{p,A}\) independent of \(n,k,\rho\). The same
+exact sampling identity as (14) holds. Taking \(A=24\), then a
+sufficiently large threshold \(V_p\), reproduces (21)--(22). Lemma 2
+supplies local strict 3-factor certificates whenever \(b\geq B_p\) for
+some finite \(B_p\) depending only on \(p\). Enlarge \(B_p\) if
+necessary so all physical disks of radius \(20\sqrt V\) and their unit
+shifts fit inside the support, using (33). Their times are
+\(\lceil\log_2(6V)\rceil=O_p(\log b)\).
+
+It remains to handle finitely many fixed indices near either endpoint.
+For every fixed \(m\geq0\), multinomial expansion gives \[
+ c_0^{-n}\left(\frac{c_0}{nc_1}\right)^m[x^m]p(x)^n
+ \longrightarrow\frac1{m!}\quad(n\to\infty). \tag{37}
+\] Indeed, after removing \(c_0^n\), the coefficient is a polynomial in
+\(n\) of degree \(m\), with leading coefficient \((c_1/c_0)^m/m!\);
+every use of a power \(x^i\) with \(i\geq2\) lowers the number of
+selected nonconstant factors.
+
+For a fixed boundary index \(k<B_p\), choose its finite strict Poisson
+certificate from Lemma 3. Convergence (37) holds simultaneously on its
+entire finite initial dependency interval. The operator \(\mathcal L\)
+and the expression \(a_k^2-3a_{k-1}a_{k+1}\) are polynomial functions of
+this finite set of entries. Strict positivity of all the finitely many
+seed inequalities therefore persists for the rescaled coefficients of
+\(p^n\) once \(n\geq N(p,k)\). The rescaling in (37) has the form (4),
+so it preserves the signs and ratios being certified. The support
+contains this fixed interval for sufficiently large \(n\). Apply the
+same argument to the reversed polynomial for the right endpoint.
+
+There are finitely many boundary centers. Take a maximum of their
+finitely many thresholds and the support thresholds, and call it
+\(N(p)\). All remaining centers have the uniform bulk certificates, and
+endpoints are positive powers of \(c_0\) and \(c_d\). Lemma 1 now gives
+every iteration on the whole support, simultaneously for each integer
+\(n\geq N(p)\). This proves Theorem B. \(\square\)
+
+Every threshold in this proof is allowed to depend on the fixed
+polynomial \(p\), exactly as in the integer-exponent version of
+Conjecture 5.2. None depends on the final iteration count. The argument
+is not an application of an unproved convolution-closure assertion.
+
+\section{Uniform curvature asymptotics at growing depth}\label{uniform-curvature-asymptotics-at-growing-depth}
+
+
+The new analytic estimates also yield a sharper description of the
+iteration scale in the bulk. Use reflection when \(k>n\), and let \(V\)
+be the tilted variance associated to the reflected index.
+
+\textbf{Theorem C.} As \(b=\min(k,2n-k)\to\infty\), uniformly in the
+allowed \(n,k\), \[
+ \sup_{0\leq j\leq\lceil\log_2(6V)\rceil}
+ \left|V2^{-j}h_j(k)-1\right|\longrightarrow0. \tag{38}
+\] The ratios and curvatures here belong to positive local coefficient
+iterates through the indicated depths.
+
+\textbf{Proof.} Fix any \(A\geq20\). Apply Lemma 4 on the scaled disk of
+radius \(A+4\). Relative error tends to zero uniformly as
+\(V\to\infty\), since the fixed Gaussian has no zeros there. The
+analytic logarithm and Cauchy estimates used in Section 6 then give \[
+ \sup_{|w-k|\leq A\sqrt V}|VH_0(w)-1|\longrightarrow0.
+\] For sufficiently large \(V\), apply Lemma 2 with \(R=A\sqrt V\) and
+\(\mu=2/(3V)\); its stopping depth remains \(\lceil\log_2(6V)\rceil\).
+Equation (6) implies that the limsup of the left side of (38) is at most
+\(56/A^2\). Equation (12) ensures the needed disks lie inside the
+support for sufficiently large \(V\). Since \(A\) can be arbitrarily
+large, the limsup is zero. This order of choices does not interchange a
+fixed-iteration estimate with an increasing iteration count. \(\square\)
+
+Let \(\tau_3(n,k)\) be the first admissible local stage with
+\(q_j(k)\leq1/3\). For every fixed \(0<\epsilon<1/2\), (38) implies, for
+all sufficiently large \(b\), \[
+ \left\lceil\log_2\frac{V\log3}{1+\epsilon}\right\rceil
+ \leq\tau_3(n,k)\leq
+ \left\lceil\log_2\frac{V\log3}{1-\epsilon}\right\rceil. \tag{39}
+\] For the upper bound, the proposed time lies within
+\(\lceil\log_2(6V)\rceil\) because \(\log3/(1-\epsilon)<6\); no
+monotonicity assumption about \(h_j(k)\) is used. At the center \(k=n\),
+\(V=2n/3\). Thus the earlier fixed-\(j\) central asymptotic is now
+controlled uniformly at growing depths, and the local cone-entry time is
+\(\log_2n+O(1)\).
+
+\section{Exact certificates and reproducibility}\label{reproducibility-and-verification-audit}
+
+
+The new verifier uses only the Python standard library and exact integer
+arithmetic. Run
+
+\begin{verbatim}
+python -B code/verify.py
+python -B code/verify.py --baseline
+\end{verbatim}
+
+The first command reconstructs and compares every new stored
+certificate. The second also reruns the entire earlier verification
+suite. \texttt{python -B code/verify.py --write-data} regenerates the new
+data rather than comparing it. Assertions are part of the verifier; do
+not run Python with \texttt{-O}.
+
+The new files contain all 2047 strict Poisson local certificates, the
+540 direct integer-ratio cross-checks, exact structural polynomial
+cross-checks, rational constant checks, and recorded execution summaries. For a
+separate test of (24)--(29), the verifier constructs every retained
+scaled polynomial through depth four from initial indices
+\(0\leq m\leq12\), verifies its degree, its leading coefficient against
+the independent Poisson iteration, its coefficient-norm bound, and
+evaluations at \(n=0,1,5,10,20,50\) against independently convolved
+trinomial rows. These finite structural tests support debugging; the
+proofs of the formulas for arbitrary indices are the inductions in
+Section 7, not an extrapolation from these tests.
+
+The large-cutoff proof uses coefficient-norm and denominator estimates,
+not stored coefficient expansions at indices as large as \(B\). The
+verifier records the symbolic expressions and checks the modest exponent
+inequalities in the derivation; it neither constructs \(\mathcal N\) nor
+executes that many exponent checks.
+
+The argument retains the following quantifier and dependency conditions. The support
+remains fixed throughout; only artificial computation prefixes are
+shortened. The tilted interpolation has an exact sampling identity with
+the actual coefficients. Its error is uniform as the tilt approaches
+either endpoint. The analytic iteration estimate holds through a
+specified growing depth on disks with adequate unit-shift margins. The
+half-line seed has strict, finite stopping certificates at every index,
+not merely infinitely many nonnegative iterates. The finite boundary
+transfer retains all needed neighbors and has a threshold independent of
+the subsequent iteration count. Local stopping is converted to global
+positivity by a first-failure argument, avoiding circular assumptions.
+No real-rootedness or positivity of auxiliary complex variables is
+presumed.
+
+
+The first command is the minimal entry point for the Poisson, polynomial and constant certificates. The optional legacy baseline is included for the finite-exponent comparison and is not a dependency of the proofs of Theorems~A--C. Detailed execution scope is recorded in the accompanying reproducibility document.
+
+The accompanying baseline records \cite{Data} certify the finite exponent set
+\[
+ \{10,11,\ldots,1000\}\cup\{2000,10000,100000\}.
+\]
+These finite-exponent results are not presented as new. The cofinite and general-polynomial arguments do not depend on the baseline \(\mathrm{PF}_4\) theorem; they use the initial coefficient formula, ratio dynamics and strict Poisson boundary certificates.
+
+\section{The remaining sharp trinomial threshold}\label{precise-remaining-gap-for-the-requested-target}
+
+
+Theorem A proves all iterations for every exponent \(n\geq N_0\), and
+the accompanying baseline records certify all iterations for their 994 listed
+exponents. Thus the still-unresolved portion of (T) is contained in the
+finite set \[
+ \{n\in\mathbb Z:10\leq n<N_0\}
+ \setminus\bigl(\{10,\ldots,1000\}\cup\{2000,10000,100000\}\bigr). \tag{40}
+\] This set is finite but astronomically large; it has not been
+exhausted computationally. The precise missing theorem is that none of
+these exponents is exceptional, or an alternative uniform argument that
+supplies all local certificates already for every \(n\geq10\). The
+product counterexample of Medina--Straub [1, Example 5.1] prevents treating multiplication by
+another copy of \(1+x+x^2\) as a generally valid infinite-log-concavity
+induction.
+
+The earlier obstacle was a lack of control when the exponent and
+required iteration depth both grow. That obstacle is removed on a common
+cofinite tail. What remains is \textbf{the sharp starting threshold},
+not a missing all-iteration limit in the new tail theorem. Theorem B
+does not settle that sharper question. No complete proof or
+counterexample for (T) is claimed.
+
+
+\paragraph{Attribution and assistance.}
+The conjectural context is due to Medina and Straub. The local stopping and shrinking-disk method is prior work, attributed above to Xie, Zhang and Zhang and its cited antecedents. This manuscript was prepared with AI assistance. No global-priority determination, independent human certification or formal proof-assistant verification is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{MS} L.~A.~Medina and A.~Straub, \emph{On multiple and infinite log-concavity}, arXiv:1405.1765v1 (7 May 2014); \emph{Annals of Combinatorics} \textbf{20} (2016), 125--138. In particular, Lemma~2.5, Conjecture~5.2 and Examples~5.1 and~5.3. \url{https://arxiv.org/abs/1405.1765v1}.
+
+\bibitem{XZZ} M.~H.~Y.~Xie, C.~X.~T.~Zhang and P.~B.~Zhang, \emph{A unified approach to infinite log-concavity of combinatorial sequences}, arXiv:2610.12237v1 (8 October 2026), Section~2, particularly Lemmas~2.1--2.2, Theorem~2.3 and Corollaries~2.5--2.6. The local closure and shrinking-disk framework is prior work; that source also credits related earlier work of Liu and Mao. The estimates required here are rederived with explicit conservative constants. \url{https://arxiv.org/html/2610.12237v1}.
+
+\bibitem{MCS} P.~R.~W.~McNamara and B.~E.~Sagan, \emph{Infinite log-concavity: developments and conjectures}, arXiv:0808.1065v2; \emph{Advances in Applied Mathematics} \textbf{44} (2010), 1--15. This is background for the factor-cone and baseline determinant framework, rather than an unproved dependency of Theorems~A--C. \url{https://arxiv.org/abs/0808.1065}.
+
+\bibitem{Data} \emph{Supplementary exact computational records for trinomial log-concavity}, 2026. The finite exponent certificates, coefficient records and their standard-library verifier are distributed under \texttt{baseline/}. These computational records are not represented as published literature.
+\end{thebibliography}
+\end{document}

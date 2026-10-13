@@ -1,0 +1,32 @@
+{
+  "execution_location": "Recorded local environment",
+  "python": "3.12.10",
+  "status": "PASS",
+  "poisson_centers": 2047,
+  "poisson_last_depth": 12,
+  "cumulative_counts": [
+    0,
+    0,
+    2,
+    6,
+    13,
+    27,
+    56,
+    115,
+    231,
+    464,
+    930,
+    1862,
+    2047
+  ],
+  "direct_integer_ratio_comparisons": 540,
+  "independent_seconds": 0.167062900000019,
+  "combined_recorded_seconds": 0.4012617999978829,
+  "peak_working_set_bytes": 26681344,
+  "source_new_suite": "PASS",
+  "legacy_baseline_reexecuted": false,
+  "startup_physical_memory_snapshot_recorded": false,
+  "manuscript_preparation_reran_math": false,
+  "relocated_candidate_entry_executed_in_preparation": false,
+  "scope": "Exact finite Poisson certificates and the source new suite; mathematical infinite-range arguments are in the paper."
+}

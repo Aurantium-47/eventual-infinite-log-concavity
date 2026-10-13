@@ -1,0 +1,41 @@
+{
+  "kind": "packaged default-entry reproduction, not a new independent proof review",
+  "date_local": "2026-10-14",
+  "portable_command": [
+    "python",
+    "-B",
+    "code/verify.py"
+  ],
+  "actual_runtime_flags": [
+    "-B",
+    "-S",
+    "-E",
+    "-X",
+    "utf8"
+  ],
+  "python": "3.12.10",
+  "summary": {
+    "status_for_original_threshold_10_target": "NONE",
+    "poisson_target_indices": 2047,
+    "poisson_last_depth": 12,
+    "independent_integer_ratio_comparisons": 540,
+    "baseline_rechecked_this_run": false,
+    "cutoff_claim": "Analytical proof, not finite enumeration; see the manuscript.",
+    "python": "3.12.10",
+    "elapsed_seconds": 0.182
+  },
+  "child_exit_code": 0,
+  "guard_exit_code": 0,
+  "shell_exit_code": 0,
+  "stderr_empty": true,
+  "external_wall_seconds": 0.328,
+  "peak_child_working_set_bytes": 19853312,
+  "startup_available_bytes": 474877952,
+  "minimum_available_bytes": 474726400,
+  "process_and_job_memory_limit_bytes": 104857600,
+  "wall_limit_seconds": 30,
+  "input_files_unchanged": 24,
+  "baseline_reexecuted": false,
+  "write_data_used": false,
+  "earlier_missing_startup_snapshot_not_replaced": true
+}

@@ -1,0 +1,45 @@
+{
+  "execution_location": "Recorded external environment; not a local replay",
+  "python": "3.13.5",
+  "arithmetic": "integers and Fraction; no floating-point certificates",
+  "imports_or_executes_author_code": false,
+  "poisson": {
+    "certified_centers": 2047,
+    "last_depth": 12,
+    "precision_bits": 512,
+    "first_stages_match_author": true,
+    "author_intervals_containing_new_intervals": 2047,
+    "cumulative_counts": [
+      0,
+      0,
+      2,
+      6,
+      13,
+      27,
+      56,
+      115,
+      231,
+      464,
+      930,
+      1862,
+      2047
+    ]
+  },
+  "direct_integer": {
+    "initial_max_index": 80,
+    "through_depth": 9,
+    "exact_ratio_comparisons": 755
+  },
+  "polynomials": {
+    "initial_construction": "Newton interpolation from convolved rows",
+    "max_initial_index": 12,
+    "max_depth": 4,
+    "polynomials_checked": 55,
+    "coefficient_evaluations_checked": 330,
+    "all_author_coefficients_match": true
+  },
+  "elapsed_seconds": 1.163,
+  "separately_recorded_source_baseline_suite": "Full legacy suite was recorded as completed externally, including all 994 specified exponent certificates; not locally rerun during this manuscript preparation.",
+  "manuscript_preparation_reran_math": false,
+  "scope": "Finite independent calculations; analytic proofs and exact threshold semantics remain in the manuscript."
+}

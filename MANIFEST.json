@@ -1,0 +1,129 @@
+{
+  "status": "RELEASE_SOURCE",
+  "version": "0.1.0",
+  "title": "Eventual infinite log-concavity of positive polynomial powers",
+  "hash_algorithm": "SHA-256",
+  "manifest_self_excluded": true,
+  "files": [
+    {
+      "path": "CITATION.md",
+      "bytes": 573,
+      "sha256": "f958d8a48af2f4a83d4b7633b5c8ad45df09c0f90374779015654a7acf221876"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2811,
+      "sha256": "8ab022649fb0bc751a78f25991935c1e54226273c799631c6ca69a6f49edc6af"
+    },
+    {
+      "path": "REFERENCES.md",
+      "bytes": 1871,
+      "sha256": "754929cac9758aa74c25149f0d1b748cb547623d4bc76db2b5f4bbda611ca336"
+    },
+    {
+      "path": "REPRODUCIBILITY.md",
+      "bytes": 4734,
+      "sha256": "ebef735b54c4ce93f35ec4859dfc7aee9a9052a40760a184c604b00142a58a39"
+    },
+    {
+      "path": "RIGHTS.md",
+      "bytes": 798,
+      "sha256": "4aeb468c022d08b179170f62ec6fc39371328ff9f99918b9785bbb9868876586"
+    },
+    {
+      "path": "SCOPE.md",
+      "bytes": 2166,
+      "sha256": "894b171ae8e7c595b0ccf50a59b19fb0fdbd74c53dde79a144b42c7fdf90ad9f"
+    },
+    {
+      "path": "WHITELIST.txt",
+      "bytes": 678,
+      "sha256": "81f5f4e2e16230bc92167a7583e6a13c44df955336e4bb06b23c421cddb73200"
+    },
+    {
+      "path": "baseline/data/boundary_polynomials.json.gz",
+      "bytes": 250517,
+      "sha256": "3b003234897e961568020ef0e76775ed2ec3e3a0676c43d20f40b5e9233fb591"
+    },
+    {
+      "path": "baseline/data/finite_positive_chains.json.gz",
+      "bytes": 156692,
+      "sha256": "93710fd00efd402d4e8df428630b805d23617c0cefc2522fdfc985b761dd7049"
+    },
+    {
+      "path": "baseline/data/interval_certificates.json",
+      "bytes": 2729781,
+      "sha256": "4f8855d076db0ae214c6c168a819b64ecb6025ae9ffe53bc6e372c0e43592d6d"
+    },
+    {
+      "path": "baseline/data/pf4_n8.csv.gz",
+      "bytes": 29659,
+      "sha256": "1a7b8d50db81415f6b71a1a1528f20cf714bd980f0405cc644d050275b734024"
+    },
+    {
+      "path": "baseline/data/pf4_n9.csv.gz",
+      "bytes": 50869,
+      "sha256": "4377d8b2a5092f180889e2edd043fbe8fd03fe15de439b830eae6dbe58b1abcb"
+    },
+    {
+      "path": "baseline/data/small_failures.json.gz",
+      "bytes": 3063,
+      "sha256": "d5ea44b5455ff7570d39222856bdb13fcd6de14c64505b04e5196522566115b6"
+    },
+    {
+      "path": "baseline/verify.py",
+      "bytes": 13046,
+      "sha256": "97b39545ba4f92e8bfaac1e40f1958a16eaef5a14c66c4dac5bc1963a3c8d53e"
+    },
+    {
+      "path": "code/verify.py",
+      "bytes": 11489,
+      "sha256": "98d97c46d178e104adab7a2b4ff29a606a6057ec382816b1d368c6e9bd1a7924"
+    },
+    {
+      "path": "data/constant_checks.json.gz",
+      "bytes": 327,
+      "sha256": "7cca84ef72d19e167fe94880c4ec87c00f2b8f042528673d7cc613fbea69bb34"
+    },
+    {
+      "path": "data/poisson_certificates.json.gz",
+      "bytes": 205081,
+      "sha256": "d8191c9e9971d795a663212e88558fd82453e4335687590cb960abaa5091e31d"
+    },
+    {
+      "path": "data/poisson_integer_crosscheck.json.gz",
+      "bytes": 340,
+      "sha256": "41cda86128ee6348b70221bf8b19deba343b39c1337b91d114e70db7ff4f0409"
+    },
+    {
+      "path": "data/polynomial_crosscheck.json.gz",
+      "bytes": 37870,
+      "sha256": "e7e1887e08f58707665e63ec84a599a23004a56fab971313c62557d3d31070ef"
+    },
+    {
+      "path": "paper/proof.pdf",
+      "bytes": 402687,
+      "sha256": "a36f1805931374b02a4991750a6ae72413dbf2ac8cc1c16695573e60ea07ca5b"
+    },
+    {
+      "path": "paper/proof.tex",
+      "bytes": 39683,
+      "sha256": "0cf2c49f7f210d164b320189dcfd93b1e1936a33b9e933e915e42ab48168ba8c"
+    },
+    {
+      "path": "verification/external_exact_check_record.json",
+      "bytes": 1405,
+      "sha256": "39047410f6f8d902425a970933c563c999a97cd4d0471250bcdbce68ffe1dcad"
+    },
+    {
+      "path": "verification/local_exact_check_record.json",
+      "bytes": 861,
+      "sha256": "9ff5f31698f2703c3175b12a5f164b3263d80dff0cf5e793f98e5c9efce36dce"
+    },
+    {
+      "path": "verification/release_entry_run.json",
+      "bytes": 1193,
+      "sha256": "3928b9d919f0a7bacf0c10a8c4c040762d1b202f7687ec20906fe108285b7d7b"
+    }
+  ]
+}
