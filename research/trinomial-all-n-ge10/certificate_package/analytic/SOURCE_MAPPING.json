@@ -1,0 +1,171 @@
+{
+  "scope": "exact analytic arithmetic regeneration; not entire analytic proof",
+  "files": [
+    {
+      "source": "check_16_saddle_algebra.py",
+      "source_sha256": "ac15364abf958863e2f5d264f4b977ebb315f83d37c5c4ed261c9d64597a5096",
+      "portable": "check_16_saddle_algebra.py",
+      "portable_sha256": "705fc2f939d2a8a6e0bae79fc962a3dd5ab4b0ba50cf3d62064da9c79541e072",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "check_complex_variance_conditioning.py",
+      "source_sha256": "0d352fc22ea7b37e7c88d161f39be4f02b256dbd5c8f2cc6723088f14e4a5336",
+      "portable": "check_complex_variance_conditioning.py",
+      "portable_sha256": "81263b6e0a59039e139629bf57e308838b5016f44b8650a819ff92a1b09304a2",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "check_sharp_real_cumulant_bounds.py",
+      "source_sha256": "340d0e94a5299b9f380b3a7ef35b880e764914088859e96c62ea5d84c4b0d431",
+      "portable": "check_sharp_real_cumulant_bounds.py",
+      "portable_sha256": "e4b57fd45a5723dbfbd8a79c3989186845a243864d77acb06f6c57df6d8c7835",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "check_uniform_cumulant_bounds.py",
+      "source_sha256": "dc5ca53e097c8aa4625f23ce1b7645208124baed422b2b0e53adb7dd9abb0b63",
+      "portable": "check_uniform_cumulant_bounds.py",
+      "portable_sha256": "551b202d5299f36c9b61e419d3340261c012fff0539540e1387efd640250fe71",
+      "changes": [
+        "prepend assertions-enabled guard",
+        "require every computed cumulant bound PASS"
+      ]
+    },
+    {
+      "source": "check_wide_box_cumulant_bounds.py",
+      "source_sha256": "7889099cb1c84adf35802f7370fbed864850176b41a84019af1096cc30299307",
+      "portable": "check_wide_box_cumulant_bounds.py",
+      "portable_sha256": "95428ee60e174a80073d0ee56a0e3f8ee83ad21bed3d99bf636bcfc1c40236fc",
+      "changes": [
+        "prepend assertions-enabled guard",
+        "require every computed cumulant bound PASS",
+        "neutral reference-implementation wording in comments/docstrings/diagnostic text; no arithmetic change"
+      ]
+    },
+    {
+      "source": "check_first_saddle_correction_independent.py",
+      "source_sha256": "096f449e41068ac92eba41ffda918ad40779c1481b395b3ad76575ceb352fc68",
+      "portable": "check_first_saddle_correction_independent.py",
+      "portable_sha256": "b82471c557bf940feb56a10547a06a7b6978fcb90e534b13ad0b9e6239ce7fa8",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "audit_local_moments_independent.py",
+      "source_sha256": "7f20e7df9fdb054ae15649cc087d60c5fcc31c8009fffd92879f5303a4c023f3",
+      "portable": "audit_local_moments_independent.py",
+      "portable_sha256": "afefa9e541971033cdbc76f3611052ea0c7345515e74c334889aeb2a43e3b5b7",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "audit_local_budget_independent.py",
+      "source_sha256": "f036b9234abd23e47ff5981de79c38db0eb3ea9ecc145fda89c5d48e1b9256ac",
+      "portable": "audit_local_budget_independent.py",
+      "portable_sha256": "6faa1cd9ad7e1f085fe7e8c726ac6548f29d0c5cdb360687b54293379cb47e6d",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "check_gaussian_correction_box_tails.py",
+      "source_sha256": "088ef3f2357476c41871a3b8bb5bba382a051cdca9e1046f3b1f46e1a55cc8d2",
+      "portable": "check_gaussian_correction_box_tails.py",
+      "portable_sha256": "0663ff28a75fec3e2a8c6a142f8d9bb1b75d6d172721d052bbef79d8eb839751",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "audit_actual_torus_certificates.py",
+      "source_sha256": "57835e2d3ae974471e2744cfe0fe580ed511ac8c47650977dc15e03fd673e0d2",
+      "portable": "audit_actual_torus_certificates.py",
+      "portable_sha256": "355aeac07e82312732689c0e1cbb7f0ad781ed29485eccdfe44c54187aa72582",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "independent_audit_v250_arithmetic.py",
+      "source_sha256": "20b9560fee93f6406cf5a9e182e840c1301cb09781b46b58653b99d9e93b7303",
+      "portable": "independent_audit_v250_arithmetic.py",
+      "portable_sha256": "c33a6145539fa05f2ccbf367d447e68930a3e46fb770d0bef5c3dec01b1fe7c4",
+      "changes": [
+        "prepend assertions-enabled guard",
+        "neutral reference-implementation wording in comments/docstrings/diagnostic text; no arithmetic change"
+      ]
+    },
+    {
+      "source": "check_phase_bridge_algebra.py",
+      "source_sha256": "962cc57a227360f0c8c52ac749b62618748610fa19243d4ddb3e439aa44733c2",
+      "portable": "check_phase_bridge_algebra.py",
+      "portable_sha256": "aa9d6bcf6fa183b631d7d72b7a95bb8aa0038d241e84343f040dbcd063328952",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "independent_final_join_250.py",
+      "source_sha256": "1b1120b9292086410bf1a62bb978a7bf44239d5689f087babdf37967b5ebc05a",
+      "portable": "independent_final_join_250.py",
+      "portable_sha256": "f74ed68bdb1b57213aae6d5303ffe8b3470fccaf4cc750d225cf39618183efc0",
+      "changes": [
+        "prepend assertions-enabled guard",
+        "neutral reference-implementation wording in comments/docstrings/diagnostic text; no arithmetic change"
+      ]
+    },
+    {
+      "source": "audit_461_bulk_bypass_independent.py",
+      "source_sha256": "66cc503aa6da7782f5bd1632df99881f7aa0a7709ae464953a16c0c77fae36ca",
+      "portable": "audit_461_bulk_bypass_independent.py",
+      "portable_sha256": "14d58e321dfc8d3ea2ab68d22c342c7196d72af734a1a97fd3eff0c22d833501",
+      "changes": [
+        "prepend assertions-enabled guard"
+      ]
+    },
+    {
+      "source": "LOCAL_HOMOTOPY_BUDGET.log",
+      "source_sha256": "6c5f2714338d35c232bab216e90f51602cf8bfc7a931268b59ef22b397d039e9",
+      "portable": "LOCAL_HOMOTOPY_BUDGET.log",
+      "portable_sha256": "6c5f2714338d35c232bab216e90f51602cf8bfc7a931268b59ef22b397d039e9",
+      "changes": []
+    },
+    {
+      "source": "LOCAL_HOMOTOPY_TAU_BUDGET_RECEIPT.json",
+      "source_sha256": "af93ba9b48a4995f7838db3682b4ced3efa771252edc294066aa3dbadbd64885",
+      "portable": "LOCAL_HOMOTOPY_TAU_BUDGET_RECEIPT.json",
+      "portable_sha256": "af93ba9b48a4995f7838db3682b4ced3efa771252edc294066aa3dbadbd64885",
+      "changes": []
+    },
+    {
+      "source": "FINAL_HARMONIC_JOIN_250_RECEIPT.json",
+      "source_sha256": "7cd56d2657383ee2dd55b5d770981f17982c5510b047c69bd80a6462fd15ac48",
+      "portable": "FINAL_HARMONIC_JOIN_250_RECEIPT.json",
+      "portable_sha256": "7cd56d2657383ee2dd55b5d770981f17982c5510b047c69bd80a6462fd15ac48",
+      "changes": []
+    },
+    {
+      "source": "ALL249_HARMONIC_RATIONAL_CANDIDATES.json",
+      "source_sha256": "2bce90973f2c0a47aa996457dea6e44e8d980976548bfe4b07f91d4eecd75b78",
+      "portable": "ALL249_HARMONIC_RATIONAL_CANDIDATES.json",
+      "portable_sha256": "2bce90973f2c0a47aa996457dea6e44e8d980976548bfe4b07f91d4eecd75b78",
+      "changes": []
+    },
+    {
+      "source": "ALL249_BULK_BYPASS_CLASSIFICATION.json",
+      "source_sha256": "c7e2a53fe0f1e18084c4967dd69c5be450eff6d9220b84e4210a966194f91c06",
+      "portable": "ALL249_BULK_BYPASS_CLASSIFICATION.json",
+      "portable_sha256": "c7e2a53fe0f1e18084c4967dd69c5be450eff6d9220b84e4210a966194f91c06",
+      "changes": []
+    }
+  ]
+}
