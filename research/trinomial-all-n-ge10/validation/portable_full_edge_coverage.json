@@ -1,0 +1,67 @@
+{
+  "canonical_matched_jets_digest": "22c038b14345430607d71e0eb7e599dd06338b2a453419d8d0b8fe15ade8904c",
+  "complete_panels": [
+    {
+      "count": 246,
+      "panel": 0,
+      "peak_rss_kib": 257624,
+      "receipt_sha256": "e2b355d6799bdede58becf87f78c28cdca0c4361ad5a8b2002531feabcf8045b",
+      "seconds": 205.99145675399996
+    },
+    {
+      "count": 245,
+      "panel": 1,
+      "peak_rss_kib": 255724,
+      "receipt_sha256": "dceef7db4ff0d386c5bb6670afbc642b907a38e4022e37b21d4de798493c2a13",
+      "seconds": 208.46917816399946
+    },
+    {
+      "count": 243,
+      "panel": 2,
+      "peak_rss_kib": 274280,
+      "receipt_sha256": "8217d1cb406d22ece5ffb64865880897e0c2e60113cfd0cae9f310a91490176a",
+      "seconds": 207.18605773200034
+    },
+    {
+      "count": 241,
+      "panel": 3,
+      "peak_rss_kib": 273288,
+      "receipt_sha256": "3faf6221b969bf2b77ce3d08b5761b62be4a8db944531f8fefc1ea28d8faff65",
+      "seconds": 206.4428236519998
+    },
+    {
+      "count": 240,
+      "panel": 4,
+      "peak_rss_kib": 274280,
+      "receipt_sha256": "fc7621efe894297d7a6dcdb8acaa713f82dd53830cc67319c8973d92c6dc1466",
+      "seconds": 195.2142899879982
+    },
+    {
+      "count": 239,
+      "panel": 5,
+      "peak_rss_kib": 273288,
+      "receipt_sha256": "ed2df20a73c909267ed7d74c746619757fe339173ce6f6f76e03610b355f10f2",
+      "seconds": 197.30134811400058
+    },
+    {
+      "count": 238,
+      "panel": 6,
+      "peak_rss_kib": 274280,
+      "receipt_sha256": "aa0132a2ea6fd27f96316fc6ace7434e5920c8c12aef86b951af250f37f008a9",
+      "seconds": 194.99070652099908
+    },
+    {
+      "count": 237,
+      "panel": 7,
+      "peak_rss_kib": 273288,
+      "receipt_sha256": "8bf629770e91a952baf9823acf5e1e28a36e9b7b1af5acca4dfe25be363efa8f",
+      "seconds": 195.76534692900168
+    }
+  ],
+  "coverage_exact_full": true,
+  "enclosures_verified": 1929,
+  "input_manifest_sha256": "af638134445d9db6e3e70a8f36311fb25bf83f0ac92c32fe251205581709e0be",
+  "scope": "Complete fresh generation-function replay under resumable orchestration, independently checked exact saved identities/coverage; not literal --full CLI nor new mathematical/referee review",
+  "status": "PASS_COMPLETE",
+  "wrapper_sha256": "3b0729600e68837800363e6588cd3045fdd794640e031a87c015585079c01182"
+}

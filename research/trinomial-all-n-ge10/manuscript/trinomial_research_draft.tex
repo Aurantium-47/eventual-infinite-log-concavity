@@ -1,0 +1,1380 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setlength{\emergencystretch}{3em}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Infinite log-concavity of trinomial powers},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Infinite log-concavity of trinomial powers}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A proposed computer-assisted proof of the all-exponent
+trinomial assertion}
+\author{}
+\date{31 October 2026}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\clearpage
+\section{Abstract}\label{abstract}
+
+Let \(a_{n,k}=[x^k](1+x+x^2)^n\), extended by zero outside its support,
+and define \((\mathcal La)_k=a_k^2-a_{k-1}a_{k+1}\). We give a
+computer-assisted proof that \(\mathcal L^r a_n\) is entrywise
+nonnegative for every integer \(n\ge10\) and every integer \(r\ge0\).
+The proof joins an exact invariant-cone verification for
+\(10\le n\le4003\) with a uniform analytic and algebraic argument for
+\(n\ge4004\). In the latter range, a sixteen-variable integral and
+explicit saddle estimates supply bulk signs for the fourth iterate;
+exact moving-node certificates supply the remaining edge signs.
+Palindromicity and a degree count then prove negative real-rootedness of
+the fourth iterate. Separate Toeplitz-minor arguments establish the
+earlier layers, and a real-rootedness preservation theorem gives every
+later layer.
+
+The numerical components use exact integers and rational enclosures. The
+claimed quantifiers are not inferred from a finite sample of exponents.
+This draft has undergone independent internal checks, including
+separately implemented arithmetic checks; it has not undergone external
+peer review or proof-assistant formalization. No assertion of exhaustive
+literature priority is made.
+
+\section{The target and the proof
+architecture}\label{the-target-and-the-proof-architecture}
+
+\textbf{Theorem.} For every integer \(n\ge10\), every integer \(r\ge0\),
+and every integer \(k\), \[
+ (\mathcal L^r a_n)_k\ge0,
+ \qquad a_{n,k}=[x^k](1+x+x^2)^n.
+\] All sequences and iterates use zero extension beyond their natural
+finite support.
+
+This is the specific trinomial assertion discussed in Example 5.3 of
+Medina and Straub, \emph{On multiple and infinite log-concavity},
+arXiv:1405.1765v1, printed page 11; the published article appears in
+\emph{Annals of Combinatorics} \textbf{20} (2016), 125--138. The
+original work verified a finite range \(10\le n\le500\). The present
+theorem does not assert the more general polynomial conjecture
+considered elsewhere in that paper.
+
+The proof has four logically separate components:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Finite exponents.} Every \(10\le n\le4003\) reaches a
+  sufficient invariant cone under exact directed ratio arithmetic. The
+  cone proves all subsequent iterations at once.
+\item
+  \textbf{Earlier layers in the infinite range.} Finite certificates at
+  exponents eight and nine imply the full \(\mathrm{PF}_4\) property
+  through symmetric-function identities. Convolution closure and
+  determinant identities then prove nonnegativity through the third
+  iterate for every \(n\ge56\).
+\item
+  \textbf{Fourth-iterate roots.} Uniform bulk estimates and exact
+  certificates on the continuous parameter interval \(0\le u\le1/4004\)
+  provide enough alternating real signs to locate all \(2n\) zeros of
+  the fourth iterate on the negative real axis for every integer
+  \(n\ge4004\).
+\item
+  \textbf{Later layers.} Brändén's preservation theorem applies to the
+  fourth iterate and thereafter. It is not used backwards to infer
+  positivity of the earlier layers.
+\end{enumerate}
+
+The finite and infinite exponent ranges are complementary and leave no
+gap. The roles of the continuous parameter family and the finite
+polynomial at reciprocal integers are kept distinct throughout.
+
+\section{Verification conventions}\label{verification-conventions}
+
+A rational enclosure is a proved inclusion, not a floating-point
+approximation. Every strict sign assertion subtracts all applicable
+rounding and analytic remainder bounds before it is accepted. The exact
+arithmetic backend is credited and pinned in the reproducibility
+package. A fast replay of saved enclosures and a full regeneration from
+the input formulas have different trust boundaries; the package
+documents both rather than conflating them.
+
+The mathematical statements below are accompanied by portable
+verification commands and explicit certificate coverage. Raw development
+logs and internal review narratives are not part of the mathematical
+exposition.
+
+\section{Finite certificates and the first three
+iterates}\label{finite-certificates-and-the-first-three-iterates}
+
+Let \(p(x)=1+x+x^2\) and \(a_k=[x^k]p(x)^n\), with zero extension. All
+arithmetic certificates below use integers and directed rational
+enclosures.
+
+\subsection{\texorpdfstring{1. Exact ratio verification for
+\(10\le n\le4003\)}{1. Exact ratio verification for 10\textbackslash le n\textbackslash le4003}}\label{exact-ratio-verification-for-10le-nle4003}
+
+The coefficient identity \(p(x)(p(x)^n)'=np'(x)p(x)^n\) gives \[
+(k+1)a_{k+1}=(n-k)a_k+(2n-k+1)a_{k-1}.
+\] The coefficients are positive on \(0\le k\le2n\) and symmetric. On
+the first half define \(r_k=a_k/a_{k-1}\). Then \(r_1=n\) and \[
+r_{k+1}=\frac{n-k+(2n-k+1)/r_k}{k+1},\qquad 1\le k<n.
+\] This expression decreases with \(r_k\). If \(S=2^{256}\) and
+\(R_k^-\le Sr_k\le R_k^+\), directed integer divisions give \[
+\begin{aligned}
+R_{k+1}^-&=\left\lfloor\frac{(n-k)SR_k^++(2n-k+1)S^2}{(k+1)R_k^+}\right\rfloor,\\
+R_{k+1}^+&=\left\lceil\frac{(n-k)SR_k^-+(2n-k+1)S^2}{(k+1)R_k^-}\right\rceil.
+\end{aligned}
+\] All denominators are positive, as checked by the certificate program.
+
+For \(q_k=a_{k-1}a_{k+1}/a_k^2\), the initial half-row enclosures are \[
+\begin{aligned}
+Q_k^-&=\left\lfloor\frac{SR_{k+1}^-}{R_k^+}\right\rfloor,&
+Q_k^+&=\left\lceil\frac{SR_{k+1}^+}{R_k^-}\right\rceil,
+&&1\le k<n,\\
+Q_n^-&=\left\lfloor\frac{S^3}{(R_n^+)^2}\right\rfloor,&
+Q_n^+&=\left\lceil\frac{S^3}{(R_n^-)^2}\right\rceil,
+\end{aligned}
+\] and \(Q_0^-=Q_0^+=0\). Symmetry gives the remaining indices. The
+powers of \(S\) in the central formula are essential.
+
+Whenever \(0\le q_k<1\), the next iterate is positive on its support and
+its ratios obey \[
+q'_k=\frac{q_k^2(1-q_{k-1})(1-q_{k+1})}{(1-q_k)^2}.
+\] The map increases in its own argument and decreases in either
+neighboring argument. Given integer enclosures
+\(0\le Q^-\le Sq\le Q^+<S\), lower and upper bounds for \(Sq'_k\) are
+therefore \[
+\left\lfloor\frac{(Q_k^-)^2(S-Q_{k-1}^+)(S-Q_{k+1}^+)}{S(S-Q_k^-)^2}\right\rfloor,
+\qquad
+\left\lceil\frac{(Q_k^+)^2(S-Q_{k-1}^-)(S-Q_{k+1}^-)}{S(S-Q_k^+)^2}\right\rceil.
+\] At the center of the symmetric half-array the right neighbor equals
+the left neighbor. No unbounded integer is replaced by floating-point
+arithmetic.
+
+The exact program checks every integer \(n=10,\ldots,4003\). At each
+step it verifies the strict upper bound \(Q_k^+<S\), and it terminates
+only when \(3Q_k^+\le S\) for every \(k\). All 3994 cases terminate by
+depth 12. A separate verifier using exact coefficient rows instead of
+the successive-ratio initializer gives the same successful coverage. The
+terminal condition is sufficient because \(q\le1/3\) implies \[
+q'\le\frac{(1/3)^2}{(1-1/3)^2}=\frac14<\frac13.
+\] Induction proves positivity of all later iterates, so a finite exact
+certificate per exponent establishes infinite log-concavity rather than
+merely a bounded number of successful iterations.
+
+\subsection{\texorpdfstring{2. Finite certificates for the full
+\(\mathrm{PF}_4\)
+property}{2. Finite certificates for the full \textbackslash mathrm\{PF\}\_4 property}}\label{finite-certificates-for-the-full-mathrmpf_4-property}
+
+For a zero-extended finite sequence \(a\), let \(T(a)_{i,j}=a_{j-i}\),
+\(i,j\ge0\). The property \(\mathrm{PF}_4\) means every minor of order
+at most four is nonnegative.
+
+Suppose \[
+A(x)=\sum_{k=0}^d a_kx^k=\prod_{h=1}^d(1+z_hx),
+\] so \(a_k=e_k(z)\). It suffices to test the finite determinants \[
+\det(a_{u_i-i+j})_{1\le i,j\le4}
+\] for every \(d\ge u_1\ge u_2\ge u_3\ge u_4\ge0\). Here the \(z_h\) may
+be complex; the tests concern real evaluated determinants.
+
+Indeed dual Jacobi--Trudi identifies these determinants with ordinary
+Schur functions \(s_\lambda(z)\) for \(\lambda'=u\), namely all shapes
+of width at most four and height at most \(d\); zero padding includes
+smaller widths. Consider an arbitrary order-\(\ell\le4\) Toeplitz minor
+with increasing rows \(r_i\) and columns \(c_i\). If \(c_i<r_i\) for
+some \(i\), the first \(i\) columns can meet at most \(i-1\) eligible
+rows, so every determinant term vanishes. Otherwise put \[
+\lambda'_i=c_{\ell+1-i}+i,\qquad \mu'_i=r_{\ell+1-i}+i.
+\] These are partitions with \(\lambda'\ge\mu'\). Transposition and
+simultaneous reversal transform the minor into \[
+\det(e_{\lambda'_i-\mu'_j-i+j})=s_{\lambda/\mu}(z).
+\] The Littlewood--Richardson expansion \[
+s_{\lambda/\mu}=\sum_\nu c_{\mu\nu}^{\lambda}s_\nu
+\] has nonnegative integer coefficients. For nonzero terms
+\(\nu\subseteq\lambda\), hence \(\operatorname{width}(\nu)\le\ell\le4\).
+If \(\operatorname{height}(\nu)>d\), its specialization to \(d\)
+variables vanishes. Every remaining ordinary Schur value is among the
+finite tests. Thus every arbitrary Toeplitz minor is nonnegative.
+
+For \(p(x)^n\) use \(d=2n\) and \(n\) copies each of \(\exp(i\pi/3)\)
+and \(\exp(-i\pi/3)\). The exact tests at \(n=8\) and \(n=9\) enumerate
+respectively \(\binom{20}{4}=4845\) and \(\binom{22}{4}=7315\)
+determinants. Every determinant is positive; the minimum is 1. These are
+finite certificates for the complete infinite-matrix \(\mathrm{PF}_4\)
+condition, not merely a sample of consecutive-row minors.
+
+\subsection{3. Convolution closure and nonnegative early
+iterates}\label{convolution-closure-and-nonnegative-early-iterates}
+
+We have \(T(a*b)=T(a)T(b)\). Each fixed minor of the product has a
+finite Cauchy--Binet sum: contributing intermediate indices lie between
+the selected row and column indices. If both factors are
+\(\mathrm{PF}_4\), every summand is nonnegative. Thus convolution
+preserves \(\mathrm{PF}_4\).
+
+For \(n\ge56\) write \(n=8q+r\), \(0\le r\le7\). Since \(q\ge7\ge r\),
+\[
+n=8(q-r)+9r.
+\] Hence \(p^n\) is a convolution of the two certified \(\mathrm{PF}_4\)
+seed rows, and is \(\mathrm{PF}_4\).
+
+Let \(D_j(k)=\det(a_{k+s-t})_{0\le s,t<j}\), \(D_0=1\). Desnanot--Jacobi
+gives \[
+D_j(k)^2-D_j(k-1)D_j(k+1)=D_{j-1}(k)D_{j+1}(k).
+\] It follows algebraically that \[
+\begin{aligned}
+(\mathcal La)_k&=D_2(k),\\
+(\mathcal L^2a)_k&=a_kD_3(k),\\
+(\mathcal L^3a)_k&=D_2(k)\bigl[a_k^2D_4(k)+D_3(k-1)D_3(k+1)\bigr].
+\end{aligned}
+\] These are polynomial identities with no division by a minor, so
+endpoints and possible zero minors cause no exception. The property
+\(\mathrm{PF}_4\) therefore implies nonnegativity of layers zero through
+three. The selected infinite range \(n\ge4004\) lies entirely within
+this proven range \(n\ge56\).
+
+\subsection{References}\label{references}
+
+The symmetric-function identities are dual Jacobi--Trudi and
+Littlewood--Richardson; see I. G. Macdonald, \emph{Symmetric Functions
+and Hall Polynomials}, second edition, Chapter I, Sections 3, 5 and 9.
+The first three iteration identities and fourth-order limitations are
+discussed by P. R. W. McNamara and B. E. Sagan, \emph{Infinite
+log-concavity: developments and conjectures},
+\url{https://arxiv.org/abs/0808.1065}. These general algebraic tools are
+prior results, not new claims of this proof.
+
+\clearpage
+
+\section{\texorpdfstring{Analytic part of a computer-assisted proof for
+powers of
+\(1+x+x^2\)}{Analytic part of a computer-assisted proof for powers of 1+x+x\^{}2}}\label{analytic-part-of-a-computer-assisted-proof-for-powers-of-1xx2}
+
+\subsection{1. Statement and structure of the
+proof}\label{statement-and-structure-of-the-proof}
+
+For a finitely supported sequence \(a=(a_k)_{k\in\mathbb Z}\), extended
+by zero outside its support, write \[
+ (\mathcal La)_k=a_k^2-a_{k-1}a_{k+1}.
+\] The sequence is \textbf{infinitely log-concave} if every iterate
+\(\mathcal L^j a\) is nonnegative.
+
+The result addressed by this draft is the following integer-exponent
+statement:
+
+\begin{quote}
+\textbf{Theorem.} For every integer \(n\ge10\), the coefficient sequence
+of \((1+x+x^2)^n\) is infinitely log-concave.
+\end{quote}
+
+This is the trinomial case discussed in Medina--Straub, Example 5.3 and
+Table 1. It is not the general assertion for every polynomial with
+positive coefficients in their Conjecture 5.2. See
+\href{https://arminstraub.com/downloads/pub/infinitelogconcavity.pdf}{Medina--Straub,
+\emph{On multiple and infinite log-concavity}}.
+
+The proof is computer-assisted in two explicit ways: certain low-degree
+rational polynomial inequalities are verified by positive Bernstein
+coefficients, and a finite collection of parameter-wide sign
+inequalities is verified by exact interval Taylor arithmetic.
+Floating-point calculations may select rational evaluation points, but
+do not certify their signs.
+
+Put \[
+ p(z)=1+z+z^2,\qquad a_{n,k}=[z^k]p(z)^n,
+ \qquad f_{n,j}(x)=\sum_k(\mathcal L^j a_n)_k x^k.
+\] The analytic argument proves that \(f_{n,4}\) has only negative real
+zeros for every integer \(n\ge4004\). Its degree is \(2n\). We do not
+require, or assert here, this stronger real-rootedness statement
+throughout the smaller finite range.
+
+The proof has three parts.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A uniform two-saddle estimate gives alternating signs of \(f_{n,4}\)
+  at explicitly defined bulk phase points.
+\item
+  Exact parameter-wide certificates supply a finite chain of edge signs
+  and its connection to the bulk.
+\item
+  The intermediate value theorem and reciprocity exhaust the degree. The
+  initial three iterates and the finite range \(10\le n\le4003\) are
+  treated in the companion finite and algebraic chapter above.
+\end{enumerate}
+
+Once \(f_{n,4}\) has negative real zeros, Brändén's preservation theorem
+applies repeatedly to the same zero-extended operator \(\mathcal L\).
+The theorem and its proof are in §3 of
+\href{https://arxiv.org/pdf/0909.1927}{Brändén, \emph{Iterated sequences
+and the geometry of zeros}}. It is used forward from the fourth iterate,
+not backward to infer the first three iterates.
+
+Throughout, \(\operatorname{sinc}x=\sin(x)/x\), with its continuous
+value at zero. Arguments of analytic functions are chosen continuously
+from the positive real axis whenever this is specified.
+
+\subsection{2. An exact sixteen-leaf
+integral}\label{an-exact-sixteen-leaf-integral}
+
+\subsubsection{2.1. The diagonal identity}\label{the-diagonal-identity}
+
+Consider a complete balanced binary tree with \(r=2^j\) labelled leaves.
+For an internal node \(\nu\), let \(L_\nu,R_\nu\) be its two child leaf
+sets, and put \[
+ Z_{\nu,L}=\prod_{i\in L_\nu}z_i,
+ \qquad Z_{\nu,R}=\prod_{i\in R_\nu}z_i.
+\] Define \[
+ P_j(z)=\prod_{\nu}\left(1-\frac{Z_{\nu,L}}{Z_{\nu,R}}\right).
+\] Then \[
+ f_{n,j}(x)=\operatorname{CT}_{z_1,\ldots,z_{r-1}}
+ P_j(z)\prod_{i=1}^r p(z_i)^n,
+ \qquad z_r=\frac{x}{z_1\cdots z_{r-1}}.                 \tag{2.1}
+\] To prove this, start with the coefficientwise product formula for a
+diagonal. At one application of \(\mathcal L\), the product of two
+equal-index coefficients is replaced by that product minus the product
+with indices shifted by \(-1,+1\). These shifts insert exactly
+\(Z_{\nu,L}/Z_{\nu,R}\). Induction down the binary tree proves (2.1),
+including zero extension at the boundaries.
+
+For \(x=-s^{16}\), take all sixteen radii equal to \(s\), and write
+\(z_i=s e^{i\alpha_i}\). The angular constraint is \[
+ \sum_{i=1}^{16}\alpha_i=\pi\pmod {2\pi}.
+\] The measure is normalized Haar measure on this fifteen-dimensional
+torus. In the coordinates \(\alpha_1,\ldots,\alpha_{15}\), it is
+\((2\pi)^{-15}d\alpha_1\cdots d\alpha_{15}\).
+
+\subsubsection{2.2. A nonnegative kernel}\label{a-nonnegative-kernel}
+
+For every internal node set \[
+ D_\nu(\alpha)=\sum_{i\in L_\nu}\alpha_i-
+                    \sum_{i\in R_\nu}\alpha_i.
+\] The exponential factor \(\prod_i p(s e^{i\alpha_i})^n\) and the
+constrained measure are invariant under permutations of the leaves.
+Average the kernel over the group generated by interchanging the two
+children at each tree node. Beginning at the lowest level, an
+interchange changes \(D_\nu\) to \(-D_\nu\), while the already averaged
+descendant factors are even and merely permuted. It therefore replaces
+\(1-e^{iD_\nu}\) by \(1-\cos D_\nu\). Repeating upward gives the exact
+integral identity \[
+ f_{n,4}(-s^{16})=
+ \int_{\sum\alpha_i=\pi\ (2\pi)}
+ K(\alpha)\prod_{i=1}^{16}p(s e^{i\alpha_i})^n\,d\mu(\alpha),
+ \qquad K=\prod_\nu(1-\cos D_\nu)\ge0.                \tag{2.2}
+\] The replacement is an equality after integration; it is not a
+pointwise equality with the original Laurent kernel.
+
+At a configuration of equal angles, the leading homogeneous term of
+\(K\) is \[
+ H(\eta)=\prod_\nu\frac{D_\nu(\eta)^2}{2}.           \tag{2.3}
+\] There are fifteen internal nodes, so this vanishing has degree
+thirty.
+
+\subsubsection{2.3. Haar coordinates and measure
+normalization}\label{haar-coordinates-and-measure-normalization}
+
+On the tangent space \[
+ \mathcal T=\{\eta\in\mathbb R^{16}:\sum_i\eta_i=0\},
+\] the fifteen contrast vectors defining \(D_\nu\) are orthogonal. Their
+squared norms are the node sizes \(m_\nu\). Sizes \(2,4,8,16\) occur
+respectively \(8,4,2,1\) times. For orthonormal coordinates
+\(x_\nu=D_\nu/\sqrt{m_\nu}\), \[
+ H=\left(\prod_\nu\frac{m_\nu}{2}\right)\prod_\nu x_\nu^2
+   =2048\prod_\nu x_\nu^2.                            \tag{2.4}
+\] The original fifteen angular coordinates have metric matrix
+\(I+\mathbf1\mathbf1^T\), of determinant sixteen. Thus their measure is
+one quarter of Euclidean measure on \(\mathcal T\). This factor is
+important in every saddle and complement estimate below.
+
+\subsection{3. Saddle geometry and explicit scalar
+inequalities}\label{saddle-geometry-and-explicit-scalar-inequalities}
+
+Set \[
+ \theta=\frac\pi{16},\quad \zeta=s e^{i\theta},\quad
+ q(z)=1+4z+z^2,\quad
+ m(z)=\frac{zp'(z)}{p(z)},\quad
+ v(z)=\frac{zq(z)}{p(z)^2},\quad V=n v(s).
+\] For \(m\ge2\), define \[
+ \kappa_m(z)=\left(z\frac d{dz}\right)^{m-2}v(z).
+\] Here \(v(s)>0\) for \(s>0\). We work with \(0<s\le1\); reciprocity
+later supplies the other half of the zeros.
+
+\subsubsection{3.1. Modulus estimates}\label{modulus-estimates}
+
+Write \[
+ h_s(\alpha)=\log\frac{|p(s e^{i\alpha})|}{p(s)}.
+\] If \(c=\cos\alpha\), the exact identity is \[
+ \frac{|p(s e^{i\alpha})|^2}{p(s)^2}=1-D(c),
+ \quad D(c)=2a(1-c)+b(1-c^2),
+\] where \[
+ a=\frac{s(1+s^2)}{p(s)^2},\qquad
+ b=\frac{4s^2}{p(s)^2},\qquad a+b=v(s),\qquad b\le\frac23v(s).
+                                                               \tag{3.1}
+\] In particular, if \(|\alpha|\ge\pi/3\), \[
+ h_s(\alpha)\le-\frac5{12}v(s).                       \tag{3.2}
+\] A small-angle bound at the equal-phase saddle is \[
+ 16h_s(\theta)>-\frac{40}{123}v(s).                  \tag{3.3}
+\] For example, \(D(\cos\theta)\le v(s)\theta^2\), \(v(s)\le1\), and
+\(-\log(1-x)\le x/(1-x)\) give \[
+ -16h_s(\theta)\le
+ \frac{\pi^2}{32(1-\pi^2/256)}v(s)<\frac{40}{123}v(s).
+\]
+
+On the central interval, \[
+ \Re v(s e^{i\alpha})\ge\frac13v(s),
+ \qquad |\alpha|\le\frac\pi3.                       \tag{3.4}
+\] Consequently \(h_s''(\alpha)=-\Re v(s e^{i\alpha})\le-v(s)/3\): the
+function is strictly concave there.
+
+These facts locate the two modulus maxima. A configuration containing a
+noncentral angle has total modulus loss at least \(5v(s)/12\), larger
+than the equal-phase loss in (3.3). If all angles are central, the
+possible winding sums are \(\pm\pi,\pm3\pi,\pm5\pi\). Jensen's
+inequality shows that the largest modulus in each such sector occurs at
+its equal-angle configuration. Since \(h_s\) is even and strictly
+decreasing on \((0,\pi/3]\), the global maxima are exactly the two
+configurations with all angles equal to \(\theta\) or \(-\theta\).
+
+\subsubsection{3.2. Scalar certificate
+lemma}\label{scalar-certificate-lemma}
+
+The following bounds hold uniformly for \(0<s\le1\). Put \(v_0=v(s)\),
+\(\beta=\Re v(\zeta)\). \[
+ \frac{19}{20}v_0\le\beta\le\frac{17}{16}v_0,
+ \qquad \left(\frac{|v(\zeta)|}{\beta}\right)^{45/2}<2,             \tag{3.5}
+\] \[
+ |\Im\kappa_3(\zeta)|\le\frac14v_0,
+ \quad |\kappa_3(\zeta)|\le\frac65v_0,
+ \quad |\kappa_4(\zeta)|\le\frac43v_0,
+ \quad |\kappa_5(\zeta)|\le\frac94v_0.                            \tag{3.6}
+\] On the wider sector \(\cos\alpha\ge3/4\), \[
+ \Re\kappa_4(s e^{i\alpha})\le\frac32v_0,
+ \quad |\kappa_4(s e^{i\alpha})|\le3v_0,
+ \quad |\kappa_6(s e^{i\alpha})|\le32v_0.                        \tag{3.7}
+\]
+
+These are rational polynomial inequalities, rather than numerical bounds
+on a grid. Here is an explicit way to verify them. If
+\(\kappa_m(z)=N_m(z)/p(z)^m\), then \[
+ N_2=zq(z),\qquad N_{m+1}=z\{pN_m'-m p'N_m\}.                   \tag{3.8}
+\] For a polynomial \(N(z)=\sum a_i z^i\), \[
+ |N(s e^{i\alpha})|^2
+ =\sum_{i,j}a_i a_j s^{i+j}T_{|i-j|}(\cos\alpha),               \tag{3.9}
+\] where \(T_j\) is a Chebyshev polynomial. Clearing positive
+denominators in each squared modulus bound produces a polynomial in
+\(s,c\). On the narrow sector, use \(c\in[49/50,1]\), containing
+\(\cos\theta\), and split \(s\in[0,1]\) into four equal intervals. On
+the wide sector use \(c\in[3/4,1]\). Nonnegative tensor-product
+Bernstein controls verify the required inequalities. For a power-basis
+polynomial \(\sum a_{ij}x^iy^j\) of bidegree \((d,e)\), the controls are
+explicitly \[
+ b_{kl}=\sum_{i\le k,\,j\le l}
+ a_{ij}\frac{\binom{k}{i}}{\binom d i}
+        \frac{\binom l j}{\binom e j}.                           \tag{3.10}
+\] Thus the verification uses rational arithmetic only.
+
+For completeness, some especially useful reductions are small. Let
+\(t=s+s^{-1}\), \(c=\cos\alpha\), \[
+ A=tc+1,\quad B^2=(t^2-4)(1-c^2),\quad D=A^2+B^2,
+ \quad R=(A+3)A^2+(A-3)B^2.
+\] Then \(\Re v=R/D^2\) and \(v(s)=(t+4)/(t+1)^2\). The polynomial \[
+ R(t+1)^2-\tfrac13(t+4)D^2
+\] has positive Bernstein controls after \(t=2+u\), \(c=(1+y)/2\): the
+minima by powers \(u^0,\ldots,u^5\) are \[
+ 148,\quad347/3,\quad65/3,\quad1/2,\quad2/3,\quad1/6.
+\] This proves (3.4). The conditioning inequality follows by verifying
+\(16(\Im v)^2<(\Re v)^2\); hence
+\((|v|/\Re v)^{45/2}<(17/16)^{45/4}<2\). The lower real-part bound in
+(3.5) and the bounds involving real or imaginary parts in (3.6)--(3.7)
+are verified after the same denominator clearing, using \(t\ge2\) where
+convenient. The upper real-part bound also follows directly by
+integrating \(|\kappa_4|\le3v_0\) twice from angle zero: \[
+ \beta\le v_0(1+3\theta^2/2)<17v_0/16.
+\] The accompanying exact certificate routines specify all polynomial
+subdivisions; their role is confined to these finite rational
+inequalities.
+
+\subsection{4. Leading amplitude and first
+correction}\label{leading-amplitude-and-first-correction}
+
+Near the positive saddle write \(\alpha_i=\theta+\eta_i\),
+\(\eta\in\mathcal T\). The exponent has quadratic part \[
+ -\frac{n v(\zeta)}2\sum_i\eta_i^2.
+\] Using (2.4), the complex Gaussian integral is a product of fifteen
+one-dimensional second-moment integrals. Including the factor \(1/4\)
+from the measure gives the one-saddle amplitude \[
+ A_n(s)=\frac{2048}{4(2\pi)^{15/2}}
+        \frac{p(\zeta)^{16n}}{(n v(\zeta))^{45/2}}.              \tag{4.1}
+\] The square root and power are chosen continuously with
+\(\Re v(\zeta)>0\). The negative saddle contributes the complex
+conjugate.
+
+Let \(S_j=\sum_i\eta_i^j\) and \(Q=\sum_\nu D_\nu^2\). The first
+correction to the Gaussian integrand is \[
+ -\frac Q{12}+\frac{n\kappa_4(\zeta)}{24}S_4
+       -\frac{n^2\kappa_3(\zeta)^2}{72}S_3^2.                 \tag{4.2}
+\] The relevant normalized unit-scale weighted Gaussian moments are \[
+ \mathbb EQ=192,\qquad \mathbb ES_4=5055/16,
+ \qquad \mathbb ES_3^2=2835/4.
+\] They yield \[
+ B_1(s)=-\frac{16}{v(\zeta)}
+  +\frac{1685\kappa_4(\zeta)}{128v(\zeta)^2}
+  -\frac{315\kappa_3(\zeta)^2}{32v(\zeta)^3}.                 \tag{4.3}
+\] Equations (3.5)--(3.6) imply \[
+ \left|\frac{B_1(s)}n\right|
+ \le\frac{2173895}{41154V}<\frac{53}{V}.                     \tag{4.4}
+\] No approximation to the zeros is inferred from this formal correction
+alone. The next two sections supply actual remainder bounds.
+
+\subsection{5. A uniform local
+remainder}\label{a-uniform-local-remainder}
+
+Let \[
+ \mathcal B=\{\eta\in\mathcal T:|\eta_i|\le2/5\text{ for all }i\}.
+\] We compare the exact integral over this box to the Gaussian plus
+(4.2) over the \textbf{same} box. The resulting one-saddle error is \[
+ \left|I_{\mathcal B}-I_{\mathcal B}^{(1)}\right|
+ \le \frac{36821}{V^2}|A_n(s)|,\qquad V\ge100.                 \tag{5.1}
+\] Here the factors \(p(\zeta)^{16n}\) and angular normalization are
+included in both integrals.
+
+\subsubsection{5.1. An even homotopy}\label{an-even-homotopy}
+
+Put \[
+ L(\eta)=\sum_i\{\log p(\zeta e^{i\eta_i})-\log p(\zeta)\},
+ \quad E_\tau=nL(\tau\eta)/\tau^2,
+\] \[
+ F_\tau=\prod_\nu\operatorname{sinc}^2(\tau D_\nu/2),
+ \qquad J(\tau,\eta)=H F_\tau e^{E_\tau}.
+\] All singularities at \(\tau=0\) are removable. In particular,
+\(E_0=-nv(\zeta)\|\eta\|^2/2\). Since \(J(-\tau,\eta)=J(\tau,-\eta)\),
+integration over the symmetric box is even in \(\tau\). Taylor's
+integral remainder therefore gives exactly \[
+ \int_{\mathcal B}\{J(1)-J(0)-\tfrac12J''(0)\}
+ =\int_0^1\frac{(1-\tau)^3}{6}
+       \int_{\mathcal B}\partial_\tau^4J(\tau,\eta)\,d\eta\,d\tau.
+                                                               \tag{5.2}
+\] Parity is used only in this integrated identity. Odd terms in the
+fourth derivative cannot be discarded at nonzero \(\tau\), because
+\(e^{E_\tau}\) need not be even in \(\eta\).
+
+\subsubsection{5.2. Bounds for the fourth
+derivative}\label{bounds-for-the-fourth-derivative}
+
+For \(m\ge1\), Taylor's integral formula gives \[
+ \partial_\tau^m E_\tau
+ =n\sum_i(i\eta_i)^{m+2}
+       \int_0^1 u^m(1-u)
+       \kappa_{m+2}(\zeta e^{iu\tau\eta_i})\,du.                \tag{5.3}
+\] Set \(d=2/5\), \(A=|S_3|\), \(B=S_4\), \(C=|S_5|\), \(D_6=S_6\). The
+scalar bounds imply \[
+\begin{aligned}
+ e_1&=V\{A/5+(\tau/9+9d\tau^2/160+8d^2\tau^3/45)B\},\\
+ e_2&=V(1/9+9d\tau/80+8d^2\tau^2/15)B,\\
+ e_3&=V(9C/80+16\tau D_6/15),\\
+ e_4&=16VD_6/15,
+\end{aligned}                                                   \tag{5.4}
+\] with \(|\partial_\tau^mE_\tau|\le e_m\). In the first two lines only,
+use \(|S_5|\le dS_4\), \(S_6\le d^2S_4\).
+
+The identity \(\operatorname{sinc}^2(t/2)=\mathbb E e^{it(U+U')}\), for
+independent uniforms on \([-1/2,1/2]\), gives \[
+ |F|\le1,\quad |F'|\le\tau Q/6=f_1,\quad |F''|\le Q/6=f_2,
+\] \[
+ |F'''|\le\tau Q^2/12=f_3,\qquad |F''''|\le Q^2/12=f_4.         \tag{5.5}
+\] For example, the exact fourth moment is \(Q^2/12-\sum D_\nu^4/60\),
+so dropping the last term gives an upper bound. The odd derivative
+estimates follow by integrating the next derivative from zero.
+
+The product rule now gives \[
+ |J^{(4)}|\le H e^{\Re E_\tau}\mathcal P,
+\] \[
+\begin{aligned}
+\mathcal P={}&f_4+4f_3e_1+6f_2(e_2+e_1^2)
+ +4f_1(e_3+3e_1e_2+e_1^3)\\
+ &+e_4+4e_1e_3+3e_2^2+6e_1^2e_2+e_1^4.                       \end{aligned} \tag{5.6}
+\] This polynomial has nonnegative coefficients in its nonnegative
+arguments.
+
+\subsubsection{5.3. Gaussian domination and a reproducible finite moment
+sum}\label{gaussian-domination-and-a-reproducible-finite-moment-sum}
+
+Real-part Taylor bounds give \[
+ \Re E_\tau\le-\frac n2a\|\eta\|^2,
+ \qquad a=\beta-\frac4{75}v_0\ge\frac{269}{300}v_0
+                         >\left(\frac{15}{16}\right)^2v_0.
+\] The ratio of this real Gaussian normalization to the absolute complex
+Gaussian normalization is \[
+ (|v(\zeta)|/a)^{45/2}<2(285/269)^{45/2}<8.                  \tag{5.7}
+\] Under the normalized \(H\)-weighted Gaussian at unit scale, the
+orthonormal Haar coordinates are independent with density
+\(x^2e^{-x^2/2}/\sqrt{2\pi}\). Hence \[
+ \mathbb ED_\nu^{2r}=(2r+1)!!m_\nu^r,
+ \qquad \mathbb ED_\nu^{2r+1}=0.                              \tag{5.8}
+\] The reconstruction \[
+ \eta_i=\sum_{\nu\text{ ancestor of }i}
+       \frac{\epsilon_{i,\nu}D_\nu}{m_\nu},\qquad
+ \epsilon_{i,\nu}\in\{-1,1\},                                \tag{5.9}
+\] makes every moment needed in (5.6) a finite rational sum. Absolute
+odd powers of \(S_3\) or \(S_5\) are bounded by Cauchy--Schwarz, moving
+one odd factor to each side so that both resulting powers are even. An
+integer ceiling of the resulting square root is used. For example, \[
+ \mathbb ES_3^4=38064735/16,\quad
+ \mathbb ES_5^2=81661725/256,\quad
+ \mathbb ES_4^4=2166032330330625/65536.
+\]
+
+For a monomial \(C_0\tau^pV^lA^aB^bC^cD_6^dQ^e\) in (5.6), let
+\(q=3a+4b+5c+6d+2e\) denote its angular degree. Every monomial has
+\(q-2l\ge4\). Its contribution to the coefficient of \(V^{-2}\), for
+\(V\ge100\), is bounded by \[
+ 8\,\frac{p!}{(p+4)!}\,
+ [\text{monomial coefficient}]\,[\text{unit moment bound}]
+ \left(\frac{16}{15}\right)^q10^{2l-q+4}.                    \tag{5.10}
+\] Here \(p!/(p+4)!\) is the exact integral of \(\tau^p(1-\tau)^3/6\);
+replacing all these weights by \(1/24\) is unnecessarily wasteful.
+
+Expanding the explicit polynomial (5.6), applying (5.8)--(5.10), and
+adding rational upper bounds gives \[
+ \frac{92329284077596045529773584373060993024}
+ {2507581295866705477237701416015625}<36821.
+\] This proves (5.1). The moment calculation is finite and exact; it is
+not an asymptotic assertion with an unspecified constant.
+
+\subsubsection{5.4. Restoring the Gaussian model outside the
+box}\label{restoring-the-gaussian-model-outside-the-box}
+
+The exact leaf-coordinate moment-generating function under the
+normalized real weighted Gaussian is \[
+ \mathbb E e^{t\sqrt{n\beta}\eta_i}
+ =e^{15t^2/32}\prod_{m=2,4,8,16}(1+t^2/m).                    \tag{5.11}
+\] Indeed a leaf has four ancestor Haar coordinates with squared
+coefficients \(1/2,1/4,1/8,1/16\). A union and Chernoff bound therefore
+give \[
+ P_{\mathcal B^c}\le32
+ e^{-td\sqrt{19V/20}+15t^2/32}
+ \prod_{m=2,4,8,16}(1+t^2/m).                                \tag{5.12}
+\] The absolute value of (4.2) is at most \[
+ Q/12+(V/18)S_4+(V^2/50)S_3^2.
+\] Its weighted \(L^2\) norm is bounded by \(67/V\); the exact squared
+constant is \[7405704307825/1693651716<67^2.\] Cauchy--Schwarz and the
+conditioning factor in (3.5) bound the restored Gaussian-plus-correction
+tail by \[
+ 2\{P_{\mathcal B^c}+(67/V)\sqrt{P_{\mathcal B^c}}\}|A_n(s)|.
+\] For \(V\ge225\), choose \(t=5\) in (5.12). Exact rational exponential
+and square-root bounds give \[
+ P_{\mathcal B^c}<1/1000,\qquad
+ 2\{P_{\mathcal B^c}+(67/V)\sqrt{P_{\mathcal B^c}}\}<11/500.
+                                                               \tag{5.13}
+\] These are tails of the Gaussian model. They are not substituted for
+the actual torus complement, which is bounded next.
+
+\subsection{\texorpdfstring{6. The actual torus complement at
+\(V\ge250\)}{6. The actual torus complement at V\textbackslash ge250}}\label{the-actual-torus-complement-at-vge250}
+
+Represent each angle in \([-\pi,\pi]\); boundary sets have measure zero.
+Call an angle central if \(|\alpha_i|\le\pi/3\). We divide the
+complement of the two local boxes into five classes. All bounds in this
+section are relative to the magnitude of \textbf{one} saddle,
+\(|A_n(s)|\).
+
+\subsubsection{6.1. Principal central sectors outside the
+boxes}\label{principal-central-sectors-outside-the-boxes}
+
+In the sector \(\sum\alpha_i=\pi\), set \(\eta_i=\alpha_i-\theta\), and
+define \[
+ g(x)=\frac{h_s(\theta)+h_s'(\theta)x-h_s(\theta+x)}{v_0}.
+\] For either radial direction, the scalar inequalities imply at
+\(d=2/5\) \[
+ g(\pm d)\ge269/3750,\qquad
+ \frac d{dr}g(\pm r)\big|_{r=d}\ge43/125.
+\] These follow by integrating \(g''(0)\ge19/20\), \(|g'''(0)|\le1/4\),
+and \(g''''\ge-3/2\). For larger radial distances still inside the
+central angular interval, (3.4) gives \(g''\ge1/3\). Thus \[
+ g(\pm r)\ge269/3750+(43/125)(r-d)+(r-d)^2/6\quad(r\ge d).
+\] Let \[
+ \gamma(R)=\frac13+\frac{158}{375R}-\frac{49}{625R^2}.
+\] It is decreasing on \([2/5,5/4]\), and \(g(x)\ge\gamma(R)x^2/2\)
+whenever \(|x|\le R\). The largest possible \(|\eta_i|\) in this sector
+is \(19\pi/48<5/4\).
+
+Split the maximum coordinate into the seventeen slabs \[
+ [\ell_j,R_j]=[2/5+j/20,\,2/5+(j+1)/20],\qquad0\le j\le16.
+\] On a slab, use \(K\le H\) and the Gaussian precision
+\(\gamma(R_j)V\). Its normalization costs at most
+\(2(17/(16\gamma(R_j)))^{23}\). Equation (5.11) gives the explicit slab
+bound \[
+ 64\left(\frac{17}{16\gamma(R_j)}\right)^{23}
+ e^{-t_j\ell_j\sqrt{\gamma(R_j)V}+15t_j^2/32}
+ \prod_{m=2,4,8,16}(1+t_j^2/m).                               \tag{6.1}
+\] At \(V=250\), take a rational lower bound for the square root by
+flooring it to denominator \(1000\), and set \(t_j\) equal to the
+integer part of the resulting \(\ell_j\sqrt{250\gamma(R_j)}\), minus
+one, or one if this is smaller. Sum (6.1), bounding each negative
+exponential by the reciprocal of a positive exponential Taylor partial
+sum. The exact sum is less than \(9/80\). Each term decreases for larger
+\(V\). Thus the two principal central complements together contribute
+less than \(9/40\).
+
+\subsubsection{6.2. Nonprincipal central
+sectors}\label{nonprincipal-central-sectors}
+
+The other central sectors have means \(\mu=\pm3\theta,\pm5\theta\).
+Strong concavity gives \[
+ \sum_i h_s(\alpha_i)
+ \le16h_s(\mu)-\frac{v_0}{6}\sum_i(\alpha_i-\mu)^2.
+\] The wide fourth-cumulant bound implies \[
+ h_s(\theta)-h_s(3\theta)
+ \ge v_0(4\theta^2-10\theta^4)>v_0/8.
+\] For example, integrate \(\Re v(se^{ia})\ge v_0(1-3a^2/2)\) first from
+zero to \(a\), then from \(\theta\) to \(3\theta\). The larger mean
+\(5\theta\) only improves the loss. There are sixteen leaves, so the
+total mean deficit exceeds \(2v_0\). The four sectors together are
+bounded by \[
+ 8(51/16)^{23}e^{-2V}<10^{-10},\qquad V\ge250.                 \tag{6.2}
+\]
+
+\subsubsection{6.3. Exactly one noncentral
+angle}\label{exactly-one-noncentral-angle}
+
+Let its magnitude be \(a\in[\pi/3,\pi]\). From (3.1), \[
+ h_s(a)\le-v_0\phi(a),\qquad
+ \phi(a)=\frac{2-\cos a-\cos^2a}{3}.
+\] For \(|x|\le2\pi/45\), (3.7) and Taylor's formula give \[
+ h_s(x)\le-v_0x^2/2+v_0x^4/16\le-(49/100)v_0x^2.
+\] The mean of the fifteen inliers has magnitude at least
+\((\pi-a)/15\). Monotonicity of \(h_s\), followed by the short-angle
+estimate at this smaller comparison argument, gives a mean cost at least
+\((49/1500)v_0(\pi-a)^2\). The remaining inlier fluctuations have
+Gaussian precision \(V/3\).
+
+The function \(\phi(a)+(49/1500)(\pi-a)^2\) is bounded below by
+\(5/12+49\pi^2/3375\). To check this, it is concave on
+\([\pi/3,2\pi/3]\), because \(\phi''\le-1/6\) while the added second
+derivative is \(49/750<1/6\); its first endpoint is the smaller one. On
+\([2\pi/3,\pi]\), \(\phi\ge2/3\), which is larger than that endpoint
+value. After subtracting (3.3), the deficit exceeds \[
+ \delta_1=\frac{3246499}{13837500},                            \tag{6.3}
+\] using \(\pi^2>493/50\).
+
+Only the four ancestors of the outer leaf need their kernel factors
+bounded by two. The eleven remaining contrasts lie orthogonally in the
+fourteen-dimensional centered inlier space, and their product of
+\(m_\nu/2\) is \(32\). Their Gaussian integral is
+\(32(2\pi)^7(3/V)^{18}\). The original measure disintegrates as
+\(da\,d\sigma/\sqrt{15}\). There are at most sixteen choices of leaf and
+six winding sectors. After normalizing by (4.1), the total is bounded by
+\[
+ 128\,3^{18}(17/16)^{23}V^{9/2}e^{-\delta_1V}<1/2000,
+ \qquad V\ge250.                                             \tag{6.4}
+\] The factor uses \(\sqrt{2\pi/15}<2/3\) and includes the conditioning
+factor two.
+
+\subsubsection{6.4. Exactly two noncentral
+angles}\label{exactly-two-noncentral-angles}
+
+The two leaf-to-root paths have at most seven distinct internal
+ancestors. At least eight contrasts therefore involve only the fourteen
+central leaves. Keep eight such contrasts and bound the other seven
+kernel factors by two. Each retained node has size at most eight, so \[
+ K\le2^{23}\prod_{j=1}^8x_j^2
+\] in orthonormal coordinates of the thirteen-dimensional centered
+inlier plane. Its Gaussian integral contributes
+\((2\pi)^{13/2}(3/V)^{29/2}\). The coarea factor is \(1/\sqrt{14}\), and
+there are at most \(\binom{16}{2}\cdot6=720\) leaf-pair/winding choices.
+
+The deficit relative to the saddle is at least
+\(2(5/12)-40/123=125/246\). Including the conditioning factor two, the
+total bound is \[
+ 720\,2^{17}3^{14}(17/16)^{23}V^8e^{-125V/246}<10^{-10},
+ \qquad V\ge250.                                             \tag{6.5}
+\] Keeping the eight intact contrasts is essential: replacing the whole
+kernel by a constant would introduce a much larger power of \(V\).
+
+\subsubsection{6.5. At least three noncentral
+angles}\label{at-least-three-noncentral-angles}
+
+Here the deficit is at least \(3(5/12)-40/123=455/492\). Use
+\(K\le2^{15}\) and normalized total torus volume one. The resulting
+bound is \[
+ 128(44/7)^8(17/16)^{23}V^{23}e^{-455V/492}<10^{-10},
+ \qquad V\ge250.                                             \tag{6.6}
+\] No union multiplier is necessary: this is a pointwise bound on the
+entire region.
+
+All numerical inequalities (6.1)--(6.6) are checked by rational
+arithmetic, positive exponential Taylor sums and elementary rational
+bounds on \(\pi\). The functions \(V^a e^{-\delta V}\) in (6.4)--(6.6)
+decrease for \(V\ge250\), as follows by differentiating their
+logarithms.
+
+\subsection{7. The uniform bulk theorem and phase
+points}\label{the-uniform-bulk-theorem-and-phase-points}
+
+Combining the two local errors, the two model-restoration errors, the
+actual complement, and (4.4), we obtain \[
+\begin{aligned}
+\frac{|f_{n,4}(-s^{16})-2\Re A_n(s)|}{2|A_n(s)|}
+ &<\frac{36821}{250^2}+\frac{53}{250}+\frac{11}{500}
+ \\ &\quad+\frac12\left(\frac9{40}+\frac1{2000}+\frac3{10^{10}}\right)
+ \\ &=\frac{18717720003}{20000000000}<\frac{47}{50}                 
+\end{aligned}\tag{7.1}
+\] whenever \(0<s\le1\) and \(V\ge250\). Notice that the actual
+complement bounds were relative to one saddle; this accounts for the
+factor \(1/2\) in the last term.
+
+Define \[
+ \Psi_n(s)=16n\arg p(\zeta)-\frac{45}{2}\arg v(\zeta).
+\] Let \(m_q=zq'/q\). Direct algebra gives, for \(z=se^{i\theta}\), \[
+ \Im m(z)=\frac{s\sin\theta(1+4s\cos\theta+s^2)}{|p(z)|^2}>0,
+\] \[
+ \Im m_q(z)=\frac{4s\sin\theta(1+s\cos\theta+s^2)}{|q(z)|^2}
+             \le4\Im m(z).
+\] The last inequality uses
+\(|q|^2-|p|^2=6s\cos\theta(1+s^2)+15s^2\ge0\). Since \(zv'/v=1+m_q-2m\),
+\[
+ \frac{d\Psi_n}{d\log s}\ge(16n-45)\Im m(z)>0\qquad(n\ge3).  \tag{7.2}
+\] Moreover, \[
+ \Psi_n(0+)=-45\pi/32,\qquad \Psi_n(1)=n\pi.
+\] Thus every integer phase level \(m\pi\), \(0\le m\le n\), has a
+unique point in \((0,1]\). We use only levels \(m\ge250\), not formal
+phase crossings near the endpoint.
+
+For \(n\ge1001\), let \(s_*\) solve \(nv(s_*)=250\). The real variance
+is strictly increasing on \((0,1)\), since \[
+ sv'(s)=\frac{s(1-s^2)(1+7s+s^2)}{p(s)^3}>0.
+\] The exact value \(v(7/20)=141260/346921\) shows \(s_*<7/20\). On this
+interval, \[
+ \frac{m(s)}{v(s)}-1=\frac{s(2s^2+2s-1)}{1+4s+s^2}\le0.
+\] Also, for \(0\le\alpha\le\theta\), \[
+ \Im v(se^{i\alpha})=
+ \frac{s\sin\alpha(1-s^2)
+ (4s^2\cos^2\alpha+8s^3\cos\alpha+8s\cos\alpha+s^4+5s^2+1)}
+ {|p(se^{i\alpha})|^4}\ge0.
+\] Therefore \(\arg p(se^{i\alpha})\) is concave in \(\alpha\), and
+\(\arg p(\zeta)\le\theta m(s)\), while \(\arg v(\zeta)\ge0\). Hence \[
+ \Psi_n(s_*)\le16n\theta v(s_*)=250\pi.                      \tag{7.3}
+\] By monotonicity, all phase points \(s_{n,m}\), \(250\le m\le n\),
+have \(V\ge250\). At such a point, \(\Re A_n=(-1)^m|A_n|\), so (7.1)
+proves \[
+ (-1)^m f_{n,4}(-s_{n,m}^{16})>0,
+ \qquad250\le m\le n,\quad n\ge1001.                         \tag{7.4}
+\] In particular, \(s_{n,n}=1\) and \(f_{n,4}(-1)\ne0\).
+
+\subsection{8. The analytic edge family and exact enclosure
+lemma}\label{the-analytic-edge-family-and-exact-enclosure-lemma}
+
+\subsubsection{\texorpdfstring{8.1. A family regular at
+\(u=0\)}{8.1. A family regular at u=0}}\label{a-family-regular-at-u0}
+
+For complex \(u,z\) with \(|uz|<1\), define \[
+ g_u(z)=\exp L(u,z),\qquad
+ L(u,z)=\begin{cases}\log p(uz)/u,&u\ne0,\\z,&u=0.\end{cases} 
+\] The logarithm is its analytic branch at zero. The displayed
+singularity is removable. Set \[
+ b_{0,k}(u)=[z^k]g_u(z),\qquad b_{j+1,k}=b_{j,k}^2-b_{j,k-1}b_{j,k+1},
+ \qquad F_u(x)=\sum_{k\ge0}b_{4,k}(u)x^k.                     \tag{8.1}
+\] These analytic functions are used only on domains where the bounds
+below ensure convergence. For a reciprocal integer \(u=1/n\), \[
+ b_{0,k}(1/n)=n^{-k}a_{n,k},\qquad
+ F_{1/n}(x)=f_{n,4}(x/n^{16}).                               \tag{8.2}
+\] The second identity follows because one application of \(\mathcal L\)
+squares a geometric coefficient scaling. It is exact, not an asymptotic
+limit.
+
+\subsubsection{8.2. Complex-parameter
+majorant}\label{complex-parameter-majorant}
+
+The series \[
+ \log p(w)=\sum_{\ell\ge1}c_\ell w^\ell,\qquad
+ c_\ell=\begin{cases}1/\ell,&3\nmid\ell,\\-2/\ell,&3\mid\ell,\end{cases}
+\] follows from \(p(w)=(1-w^3)/(1-w)\). Put \[
+ G(q)=-\log(1-q)-\tfrac13\log(1-q^3),
+ \qquad H(q)=\frac{qG'(q)-G(q)}{q^2}.
+\] Let \(c\ge0\), \(r,R>0\), and \(q=(c+r)R<1\). On \(|u-c|\le r\),
+\(|z|\le R\), \[
+ |\partial_uL(u,z)|\le R^2H(q).
+\] Integrating from \(c\) to \(u\) gives \[
+ |g_u(z)|\le e^E,\qquad
+ E=\frac{\log p(cR)}c+rR^2H(q),                              \tag{8.3}
+\] where the quotient is interpreted as \(R\) when \(c=0\). At the real
+starting parameter \(c>0\), the bound follows from \(|p(cz)|\le p(cR)\).
+
+Cauchy's coefficient estimate followed by four applications of
+\(\mathcal L\) yields \[
+ |b_{4,k}(u)|\le2^{15}e^{16E}R^{-16k}.                       \tag{8.4}
+\] Indeed the constants obey \(C_{j+1}=2C_j^2\), \(C_0=1\), while the
+spatial exponent doubles at every layer. A missing negative-index
+neighbor only improves the estimate.
+
+\subsubsection{8.3. Moving-node Taylor
+remainder}\label{moving-node-taylor-remainder}
+
+Let a positive rational moving node on a real panel \([c-h,c+h]\) be \[
+ t(u)=\frac{t_c}{1+a(u-c)},\qquad |a|r<1,\qquad0<h<r.
+\] Then \(|t(u)|\le T=t_c/(1-|a|r)\) throughout the \textbf{complex}
+parameter disk. Choose \(R>T\) with \((c+r)R<1\). For the truncated
+evaluation \[
+ Q_K(u)=\sum_{k=0}^K b_{4,k}(u)(-t(u)^{16})^k,
+\] (8.4) gives \[
+ |Q_K(u)|\le M=\frac{2^{15}e^{16E}}{1-(T/R)^{16}}.
+\] If \(Q_K(c+hw)=\sum_{j\ge0}d_jw^j\), Cauchy's estimate proves \[
+ \left|Q_K(c+hw)-\sum_{j=0}^{d}d_jw^j\right|
+ \le M\frac{(h/r)^{d+1}}{1-h/r},\qquad |w|\le1.              \tag{8.5}
+\] The finite coefficient truncation is bounded separately. For real
+\(0\le u\le U\), \[
+ \log p(uR_0)/u\le R_0+UR_0^2/2=:E_0,
+\] because \(\log p(q)\le q+q^2/2\). If \(R_0>T_0=\max t(u)\) and
+\(UR_0<1\), then \[
+ |F_u(-t(u)^{16})-Q_K(u)|
+ \le\frac{2^{15}e^{16E_0}(T_0/R_0)^{16(K+1)}}
+             {1-(T_0/R_0)^{16}}.                            \tag{8.6}
+\] The complex-disk radius in (8.5) need not equal the real
+coefficient-tail radius in (8.6). In the certificates, \(r=4h\),
+\(R=T+1\), and \(R_0=2T_0\) are used after checking the displayed domain
+inequalities exactly.
+
+\subsubsection{8.4. Exact finite Taylor arithmetic and the sign
+test}\label{exact-finite-taylor-arithmetic-and-the-sign-test}
+
+The retained Taylor coefficients are enclosed as \[
+ d_i\in2^{e-P}[m_i-\rho,m_i+\rho],\qquad0\le i\le d,
+\] with integer midpoints, a common nonnegative integer radius, and an
+arbitrary integer binary exponent. Thus rounding contributes at most
+\((d+1)\rho2^{e-P}\) on \(|w|\le1\).
+
+For multiplication, exact integer convolution of the midpoint vectors
+has raw coefficient error at most \[
+ \rho_b\sum|m_a|+\rho_a\sum|m_b|+(d+1)\rho_a\rho_b.
+\] Its raw exponent is \(e_a+e_b-P\). Rescaling a midpoint by a positive
+integer denominator \(D\), with nearest integer \(n_i\), enlarges the
+radius to \[
+ \left\lceil\frac{\rho+\max_i|Dn_i-m_i|}{D}\right\rceil.
+\] These formulas prove the enclosure invariant independently of
+intermediate coefficient size. Normalization uses both midpoint
+magnitudes and the radius; a zero midpoint with nonzero radius is not
+discarded. For multiplication by a rational scalar \(N/D\), \(D>0\),
+choose integer rounded midpoints \(n_i\); a valid new common radius is
+\[
+ \left\lceil\frac{|N|\rho+\max_i|Dn_i-Nm_i|}{D}\right\rceil.
+\] Addition first aligns binary exponents by these outward-rounded
+rescalings and then adds the radii. A formal coefficient shift preserves
+the common radius on retained entries. Thus all primitive operations
+used in the recurrence preserve the stated coefficientwise enclosure.
+
+The initial jets are generated from the exact recurrence \[
+ b_{0,0}=b_{0,1}=1,\qquad
+ (k+1)b_{0,k+1}=(1-ku)b_{0,k}+u(2-(k-1)u)b_{0,k-1}.           \tag{8.7}
+\] Four radius-one stencils give the shared \(b_{4,k}\) jets. At each
+moving node, Horner evaluation uses the Taylor jet \[
+ -t_c^{16}(1+ahw)^{-16},\qquad
+ [w^j]=-t_c^{16}\binom{15+j}{j}(-ah)^j.
+\] Truncating after formal degree \(d\) cannot affect retained formal
+coefficients.
+
+Convert the midpoint polynomial to Bernstein form after \(w=2x-1\),
+\(0\le x\le1\). Its minimum and maximum controls enclose all values. Add
+the rounding envelope and the two independent errors (8.5)--(8.6). A
+strictly positive lower bound or strictly negative upper bound then
+certifies the sign on the entire closed panel. This is an interval-wide
+proof, not a sampled evaluation.
+
+All transcendental majorants can be replaced by rational upper bounds.
+For example, expand \(H(q)\) through degree thirty and bound the
+remainder by \(2q^{31}/(1-q)\); bound logarithms by the positive atanh
+series with its geometric tail; use a positive rational lower bound for
+\(\log2\) to replace \(e^X\) by
+\(2^{\lceil X/\log2_{\rm lower}\rceil}\). Consequently the final sign
+comparison is an exact rational inequality.
+
+\subsection{9. Parameter-wide bulk bypass and the final
+join}\label{parameter-wide-bulk-bypass-and-the-final-join}
+
+For real \(r>0\), the analytic function \(p(z)^r\) on \(|z|<1\) is
+defined with the logarithm at zero. The diagonal identity, kernel
+symmetrization and all modulus estimates remain valid: integrality of
+\(r\) was not used in those steps. Thus (7.1) extends to real \(r\),
+\(0<s<1\), \(rv(s)\ge250\). No polynomial degree or reciprocal-root
+assertion is made for noninteger \(r\).
+
+At a moving node, set \(r=1/u\), \(s=ut(u)\). If \[
+ rv(s)\ge250,\qquad |\Psi_r(s)-j\pi|\le1/3,
+\] then (7.1) gives the desired sign because
+\(\cos(1/3)\ge17/18>47/50\). At \(u=0\), the analytic family tends
+uniformly on compact sets to its Poisson-scale limit \(g_0(z)=e^z\). The
+amplitude has a finite positive limiting magnitude; the strict uniform
+margin therefore extends the sign to that endpoint.
+
+These bypass inequalities and the final join are themselves low-degree
+rational polynomial certificates. Write \(t=A/B\), \(B>0\), and let
+\(c=\cos\theta,d=\sin\theta,c_2=\cos2\theta,d_2=\sin2\theta\). Then \[
+ \arg p(ut e^{i\theta})=\arctan\frac{uN_p}{D_p},
+\quad D_p=B^2+cuAB+c_2u^2A^2,
+\quad N_p=dAB+d_2uA^2,
+\] with \(D_q=B^2+4cuAB+c_2u^2A^2\), \(N_q=4dAB+d_2uA^2\) for \(q\).
+Hence \[
+ \Psi_{1/u}(ut)
+ =(16/u+45)\arctan(uN_p/D_p)
+ -(45/2)\arctan(uN_q/D_q)-45\pi/32.                          \tag{9.1}
+\] All real parts are positive, so the branches are unambiguous. Use
+certified rational sine, cosine and \(\pi\) enclosures, together with \[
+ x-x^3/3\le\arctan x\le x-x^3/3+x^5/5\qquad(x\ge0).
+\] The upper polynomial is increasing; the lower is increasing on
+\([0,1]\), which is verified for the relevant ratio bounds. After
+division by \(u\), the apparent singularity in (9.1) is removable.
+Clearing positive denominators gives degree-sixteen polynomial phase
+margins. The variance condition is the degree-four inequality obtained
+from \[
+ \frac{v(ut)}u=
+ \frac{AB(B^2+4uAB+u^2A^2)}{(B^2+uAB+u^2A^2)^2}.              \tag{9.2}
+\] Positive Bernstein controls certify both types of margin on each
+whole panel.
+
+For the supplied final harmonic node, the exact inequalities establish
+\(\Psi_{1/u}(ut_{249}(u))<250\pi\). For the root argument we use this
+only at reciprocal integers \(u=1/n\): phase monotonicity then gives \[
+ t_{249}(1/n)<n s_{n,250}.                                   \tag{9.3}
+\]
+
+\subsection{10. Certified edge inputs and
+assembly}\label{certified-edge-inputs-and-assembly}
+
+The rational parameter grid is \[
+ u_\ell=\ell/32032,\qquad0\le\ell\le32.
+\] For each \(j=1,\ldots,249\), the endpoint table supplies positive
+rational values \(T_{j,\ell}\). On a panel interpolate reciprocals: \[
+ t_j(u)=\left(\frac{1-\lambda}{T_{j,\ell}}
+               +\frac{\lambda}{T_{j,\ell+1}}\right)^{-1},
+ \quad \lambda=\frac{u-u_\ell}{u_{\ell+1}-u_\ell}.
+\] The exact adjacent endpoint comparisons imply strict node ordering
+throughout every panel: reciprocal interpolation preserves the reversed
+inequalities, and the final reciprocal restores their order.
+
+The completed finite edge certificate consists of panels \(0,\ldots,7\),
+exactly covering \[
+ [0,8/32032]=[0,1/4004].
+\] On each of these panels, every node \(j=1,\ldots,249\) has the strict
+sign \[
+ (-1)^jF_u(-t_j(u)^{16})>0.                                  \tag{10.1}
+\] The certificate inputs are as follows; the entries distinguish Taylor
+enclosures from the exact bulk-bypass criterion, not separate
+mathematical conclusions.
+
+\begin{longtable}[]{@{}rrrr@{}}
+\toprule\noalign{}
+Panel & Taylor-enclosed signs & Bulk-bypass signs & Total \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 246 & 3 & 249 \\
+1 & 245 & 4 & 249 \\
+2 & 243 & 6 & 249 \\
+3 & 241 & 8 & 249 \\
+4 & 240 & 9 & 249 \\
+5 & 239 & 10 & 249 \\
+6 & 238 & 11 & 249 \\
+7 & 237 & 12 & 249 \\
+\end{longtable}
+
+Each Taylor entry includes an exact final coefficient enclosure and
+strict rational comparison against both analytic errors. The hypotheses
+of (8.3)--(8.6) are checked entry by entry. The bypass entries use the
+exact inequalities in §9. The final join (9.3) and ordering use the same
+frozen rational node table. None of these statements follows merely from
+the aggregate counts in the table.
+
+Now fix an integer \(n\ge4004\). Its reciprocal lies in the certified
+closed parameter union. Since \(F_{1/n}(0)=1\), the first 249
+alternating edge signs give 249 disjoint root intervals. The last edge
+sign is negative, while phase point 250 has positive sign, so (9.3)
+supplies one more interval. Bulk phases 250 through \(n\) supply
+\(n-250\) further intervals. In the original polynomial variable these
+are \[
+ 249+1+(n-250)=n
+\] disjoint intervals inside \((-1,0)\). Thus \(f_{n,4}\) has at least
+\(n\) distinct roots there.
+
+The operator \(\mathcal L\) preserves palindromicity, degree \(2n\), and
+both endpoint coefficients one. Reciprocal roots give another \(n\)
+distinct roots below \(-1\). The value at \(-1\) is nonzero by (7.4).
+These \(2n\) roots exhaust the degree, so every root is strictly
+negative and real.
+
+The companion finite/algebraic chapter proves nonnegativity of iterates
+zero through three for \(n\ge56\), by finite PF4 seed certificates and
+convolution closure. This includes the entire infinite range used here.
+Brändén's theorem then gives all iterates from four onward. For
+\(10\le n\le4003\), exact directed ratio certificates enter the
+invariant cone \(\max q_k\le1/3\), which implies all subsequent iterates
+are positive. The finite and infinite ranges meet without a gap and
+cover every integer \(n\ge10\).
+
+\subsection{11. Reproducibility
+boundary}\label{reproducibility-boundary}
+
+The mathematical proof requires more than a floating plot or a list of
+successful samples. Its finite data are:
+
+\begin{itemize}
+\tightlist
+\item
+  the rational Bernstein certificates for the scalar inequalities in §3;
+\item
+  the exact weighted-moment sum in §5;
+\item
+  the rational complement bounds in §6;
+\item
+  the frozen moving-node endpoint table, interval-wide sign enclosures,
+  and final-join controls;
+\item
+  the finite cone and PF4 certificates described in the companion
+  chapter.
+\end{itemize}
+
+The computation uses reviewed exact integer/rational arithmetic and
+outward-rounded coefficient enclosures. An executable certificate
+checker must verify domains, strict sign inequalities, index coverage
+and the connection between every saved enclosure and its parameters.
+Cryptographic hashes help identify the intended records; hashing alone
+does not establish any mathematical inequality. This draft presents a
+computer-assisted proof, not a claim of formal proof-assistant
+verification or external peer review.
+
+\subsubsection{Primary references}\label{primary-references}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L. A. Medina and A. Straub, \emph{On multiple and infinite
+  log-concavity}, 2014 preprint; Annals of Combinatorics \textbf{20}
+  (2016), 125--138.
+  \href{https://arminstraub.com/downloads/pub/infinitelogconcavity.pdf}{Author-hosted
+  paper}, especially Example 5.3 and Table 1.
+\item
+  P. Brändén, \emph{Iterated sequences and the geometry of zeros},
+  Journal für die reine und angewandte Mathematik \textbf{658} (2011),
+  115--131. \href{https://arxiv.org/pdf/0909.1927}{arXiv version},
+  especially §3.
+\end{enumerate}
+
+\clearpage
+
+\section{Reproducing the computational
+premises}\label{reproducing-the-computational-premises}
+
+The accompanying \texttt{certificate\_package} has three independent
+directories: \texttt{finite}, \texttt{analytic}, and \texttt{edge}. It
+requires Python with assertions enabled. Exact analytic polynomial
+checks use SymPy 1.14.0, and accelerated edge regeneration uses
+python-flint 0.9.0. The finite checks and saved-edge replay require only
+the standard library. Dependency versions and backend provenance are
+pinned in the package.
+
+From the package directory, the following commands reconstruct the
+stated premises:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{python}\NormalTok{ finite/verify\_pf4.py}
+\ExtensionTok{python}\NormalTok{ finite/verify\_finite.py }\AttributeTok{{-}{-}full} \AttributeTok{{-}{-}output}\NormalTok{ finite\_result.json}
+\ExtensionTok{python}\NormalTok{ analytic/run\_analytic.py }\AttributeTok{{-}{-}full}
+\ExtensionTok{python}\NormalTok{ edge/regenerate.py }\AttributeTok{{-}{-}full}
+\ExtensionTok{python}\NormalTok{ edge/replay\_saved\_inequalities.py}
+\end{Highlighting}
+\end{Shaded}
+
+The finite command verifies all 3994 exponents in the finite range, not
+a selection. The analytic command reconstructs the rational polynomial
+and weighted-moment arithmetic underlying the displayed inequalities.
+The edge-generation command reconstructs all interval enclosures from
+the coefficient recurrence and four applications of the operator.
+Finally, the saved-inequality command evaluates every enclosure's strict
+sign margin and its two analytic remainder budgets.
+
+For a shorter inspection,
+\texttt{python\ edge/replay\_saved\_inequalities.py} alone checks all
+1929 saved enclosure inequalities, 63 bypass boxes, node ordering and
+the final join. This shorter command is deliberately described as
+\emph{conditional on the saved enclosures}: it does not reproduce their
+interval-propagation provenance. The separate representative command
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{python}\NormalTok{ edge/regenerate.py }\AttributeTok{{-}{-}panel}\NormalTok{ 0 }\AttributeTok{{-}{-}node}\NormalTok{ 200}
+\end{Highlighting}
+\end{Shaded}
+
+reconstructs one enclosure and compares every deterministic midpoint,
+radius and exponent. A successful representative test is not represented
+as a full-chain rerun. The original complete generation and independent
+saved-inequality checks were performed; the portable full-generation
+command is supplied for reproduction.
+
+Eight deterministic compressed data files contain the original final
+jets, one file per parameter panel. Hash manifests authenticate the
+files and identify the exact reproducibility version. Hash agreement is
+not a substitute for the mathematical implications proved in the
+manuscript or for arithmetic reconstruction. Intermediate shared
+coefficient checkpoints are omitted from the compact distribution; full
+regeneration rebuilds them in memory.
+
+The computational evidence and proof composition have received
+independent internal checks. External peer review and proof-assistant
+formalization remain distinct activities; neither is claimed by the
+present draft.
+
+\clearpage
+
+\section{References}\label{references-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  L. A. Medina and A. Straub, \emph{On multiple and infinite
+  log-concavity}, arXiv:1405.1765v1 (2014); \emph{Annals of
+  Combinatorics} \textbf{20} (2016), 125--138. The specific target is
+  Example 5.3, printed page 11 of the preprint.
+  \url{https://arxiv.org/abs/1405.1765v1}
+\item
+  P. Brändén, \emph{Iterated sequences and the geometry of zeros},
+  arXiv:0909.1927v3 (2010); \emph{Journal für die reine und angewandte
+  Mathematik} \textbf{658} (2011), 115--131. Section 3 gives the
+  real-nonpositive-zero preservation used after the fourth iterate.
+  \url{https://arxiv.org/abs/0909.1927v3}
+\item
+  P. R. W. McNamara and B. E. Sagan, \emph{Infinite log-concavity:
+  developments and conjectures}, \emph{Advances in Applied Mathematics}
+  \textbf{44} (2010), 1--15; arXiv:0808.1065. The symmetric-function
+  iteration identities and Toeplitz positivity provide context for the
+  earlier-layer argument. \url{https://arxiv.org/abs/0808.1065}
+\item
+  I. G. Macdonald, \emph{Symmetric Functions and Hall Polynomials},
+  second edition, Oxford University Press, 1995, Chapter I, Sections 3,
+  5 and 9. Used for dual Jacobi--Trudi and Littlewood--Richardson
+  identities.
+\end{enumerate}
+
+The exact polynomial-multiplication implementation uses the released
+python-flint 0.9.0 interface to FLINT. This is an arithmetic dependency,
+not a mathematical theorem proved here. Its release provenance and exact
+conversion contract are documented with the verification software.
+\url{https://pypi.org/project/python-flint/0.9.0/}
+
+\end{document}

@@ -1,0 +1,27 @@
+{
+  "source_files": [
+    {
+      "file": "INTRODUCTION.md",
+      "sha256": "ccc5e4e605332e8b4235e27a90e0cf79b4f45a6a10e3480f8258a7dec1b6d701"
+    },
+    {
+      "file": "FINITE_AND_ALGEBRAIC_PROOF_TYPESET.md",
+      "sha256": "aaf42e5c4c1322edae65fc7b52256600cb91f1be211c30a7a5b7e11088b4a409"
+    },
+    {
+      "file": "ANALYTIC_PROOF.md",
+      "sha256": "b137fcdbae9a0418d4b8f1b68a156d951cf0ecb00a20521c0c0a102d530107c3"
+    },
+    {
+      "file": "VERIFICATION_APPENDIX.md",
+      "sha256": "e6aaf00512f809494324eb7ece6c113f61f1748a9599cea4b3ec45ee99dfe01a"
+    },
+    {
+      "file": "REFERENCES.md",
+      "sha256": "7ba54d9778175ef4060a9c83d912e7308bea56dd0fe0204143e8433e76a004ee"
+    }
+  ],
+  "manuscript_sha256": "afc58e8c6b8a55557480c4612824982d9183412a80c60827410404b032a87ecd",
+  "pdf_sha256": "5e9974bde3ef72d8a86d6ebdd72c1e07707c3612ac3549355a9689c574ac1739",
+  "scope": "Typeset research draft; mathematical source and certificate verification are separate."
+}
