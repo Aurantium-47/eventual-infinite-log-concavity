@@ -1,0 +1,231 @@
+{
+  "status": "PASS",
+  "source_code_imported": false,
+  "finite_exponents_checked": false,
+  "saved_edge_certificates_replayed": false,
+  "one_outer_cases": 16,
+  "two_outer_cases": 120,
+  "two_outer_intact_count_range": [
+    8,
+    11
+  ],
+  "winding_sector_bounds": {
+    "0": {
+      "range_in_units_of_pi": "16/3",
+      "possible_odd_sums": [
+        -5,
+        -3,
+        -1,
+        1,
+        3,
+        5
+      ]
+    },
+    "1": {
+      "range_in_units_of_pi": "6",
+      "possible_odd_sums": [
+        -5,
+        -3,
+        -1,
+        1,
+        3,
+        5
+      ]
+    },
+    "2": {
+      "range_in_units_of_pi": "20/3",
+      "possible_odd_sums": [
+        -5,
+        -3,
+        -1,
+        1,
+        3,
+        5
+      ]
+    }
+  },
+  "slabs": [
+    {
+      "j": 0,
+      "ell": "2/5",
+      "R": "9/20",
+      "gamma": "1787/2025",
+      "sqrt_lower": "14853/1000",
+      "Chernoff_t": 4,
+      "loss_lower": "20331/1250",
+      "certified_upper": "53367562807/500000000000"
+    },
+    {
+      "j": 1,
+      "ell": "9/20",
+      "R": "1/2",
+      "gamma": "539/625",
+      "sqrt_lower": "14683/1000",
+      "Chernoff_t": 5,
+      "loss_lower": "10659/500",
+      "certified_upper": "554401267/125000000000"
+    },
+    {
+      "j": 2,
+      "ell": "1/2",
+      "R": "11/20",
+      "gamma": "305/363",
+      "sqrt_lower": "14493/1000",
+      "Chernoff_t": 6,
+      "loss_lower": "6651/250",
+      "certified_upper": "67096659/500000000000"
+    },
+    {
+      "j": 3,
+      "ell": "11/20",
+      "R": "3/5",
+      "gamma": "184/225",
+      "sqrt_lower": "7149/500",
+      "Chernoff_t": 6,
+      "loss_lower": "75771/2500",
+      "certified_upper": "769613/125000000000"
+    },
+    {
+      "j": 4,
+      "ell": "3/5",
+      "R": "13/20",
+      "gamma": "3363/4225",
+      "sqrt_lower": "7053/500",
+      "Chernoff_t": 7,
+      "loss_lower": "725529/20000",
+      "certified_upper": "84473/1000000000000"
+    },
+    {
+      "j": 5,
+      "ell": "13/20",
+      "R": "7/10",
+      "gamma": "407/525",
+      "sqrt_lower": "13921/1000",
+      "Chernoff_t": 8,
+      "loss_lower": "105973/2500",
+      "certified_upper": "887/1000000000000"
+    },
+    {
+      "j": 6,
+      "ell": "7/10",
+      "R": "3/4",
+      "gamma": "1417/1875",
+      "sqrt_lower": "2749/200",
+      "Chernoff_t": 8,
+      "loss_lower": "11743/250",
+      "certified_upper": "17/1000000000000"
+    },
+    {
+      "j": 7,
+      "ell": "3/4",
+      "R": "4/5",
+      "gamma": "59/80",
+      "sqrt_lower": "6789/500",
+      "Chernoff_t": 9,
+      "loss_lower": "214731/4000",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 8,
+      "ell": "4/5",
+      "R": "17/20",
+      "gamma": "15617/21675",
+      "sqrt_lower": "13421/1000",
+      "Chernoff_t": 9,
+      "loss_lower": "1173249/20000",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 9,
+      "ell": "17/20",
+      "R": "9/10",
+      "gamma": "1427/2025",
+      "sqrt_lower": "13273/1000",
+      "Chernoff_t": 10,
+      "loss_lower": "131891/2000",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 10,
+      "ell": "9/10",
+      "R": "19/20",
+      "gamma": "6227/9025",
+      "sqrt_lower": "13133/1000",
+      "Chernoff_t": 10,
+      "loss_lower": "35661/500",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 11,
+      "ell": "19/20",
+      "R": "1",
+      "gamma": "1268/1875",
+      "sqrt_lower": "6501/500",
+      "Chernoff_t": 11,
+      "loss_lower": "1583043/20000",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 12,
+      "ell": "1",
+      "R": "21/20",
+      "gamma": "209/315",
+      "sqrt_lower": "12879/1000",
+      "Chernoff_t": 11,
+      "loss_lower": "339801/4000",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 13,
+      "ell": "21/20",
+      "R": "11/10",
+      "gamma": "1971/3025",
+      "sqrt_lower": "6381/500",
+      "Chernoff_t": 12,
+      "loss_lower": "233253/2500",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 14,
+      "ell": "11/10",
+      "R": "23/20",
+      "gamma": "25409/39675",
+      "sqrt_lower": "12653/1000",
+      "Chernoff_t": 12,
+      "loss_lower": "248799/2500",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 15,
+      "ell": "23/20",
+      "R": "6/5",
+      "gamma": "63/100",
+      "sqrt_lower": "12549/1000",
+      "Chernoff_t": 13,
+      "loss_lower": "67743/625",
+      "certified_upper": "1/1000000000000"
+    },
+    {
+      "j": 16,
+      "ell": "6/5",
+      "R": "5/4",
+      "gamma": "9691/15625",
+      "sqrt_lower": "3113/250",
+      "Chernoff_t": 13,
+      "loss_lower": "2300649/20000",
+      "certified_upper": "1/1000000000000"
+    }
+  ],
+  "certified_rational_upper_bounds_at_V250": {
+    "one_principal_sector": "22262154269/200000000000",
+    "four_nonprincipal_sectors": "1/1000000000000000000000000000000",
+    "one_outer_total": "41550751/100000000000",
+    "two_outer_total": "939881397/500000000000000000000000000000",
+    "three_or_more_outer_total": "69775301283121/100000000000000000000000000000000000000000000000000",
+    "whole_torus_complement_relative_one_saddle": "223037050199/1000000000000"
+  },
+  "advertised_torus_cap_relative_one_saddle": "2255000003/10000000000",
+  "scalar_estimates_3_4_3_5_3_7_are_mathematical_inputs": true,
+  "all_V_ge250_extension": "Each Chernoff term decreases in V; each V^a exp(-delta V) has a/V-delta<0 at250 and thereafter.",
+  "script_sha256": "fa944ea9076916546ab69dff61ae0aa196a9220873967a42dc53aca8d66fd698"
+}

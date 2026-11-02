@@ -1,0 +1,334 @@
+{
+  "status": "PASS",
+  "method": "sparse integer polynomials in s,c and pairs a+i*w*b with w^2=1-c^2",
+  "dependencies": "Python standard library only; no submitted programs or data read",
+  "identity_count": 6,
+  "identities": [
+    {
+      "name": "imaginary_part_of_m",
+      "equation": "Im(z*pprime/p)=s*w*(1+4*s*c+s^2)/|p|^2",
+      "cleared_left": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 1
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 1
+        }
+      ],
+      "residual": [],
+      "equal": true
+    },
+    {
+      "name": "imaginary_part_of_mq",
+      "equation": "Im(z*qprime/q)=4*s*w*(1+s*c+s^2)/|q|^2",
+      "cleared_left": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 4
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 4
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 4
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 4
+        }
+      ],
+      "residual": [],
+      "equal": true
+    },
+    {
+      "name": "q_minus_p_squared_modulus",
+      "equation": "|q|^2-|p|^2=6*s*c*(1+s^2)+15*s^2",
+      "cleared_left": [
+        {
+          "s_power": 1,
+          "c_power": 1,
+          "coefficient": 6
+        },
+        {
+          "s_power": 2,
+          "c_power": 0,
+          "coefficient": 15
+        },
+        {
+          "s_power": 3,
+          "c_power": 1,
+          "coefficient": 6
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 1,
+          "c_power": 1,
+          "coefficient": 6
+        },
+        {
+          "s_power": 2,
+          "c_power": 0,
+          "coefficient": 15
+        },
+        {
+          "s_power": 3,
+          "c_power": 1,
+          "coefficient": 6
+        }
+      ],
+      "residual": [],
+      "equal": true
+    },
+    {
+      "name": "imaginary_part_of_v",
+      "equation": "Im(v)=s*w*(1-s^2)*(4*s^2*c^2+8*s^3*c+8*s*c+s^4+5*s^2+1)/|p|^4",
+      "cleared_left": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 8
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 2,
+          "coefficient": 4
+        },
+        {
+          "s_power": 5,
+          "c_power": 0,
+          "coefficient": -4
+        },
+        {
+          "s_power": 5,
+          "c_power": 2,
+          "coefficient": -4
+        },
+        {
+          "s_power": 6,
+          "c_power": 1,
+          "coefficient": -8
+        },
+        {
+          "s_power": 7,
+          "c_power": 0,
+          "coefficient": -1
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 2,
+          "c_power": 1,
+          "coefficient": 8
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 4
+        },
+        {
+          "s_power": 3,
+          "c_power": 2,
+          "coefficient": 4
+        },
+        {
+          "s_power": 5,
+          "c_power": 0,
+          "coefficient": -4
+        },
+        {
+          "s_power": 5,
+          "c_power": 2,
+          "coefficient": -4
+        },
+        {
+          "s_power": 6,
+          "c_power": 1,
+          "coefficient": -8
+        },
+        {
+          "s_power": 7,
+          "c_power": 0,
+          "coefficient": -1
+        }
+      ],
+      "residual": [],
+      "equal": true
+    },
+    {
+      "name": "real_variance_derivative",
+      "equation": "s*vprime(s)=s*(1-s^2)*(1+7*s+s^2)/p(s)^3",
+      "cleared_left": [
+        {
+          "s_power": 0,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 7
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": -7
+        },
+        {
+          "s_power": 4,
+          "c_power": 0,
+          "coefficient": -1
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 0,
+          "c_power": 0,
+          "coefficient": 1
+        },
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": 7
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": -7
+        },
+        {
+          "s_power": 4,
+          "c_power": 0,
+          "coefficient": -1
+        }
+      ],
+      "residual": [],
+      "equal": true
+    },
+    {
+      "name": "m_over_v_minus_one",
+      "equation": "m(s)/v(s)-1=s*(2*s^2+2*s-1)/(1+4*s+s^2)",
+      "cleared_left": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": -1
+        },
+        {
+          "s_power": 2,
+          "c_power": 0,
+          "coefficient": 2
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 2
+        }
+      ],
+      "cleared_right": [
+        {
+          "s_power": 1,
+          "c_power": 0,
+          "coefficient": -1
+        },
+        {
+          "s_power": 2,
+          "c_power": 0,
+          "coefficient": 2
+        },
+        {
+          "s_power": 3,
+          "c_power": 0,
+          "coefficient": 2
+        }
+      ],
+      "residual": [],
+      "equal": true
+    }
+  ],
+  "rational_comparison_count": 3,
+  "comparisons": [
+    {
+      "name": "variance_at_7_over_20",
+      "left": "141260/346921",
+      "right": "141260/346921",
+      "relation": "=",
+      "pass": true
+    },
+    {
+      "name": "n1001_variance_bridge",
+      "left": "54671010/346921",
+      "right": "0",
+      "relation": ">",
+      "pass": true,
+      "cleared_integer_margin": 54671010
+    },
+    {
+      "name": "m_below_v_endpoint_polynomial",
+      "left": "-11/200",
+      "right": "-11/200",
+      "relation": "=",
+      "pass": true
+    }
+  ],
+  "scope": "Algebra only; branch, sign, domain, and convergence arguments are in PHASE_AND_REAL_EXPONENT.txt."
+}

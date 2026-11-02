@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "frozen_source_and_input_hashes": "verified against commit blobs and receipt",
+  "terminal_log_sha256": "f552e314b4acda4e9e8566ec9b00e4abc928c94e0c2701bfa7ad42dd39c946a8",
+  "jet_operator_and_Bernstein_diagnostics": 1200,
+  "independent_high_degree_Bernstein_case": [
+    7,
+    22,
+    86
+  ],
+  "coverage": "exact disjoint1929+63=8x249",
+  "diagnostic_limit": "finite diagnostics support but do not replace algebraic invariant proof"
+}

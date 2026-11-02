@@ -1,0 +1,23 @@
+{
+  "commit": "68f4c920606ad239fbc3a8195bc0987b790f5905",
+  "files": [
+    {
+      "path": "ANALYTIC_PROOF.md",
+      "sha256": "b137fcdbae9a0418d4b8f1b68a156d951cf0ecb00a20521c0c0a102d530107c3",
+      "matches_frozen_archive": true,
+      "bytes": 39414
+    },
+    {
+      "path": "ANALYTIC_VERIFICATION_MAP.md",
+      "sha256": "154b66a4ab13fe51c93830a4d68c794e25aaba70859003347a21a357a159ac29",
+      "matches_frozen_archive": true,
+      "bytes": 9093
+    },
+    {
+      "path": "manuscript/trinomial_research_draft.pdf",
+      "sha256": "5e9974bde3ef72d8a86d6ebdd72c1e07707c3612ac3549355a9689c574ac1739",
+      "matches_frozen_archive": true,
+      "bytes": 156472
+    }
+  ]
+}

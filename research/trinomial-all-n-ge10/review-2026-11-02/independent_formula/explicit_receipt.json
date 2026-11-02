@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "method": "direct multinomial formula, exact fmpq polynomial Taylor algebra, independent four L maps",
+  "taylor_degree": 3,
+  "elapsed_seconds": 84.62327012099558,
+  "cases": [
+    {
+      "panel": 0,
+      "node": 1,
+      "K": 66,
+      "orders": [
+        {
+          "order": 0,
+          "exact_value_sha256": "649ddb6c038ac651edf6d676e89d359ae9358f8122374210324aa8094d3b36b9",
+          "numerator_bits": 63655,
+          "denominator_bits": 63645,
+          "contained": true
+        },
+        {
+          "order": 1,
+          "exact_value_sha256": "9e06355f0c769a0cd74a13fbbd417e05635d011a4579ae69ae0a65a3fa5893dd",
+          "numerator_bits": 63726,
+          "denominator_bits": 63730,
+          "contained": true
+        },
+        {
+          "order": 2,
+          "exact_value_sha256": "e3cf78062473c57ca23736929f1183c5c4c5a89f7a221a7a3a3f583f2619bcc3",
+          "numerator_bits": 63805,
+          "denominator_bits": 63822,
+          "contained": true
+        },
+        {
+          "order": 3,
+          "exact_value_sha256": "3a27b102d9afb6d1626c89e5985f67c0566119f72bfae716733a86fcfe66d328",
+          "numerator_bits": 63874,
+          "denominator_bits": 63906,
+          "contained": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "panel": 0,
+      "node": 246,
+      "K": 556,
+      "orders": [
+        {
+          "order": 0,
+          "exact_value_sha256": "f152d6b0125ee3643a6fc7bb3c0f2c11b7480d8ba4e94e5d7685ccaab06eabed",
+          "numerator_bits": 681852,
+          "denominator_bits": 676414,
+          "contained": true
+        },
+        {
+          "order": 1,
+          "exact_value_sha256": "1de3c9754b915f979063757571385c2318281bb10820e8771dd7ed081c6b44a4",
+          "numerator_bits": 682641,
+          "denominator_bits": 677200,
+          "contained": true
+        },
+        {
+          "order": 2,
+          "exact_value_sha256": "7d6ca2c8f712da3b0864ec95c63aa6487b82245856e74c4f83bb534eb7d5964d",
+          "numerator_bits": 683434,
+          "denominator_bits": 677991,
+          "contained": true
+        },
+        {
+          "order": 3,
+          "exact_value_sha256": "eabb980e8bbfaf0203bc3537b556605e98c1656aad7b08431d96474859b529f8",
+          "numerator_bits": 684222,
+          "denominator_bits": 678778,
+          "contained": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "panel": 7,
+      "node": 1,
+      "K": 66,
+      "orders": [
+        {
+          "order": 0,
+          "exact_value_sha256": "54cd807d31c65f1ed58c7569d7d4f8c837df79b760a3b1cdb8ad5a4e01698925",
+          "numerator_bits": 74791,
+          "denominator_bits": 74781,
+          "contained": true
+        },
+        {
+          "order": 1,
+          "exact_value_sha256": "67f18356bafc9d923889c0c214417219bc9f8b468920d59716ae6e5b6a740a35",
+          "numerator_bits": 74871,
+          "denominator_bits": 74875,
+          "contained": true
+        },
+        {
+          "order": 2,
+          "exact_value_sha256": "4014fd46e17c857ee092ffa8e64b50de9f25d00354987da06cf6dcf2fb394799",
+          "numerator_bits": 74954,
+          "denominator_bits": 74971,
+          "contained": true
+        },
+        {
+          "order": 3,
+          "exact_value_sha256": "d5bfc867cb908345f7e8d375f39a3a0b16f3876d2fef9fcb27722bcef6280a95",
+          "numerator_bits": 75036,
+          "denominator_bits": 75068,
+          "contained": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "panel": 7,
+      "node": 237,
+      "K": 538,
+      "orders": [
+        {
+          "order": 0,
+          "exact_value_sha256": "ec1e00f7db39b9ec750340967216d8f828d30ca40af3e82b9e5f1ab897fc705a",
+          "numerator_bits": 655085,
+          "denominator_bits": 649962,
+          "contained": true
+        },
+        {
+          "order": 1,
+          "exact_value_sha256": "732ee2e9513884aedcab9b829f49630dd76c8f6dada1396a654020897eda1de7",
+          "numerator_bits": 655843,
+          "denominator_bits": 650718,
+          "contained": true
+        },
+        {
+          "order": 2,
+          "exact_value_sha256": "8aaee9a30f9db2f0b80cf20d988b7a0553f6d5104e650512c3fcb9783734b74c",
+          "numerator_bits": 656630,
+          "denominator_bits": 651504,
+          "contained": true
+        },
+        {
+          "order": 3,
+          "exact_value_sha256": "50d2d160c12c81cb18a656323d1b875fd69c5a3d4814582b48d3f6c253b3ab88",
+          "numerator_bits": 657385,
+          "denominator_bits": 652258,
+          "contained": true
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Only orders 0..3 of finite K polynomial tested.",
+    "Does not independently certify tail/Cauchy/Bernstein bounds or whole interval.",
+    "Uses same official FLINT arithmetic library as primary regeneration, but different mathematical algorithm."
+  ]
+}
