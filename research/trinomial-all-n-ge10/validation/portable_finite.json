@@ -1,0 +1,29 @@
+{
+  "canonical_mathematical_results_sha256": "d9863aac855893ef8c8a670ee6c3c3f2a4f611f1d98f793491d8a43b2c2786ba",
+  "command": "python certificate_package/finite/verify_finite.py --full --output finite_result.json",
+  "count": 3994,
+  "elapsed_seconds": 366.18012058399836,
+  "exit_code": 0,
+  "full_1929_edge_enclosure_regeneration_run": false,
+  "independent_output_checks": [
+    "Exact ordered exponent range",
+    "Contiguous per-case stage depths",
+    "Every stage maximum is strictly below 2^256",
+    "Every terminal stage satisfies 3*maximum<=2^256",
+    "Canonical exact-results digest equals frozen expected digest"
+  ],
+  "max_cone_depth": 12,
+  "peak_rss_kib": 86536,
+  "precision_bits": 256,
+  "python_version": "3.12.14",
+  "range_inclusive": [
+    10,
+    4003
+  ],
+  "released_manifest_sha256": "2f6843a60b7398d8f5976aa279d26cb5f4fece4f2918fe555fdb0182e31abbb8",
+  "result_receipt_note": "Contains runtime; canonical mathematical digest excludes runtime.",
+  "result_receipt_sha256": "0f10cd9e5861e608db4ae41d6cafa7cea1b10ded820ccaaf122aad1dcab5cc24",
+  "scope": "Complete documented portable finite verifier for all integers n=10..4003, reaching invariant cone",
+  "script_sha256": "dc74e2349bba515d1f4772a3397cbb838e2a4a404dd64297a775db46d4b16c0e",
+  "status": "PASS"
+}

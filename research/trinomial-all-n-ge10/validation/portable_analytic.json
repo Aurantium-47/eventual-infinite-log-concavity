@@ -1,0 +1,48 @@
+{
+  "comparison_to_originals": "All mathematical fields agree; diagnostic wording and elapsed runtime may differ. All 28 weighted moments and local budget receipts match original JSON exactly.",
+  "counts": {
+    "bulk_bypass_boxes": 461,
+    "endpoint_ordering_comparisons": 8184,
+    "join_panels": 32,
+    "weighted_moments": 28
+  },
+  "elapsed_seconds": 70.95721432100254,
+  "exit_code": 0,
+  "input_files_sha256": {
+    "ALL249_BULK_BYPASS_CLASSIFICATION.json": "c7e2a53fe0f1e18084c4967dd69c5be450eff6d9220b84e4210a966194f91c06",
+    "ALL249_HARMONIC_RATIONAL_CANDIDATES.json": "2bce90973f2c0a47aa996457dea6e44e8d980976548bfe4b07f91d4eecd75b78",
+    "FINAL_HARMONIC_JOIN_250_RECEIPT.json": "7cd56d2657383ee2dd55b5d770981f17982c5510b047c69bd80a6462fd15ac48",
+    "LOCAL_HOMOTOPY_BUDGET.log": "6c5f2714338d35c232bab216e90f51602cf8bfc7a931268b59ef22b397d039e9",
+    "LOCAL_HOMOTOPY_TAU_BUDGET_RECEIPT.json": "af93ba9b48a4995f7838db3682b4ced3efa771252edc294066aa3dbadbd64885",
+    "SOURCE_MAPPING.json": "714337d9bf8aed6d1e9d420563edbd8ac145c4296e494102b78cc305e11b9d51",
+    "audit_461_bulk_bypass_independent.py": "14d58e321dfc8d3ea2ab68d22c342c7196d72af734a1a97fd3eff0c22d833501",
+    "audit_actual_torus_certificates.py": "355aeac07e82312732689c0e1cbb7f0ad781ed29485eccdfe44c54187aa72582",
+    "audit_local_budget_independent.py": "6faa1cd9ad7e1f085fe7e8c726ac6548f29d0c5cdb360687b54293379cb47e6d",
+    "audit_local_moments_independent.py": "afefa9e541971033cdbc76f3611052ea0c7345515e74c334889aeb2a43e3b5b7",
+    "check_16_saddle_algebra.py": "705fc2f939d2a8a6e0bae79fc962a3dd5ab4b0ba50cf3d62064da9c79541e072",
+    "check_complex_variance_conditioning.py": "81263b6e0a59039e139629bf57e308838b5016f44b8650a819ff92a1b09304a2",
+    "check_first_saddle_correction_independent.py": "b82471c557bf940feb56a10547a06a7b6978fcb90e534b13ad0b9e6239ce7fa8",
+    "check_gaussian_correction_box_tails.py": "0663ff28a75fec3e2a8c6a142f8d9bb1b75d6d172721d052bbef79d8eb839751",
+    "check_model_tail_norm.py": "26eb8836da3c7bd98b568d103a09bfb6ef4c8c058daa55b6c4697551124e1b4b",
+    "check_phase_bridge_algebra.py": "aa9d6bcf6fa183b631d7d72b7a95bb8aa0038d241e84343f040dbcd063328952",
+    "check_sharp_real_cumulant_bounds.py": "e4b57fd45a5723dbfbd8a79c3989186845a243864d77acb06f6c57df6d8c7835",
+    "check_uniform_cumulant_bounds.py": "551b202d5299f36c9b61e419d3340261c012fff0539540e1387efd640250fe71",
+    "check_wide_box_cumulant_bounds.py": "95428ee60e174a80073d0ee56a0e3f8ee83ad21bed3d99bf636bcfc1c40236fc",
+    "independent_audit_v250_arithmetic.py": "c33a6145539fa05f2ccbf367d447e68930a3e46fb770d0bef5c3dec01b1fe7c4",
+    "independent_final_join_250.py": "f74ed68bdb1b57213aae6d5303ffe8b3470fccaf4cc750d225cf39618183efc0",
+    "run_analytic.py": "6799010a7b862a12e6cb0ddaa88c66b78470023061dfb938fcbf2406ca5b865b"
+  },
+  "peak_rss_kib": 140584,
+  "portable_all_1929_edge_enclosures_regenerated": false,
+  "regenerated_receipts_sha256": {
+    "ALL249_BULK_BYPASS_INDEPENDENT_RECEIPT.json": "b45406ee754c33f1587254b892795163bfe3539817ee71a0b509cf2bbb2fdb53",
+    "INDEPENDENT_FINAL_JOIN_250_RECEIPT.json": "d0057dc9d6931d0ef1842c68de041fe5cc0aa147c26e63e671b69010de20262b",
+    "INDEPENDENT_V250_ARITHMETIC_RECEIPT.json": "d55bdaffc0e5bb5b506b10fc36ebcb320be729bfc52ee9c0a902fa7e4b03eb05",
+    "LOCAL_HOMOTOPY_INDEPENDENT_BUDGET_RECEIPT.json": "4bb2ec5db6731cabe2a79540a5262f31bc563f57af49b9f51c09641cb4252836",
+    "LOCAL_HOMOTOPY_INDEPENDENT_MOMENTS.json": "8d4670611f9c52ad39dfc89bd198e8bdaf9fb9bc5e0150e2bbab2bd01300f1f7"
+  },
+  "released_manifest_sha256": "2f6843a60b7398d8f5976aa279d26cb5f4fece4f2918fe555fdb0182e31abbb8",
+  "scope": "Complete documented portable analytic arithmetic sequence; mathematical proof arguments remain separate",
+  "stage_count": 15,
+  "status": "PASS"
+}

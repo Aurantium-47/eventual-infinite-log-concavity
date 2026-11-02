@@ -1,0 +1,61 @@
+{
+  "all_1929_strict_signs_rechecked": true,
+  "all_midpoints_common_radii_binary_exponents_matched": true,
+  "backend_binary_sha256": "a637d8bbd1f03454b1ac85614022fa38f6a72115b68a28e3cc8603352b479893",
+  "canonical_matched_jets_digest": "22c038b14345430607d71e0eb7e599dd06338b2a453419d8d0b8fe15ade8904c",
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python resumable_replay.py --panels 0,2,4,6",
+    "PYTHONDONTWRITEBYTECODE=1 python resumable_replay.py --panels 1,3,5,7",
+    "python audit_replay_coverage.py --full"
+  ],
+  "coverage_checker_sha256": "809cd6dce8af320e89b81f35304f1e6b710e03fa18c02ddfc2a3d67c2c474b7a",
+  "coverage_receipt_sha256": "2bd0ef6b94fce765127d6dddc9dec368aff03a3fab20c3a6f0ecc8976195881f",
+  "date_utc": "2026-10-31",
+  "enclosure_count": 1929,
+  "exact_coverage_set_audit": "1929 unique jets plus63 disjoint previously certified bypasses equal all8x249 obligations",
+  "input_manifest_sha256": "af638134445d9db6e3e70a8f36311fb25bf83f0ac92c32fe251205581709e0be",
+  "limitations": [
+    "Mathematical analytic/algebraic arguments remain separate premises.",
+    "This is internal computational reproduction, not external peer review, proof-assistant verification or novelty assessment.",
+    "The63 bypasses were covered by prior identical-code exact replay; this fresh regeneration reconstructs all1929 non-bypass enclosure cases."
+  ],
+  "mathematical_source_files_sha256": {
+    "bulk_bounds.py": "c81c89ca56bfbc21dbc44f267a8d44de32b2a8d6ac677988f23a7c2a6322ffdb",
+    "certificate_math.py": "8ddac8fe35708cc56dcb8bdc8fa5f1219e085af44910bf16d9491a2b44003ce7",
+    "data_manifest.json": "dd61dfa83e1c75ac8cc7fffe6b5b4dc2e78319ff2520787d45a4f493cf0b6b34",
+    "integer_polynomial.py": "18789e5e5a0347a69d26ff059317b9d376b22d5b0871667e45c34366bac76941",
+    "interval_jets.py": "a4d9fc6e2fba515ad334bd832e154b4c3af7223075e040632fa618287c7819a9",
+    "regenerate.py": "0ef351840a720dcb3bb42d675d0fdc3e848a42f1d2edf2694512afe3ef50bf38",
+    "replay_saved_inequalities.py": "14d409f48af4b2ac0ac69bb94e0e04eef6254c1f42b0d04dac5c9140d65e04c1"
+  },
+  "maximum_process_peak_rss_kib": 274280,
+  "official_wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76",
+  "panel_counts": [
+    246,
+    245,
+    243,
+    241,
+    240,
+    239,
+    238,
+    237
+  ],
+  "panels": 8,
+  "prior_representative_node_reused": false,
+  "published_and_frozen_input_files_unchanged": true,
+  "python_flint_version": "0.9.0",
+  "python_version": "3.12.14",
+  "queue_exit_codes": [
+    0,
+    0
+  ],
+  "queue_panel_elapsed_seconds": [
+    803.3825109949976,
+    807.9786968590015
+  ],
+  "restarts": 0,
+  "resumable_wrapper_sha256": "3b0729600e68837800363e6588cd3045fdd794640e031a87c015585079c01182",
+  "run_specification_sha256": "9fc2bfea05f23c906ad8f52286fa0c82cd3a254d3dd1bd0eb21ca0e7506bbf9d",
+  "scope": "Fresh reconstruction of every saved interval enclosure by unchanged released generation/evaluate/verify functions under independently reviewed resumable orchestration; not literal regenerate.py --full CLI invocation",
+  "status": "PASS_COMPLETE"
+}

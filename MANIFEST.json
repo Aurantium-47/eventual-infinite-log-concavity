@@ -12,8 +12,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2811,
-      "sha256": "8ab022649fb0bc751a78f25991935c1e54226273c799631c6ca69a6f49edc6af"
+      "bytes": 3829,
+      "sha256": "a5d6572b02502a903f9d4ff257b127b8370ad989993d0ddd5b289f4b7143ba00"
     },
     {
       "path": "REFERENCES.md",
@@ -125,5 +125,6 @@
       "bytes": 1193,
       "sha256": "3928b9d919f0a7bacf0c10a8c4c040762d1b202f7687ec20906fe108285b7d7b"
     }
-  ]
+  ],
+  "documentation_addendum": "2026-11-02: README hash only refreshed for review navigation; all original proof/data entries unchanged. New research review evidence has its own manifest."
 }

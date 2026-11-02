@@ -1,0 +1,61 @@
+shared generated 100 seconds 2.6975921940029366
+shared generated 200 seconds 7.527844670999912
+shared generated 300 seconds 12.859594606998144
+shared generated 400 seconds 18.829668939004478
+shared generated 500 seconds 25.28797797000152
+shared generated 600 seconds 32.11063486800413
+panel 0 matched 246
+shared generated 100 seconds 2.177883116004523
+shared generated 200 seconds 6.074185811005009
+shared generated 300 seconds 11.272192125004949
+shared generated 400 seconds 16.69182423800521
+shared generated 500 seconds 22.106718952003575
+shared generated 600 seconds 28.095851070000208
+panel 1 matched 245
+shared generated 100 seconds 2.6286306280017016
+shared generated 200 seconds 6.91307431399764
+shared generated 300 seconds 11.530179455003235
+shared generated 400 seconds 16.782712166001147
+shared generated 500 seconds 22.17861494099634
+shared generated 600 seconds 28.223306047002552
+panel 2 matched 243
+shared generated 100 seconds 2.2230109049996827
+shared generated 200 seconds 6.560102717994596
+shared generated 300 seconds 11.423220976001176
+shared generated 400 seconds 17.29048259499541
+shared generated 500 seconds 23.634127154000453
+shared generated 600 seconds 31.124332130995754
+panel 3 matched 241
+shared generated 100 seconds 2.3489721190053388
+shared generated 200 seconds 6.420455826002581
+shared generated 300 seconds 12.209099134001008
+shared generated 400 seconds 18.317096918006428
+shared generated 500 seconds 24.58104256500519
+shared generated 600 seconds 31.413653540002997
+panel 4 matched 240
+shared generated 100 seconds 2.3850191940000514
+shared generated 200 seconds 7.17072650299815
+shared generated 300 seconds 12.868495367001742
+shared generated 400 seconds 18.84891505500127
+shared generated 500 seconds 25.082176985000842
+shared generated 600 seconds 31.871210937002616
+panel 5 matched 239
+shared generated 100 seconds 2.4449635810015025
+shared generated 200 seconds 6.60648635400139
+shared generated 300 seconds 12.900321598004666
+shared generated 400 seconds 19.618043563001265
+shared generated 500 seconds 25.97226581400173
+shared generated 600 seconds 33.58015425300255
+panel 6 matched 238
+shared generated 100 seconds 2.524409874000412
+shared generated 200 seconds 6.856273413999588
+shared generated 300 seconds 12.177317793000839
+shared generated 400 seconds 17.367375928995898
+shared generated 500 seconds 22.57443046700064
+shared generated 600 seconds 28.51955026199721
+panel 7 matched 237
+{"status": "PASS", "deterministic_enclosures_regenerated": 1929, "full_edge_generation": true}
+
+real	29m39.084s
+user	29m35.834s
+sys	0m1.837s

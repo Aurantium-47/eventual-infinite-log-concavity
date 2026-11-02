@@ -10,6 +10,12 @@ The paper also contains an explicit cofinite theorem for trinomial powers and a 
 
 The complete proofs and formulas are included, with the general positive-polynomial theorem highlighted in the introduction. The original shrinking-disk and local stopping machinery is credited to Xie, Zhang and Zhang and its cited antecedents; the conjectural context is credited to Medina and Straub. The paper does not claim these methods as newly invented. See [REFERENCES.md](REFERENCES.md).
 
+## Trinomial milestone: every integer n ≥ 10, every iterate
+
+The separate [24-page computer-assisted proof draft](research/trinomial-all-n-ge10/README.md) addresses the sharper trinomial assertion identified in Medina–Straub (2014), Example 5.3 and Table 1: every zero-extended log-concavity iterate of `(1+x+x²)^n` is nonnegative for **every integer n ≥ 10**. For n ≥ 4004 its fourth-iterate polynomial has **2n distinct strictly negative real roots**.
+
+The [2026-11-02 review and reproducibility evidence](research/trinomial-all-n-ge10/review-2026-11-02/REVIEW.md) records completed AI-assisted mathematical dependency review, literal full reconstruction of 1,929 boundary enclosures, and clearly delimited independent algebraic cross-checks. This is a public review draft—not human peer review, proof-assistant formalization, a solution of general Conjecture 5.2, or a priority claim. The original release paper above remains unchanged; the sharper result belongs to this separate research draft.
+
 ## Exact data and reproduction
 
 Python 3.10 or later, standard library only:

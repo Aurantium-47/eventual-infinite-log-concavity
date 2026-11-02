@@ -1,0 +1,399 @@
+TRINOMIAL INFINITE LOG-CONCAVITY: REFEREE REPORT ON THE UNIFORM ANALYTIC CORE
+Fixed source: 68f4c920606ad239fbc3a8195bc0987b790f5905
+Review date: 2026-11-02, UTC
+
+## 1. Decision and exact scope
+
+DECISION: ACCEPT the mathematical analytic core in ANALYTIC_PROOF.md Sections 5-7, including the stated uniform two-saddle estimate (7.1), with the explicit derivations and independently regenerated exact arithmetic supplied here. No change of constants, reduction of the parameter domain, or additional unproved analytic lemma is required. The signed-angle notation in Section 6.3 and several compressed normalization arguments should be expanded as described below; these are clarifications of valid bounds, not repairs of a failed bound.
+
+This is an AI-produced mathematical referee assessment supported by reproducible exact calculations. It is not human peer review or proof-assistant certification. The decision concerns a specific theorem and its premises, not the entire all-exponent theorem and not historical priority.
+
+The source is research/trinomial-all-n-ge10/ in the fixed GitHub commit above. The principal source locations are manuscript/trinomial_research_draft.pdf, printed pages 11-16, and ANALYTIC_PROOF.md Sections 5-7. The exact integral and scalar premises in Sections 2-4 are necessary dependencies and have also been independently checked. The source text and manuscript bytes match the previously downloaded archive of the fixed commit; hashes are in source_identity.json.
+
+No finite-exponent verification, saved edge-inequality replay, full edge-jet regeneration, BRW extension, remote repository edit, third-party communication, or signature was performed in this review. The separate reconstruction of 1,929 edge enclosures remains outside this decision.
+
+Write p(z)=1+z+z^2 and let f(n,4) be the generating polynomial after four applications of the zero-extended log-concavity operator to the coefficients of p(z)^n. Define
+\[
+\theta=\frac{\pi}{16},\quad \zeta=se^{i\theta},\quad v(z)=\frac{z(1+4z+z^2)}{p(z)^2},\quad v_0=v(s),\quad V=nv_0.
+\]
+The theorem accepted in this review is: for every positive integer n and every real 0<s<=1 with V>=250, the following amplitude, on the branch continued from positive Gaussian precision, satisfies the displayed bound:
+\[
+A_n(s)=\frac{2048}{4(2\pi)^{15/2}}\frac{p(\zeta)^{16n}}{(nv(\zeta))^{45/2}}.
+\]
+\[
+\frac{|f_{n,4}(-s^{16})-2\mathrm{Re}\,A_n(s)|}{2|A_n(s)|}<\frac{18717720003}{20000000000}<\frac{47}{50}.
+\]
+The same bound holds for the analytic coefficient sequence of p(z)^nu for real nu>0, provided 0<s<1 and nu*v(s)>=250, using the analytic logarithm at zero. This extension makes no polynomial-degree or root-count assertion for noninteger nu. At s=1 the present endpoint assertion is for integer n.
+
+## 2. Exact object, symmetrization, and measure
+
+Source: manuscript pp.7-8, equations (2.1)-(2.4). For a finitely supported sequence with generating polynomial A, a direct coefficient extraction gives
+\[
+\operatorname{CT}_z\left(1-\frac{z^2}{x}\right)A(z)A(x/z)=\sum_k(a_k^2-a_{k-1}a_{k+1})x^k.
+\]
+In the negative term, the constant-term condition is i-l+2=0 and the power of x is l-1=k. Hence its coefficient is exactly a(k-1)*a(k+1), with no extra shift. Iterating the identity produces a balanced binary tree with sixteen leaves and fifteen internal nodes. Each internal node inserts 1-Z(left)/Z(right). The monomial substitutions used to combine nested constant terms are unimodular. The support convention is preserved automatically, and no positivity of intermediate iterates is assumed.
+
+For x=-s^16, set every leaf radius equal to s. The angles lie on the fifteen-dimensional torus with sum congruent to pi modulo 2pi. The leaf product and Haar measure are invariant under leaf permutations. Averaging child swaps from the lowest level upward replaces each node factor by 1-cos(D). Already averaged descendants are only permuted at the next swap. Consequently
+\[
+f_{n,4}(-s^{16})=\int K(\alpha)\prod_{i=1}^{16}p(se^{i\alpha_i})^n\,d\mu(\alpha),\qquad K=\prod_\nu(1-\cos D_\nu)\ge0.
+\]
+This is equality after integration, not pointwise equality with the original Laurent kernel. A nonnegative K does not make the complex integrand nonnegative.
+
+Choose angle representatives in [-pi,pi]. A convenient exact expression for the normalized measure is
+\[
+d\mu=(2\pi)^{-15}\sum_{k\in\mathbb Z}\delta\!\left(\sum_i\alpha_i-(2k+1)\pi\right)d\alpha_1\cdots d\alpha_{16}.
+\]
+For almost every choice of the first fifteen angles, the delta integral selects exactly one representative of the last angle. Thus the total measure is one. On a fixed hyperplane the gradient length of the sum is 4, giving dmu=dvol/[4(2pi)^15]. Equivalently, the parametrization by the first fifteen coordinates has Gram matrix I+11^T and determinant 16.
+
+The fifteen node contrast vectors are orthogonal: disjoint supports give zero inner product; for nested supports the larger vector is constant on the smaller support, whose entries sum to zero. The node sizes 2,4,8,16 occur 8,4,2,1 times. In orthonormal coordinates x(nu)=D(nu)/sqrt(m(nu)),
+\[
+H(\eta)=\prod_\nu\frac{D_\nu^2}{2}=2048\prod_{\nu=1}^{15}x_\nu^2,\qquad \sum_i\eta_i=0.
+\]
+Moreover K=H times the product of sinc^2(D/2), exactly. For complex c with Re(c)>0, the one-dimensional second-moment Gaussian integral is sqrt(2pi)*c^(-3/2). Fifteen such factors give the exponent 45/2. Together with the factor 1/4 in the measure, this proves the amplitude normalization above. Polynomial Gaussian moments extend holomorphically from positive real c; absolute-moment inequalities below are only used for real positive Gaussian measures.
+
+## 3. The scalar premises are proved over their complete domains
+
+Source: manuscript pp.8-10, equations (3.1)-(3.10). These premises are not accepted merely because an author checker printed PASS. The new program auxiliary/rederive_scalar_premises.py constructs the relevant rational functions directly from p. It imports no author code, receipts, controls, or expected values.
+
+For kappa(m)=N(m)/p^m, differentiation gives
+\[
+N_2=z(1+4z+z^2),\qquad N_{m+1}=z\{pN_m'-mp'N_m\}.
+\]
+Set z=s(c+iw), where w^2=1-c^2. Products are evaluated as real/imaginary pairs in this exact polynomial ring. If P=|p|^2, multiplication by the conjugate of p^m gives the real numerator and w times the imaginary numerator of kappa(m), with denominator P^m. Squared modulus bounds are formed separately from N(m) and its conjugate. On c>=1/2,
+\[
+P=1-s^2+s^4+2s(1+s^2)c+4s^2c^2\ge(1+s)(1+s^3)>0.
+\]
+Thus all denominator clearing preserves the inequality direction. A common power of s is cancelled only because the analytic theorem assumes s>0; the reduced polynomial is then checked on the closed interval 0<=s<=1.
+
+On each rectangle s in [j/4,(j+1)/4], j=0,1,2,3, a change of variables takes the rectangle to the unit square. For a polynomial of bidegree (d,e), the tensor Bernstein control is
+\[
+b_{kl}=\sum_{i\le k,\,j\le l}a_{ij}\frac{\binom{k}{i}}{\binom{d}{i}}\frac{\binom{l}{j}}{\binom{e}{j}}.
+\]
+The Bernstein basis functions are nonnegative and sum to one. Positive controls therefore prove a domain-wide polynomial inequality, not a mesh-sampling statement. The new calculation obtains positive minima on all four rectangles for every premise below; exact minima and domains are in scalar_premises_results.json.
+
+On c in [1/2,1]: Re(v)>=v0/3. On c in [49/50,1]: 19v0/20<=Re(v)<=17v0/16, 16(Im(v))^2<=(Re(v))^2, |Im(kappa3)|<=v0/4, and |kappa3|<=6v0/5, |kappa4|<=4v0/3, |kappa5|<=9v0/4. On c in [3/4,1]: Re(kappa4)<=3v0/2, |kappa4|<=3v0, and |kappa6|<=32v0. These eleven inequalities are precisely the scalar estimates used by the reviewed remainder argument; unused higher cumulants are not required.
+
+In particular, putting beta=Re(v(zeta)),
+\[
+\left(\frac{|v(\zeta)|}{\beta}\right)^{45/2}\le\left(\frac{17}{16}\right)^{45/4}<2.
+\]
+The final strict inequality is a rational power comparison. The elementary angle inclusions also have exact rational checks: cos(pi/16)>49/50; and for |eta_i|<=2/5 and |tau|,u<=1, cos(theta+u*tau*eta_i)>3/4. All relevant paths therefore lie within the certified domains, including as s tends to zero.
+
+## 4. Local truncation and the location of parity cancellation
+
+Source: manuscript p.11, equations (5.2)-(5.6). Let B be the zero-sum coordinate box with every |eta_i|<=d=2/5. Write S_j=sum eta_i^j and Q=sum D(nu)^2. The homotopy is
+\[
+L(\eta)=\sum_i\{\log p(\zeta e^{i\eta_i})-\log p(\zeta)\},\qquad E_\tau=nL(\tau\eta)/\tau^2.
+\]
+\[
+F_\tau=\prod_\nu\operatorname{sinc}^2(\tau D_\nu/2),\qquad J(\tau,\eta)=HF_\tau e^{E_\tau}.
+\]
+The constant and linear terms of L vanish; the latter is i*m(zeta)*sum eta_i. Thus E has a removable singularity at zero and E_0=-nv(zeta)*||eta||^2/2. For the whole homotopy, |theta+u*tau*eta_i|<3/5<pi/4, so Re p>0 and a single logarithm branch is available. On the compact box and compact tau interval, four derivatives may be passed under the integral. These statements hold for each s>0; uniformity is subsequently supplied by the explicit bounds rather than by an unproved compactness assertion as s approaches zero.
+
+The equality J(-tau,eta)=J(tau,-eta) implies that G(tau)=integral_B J(tau,eta) is even. Only G'(0) and G'''(0) are cancelled. Taylor's theorem therefore gives exactly
+\[
+G(1)-G(0)-\frac12G''(0)=\int_0^1\frac{(1-\tau)^3}{6}\int_{\mathcal B}\partial_\tau^4J(\tau,\eta)\,d\eta\,d\tau.
+\]
+This verifies (5.2). At a nonzero tau, the exponential need not be even, and no odd term in the fourth derivative is discarded. Odd monomials are later cancelled only in a separate full-space real Gaussian moment calculation, where the symmetry is genuinely present.
+
+The exact differentiated integral representation is
+\[
+\partial_\tau^mE_\tau=n\sum_i(i\eta_i)^{m+2}\int_0^1u^m(1-u)\kappa_{m+2}(\zeta e^{iu\tau\eta_i})\,du.
+\]
+It follows from the second-order integral remainder for L after eliminating its linear term. There is no missing factorial. At tau=0 the coefficient is 1/[(m+1)(m+2)]. Taylor expansion of these derivatives, using the certified cumulants and the sixth-cumulant remainder, gives the following majorants, with A=|S3|, B4=S4, C=|S5|, D6=S6:
+\[
+e_1=V\{A/5+(\tau/9+9d\tau^2/160+8d^2\tau^3/45)B_4\}.
+\]
+\[
+e_2=V(1/9+9d\tau/80+8d^2\tau^2/15)B_4.
+\]
+\[
+e_3=V(9C/80+16\tau D_6/15),\qquad e_4=16VD_6/15.
+\]
+For example, the last coefficient is 32*integral_0^1 u^4(1-u)du=16/15. The coefficients of the remainders in e1 and e2 are obtained by integrating this bound downward; |S5|<=d*S4 and S6<=d^2*S4 are used only in those first two majorants. All signs in these nonnegative bounds have been checked.
+
+Let the node uniforms U and U' be mutually independent on [-1/2,1/2], and X=sum D(nu)*(U(nu)+U'(nu)). Then F_tau=E exp(i*tau*X). Its variance is Q/6 and its fourth moment is Q^2/12-sum D^4/60. Therefore
+\[
+|F|\le1,\quad |F'|\le\tau Q/6=f_1,\quad |F''|\le Q/6=f_2,
+\]
+\[
+|F'''|\le\tau Q^2/12=f_3,\qquad |F''''|\le Q^2/12=f_4.
+\]
+The odd-derivative bounds follow by integration from zero. Applying the full Leibniz rule and exponential Bell derivatives yields |J^(4)|<=H exp(Re E)*P, where
+\[
+\mathcal P=f_4+4f_3e_1+6f_2(e_2+e_1^2)+4f_1(e_3+3e_1e_2+e_1^3)
+\]
+\[
+{}+e_4+4e_1e_3+3e_2^2+6e_1^2e_2+e_1^4.
+\]
+This proves the connection between the real target derivative and the positive polynomial whose arithmetic is evaluated next.
+
+## 5. Gaussian domination, complete moment requirements, and (5.7)
+
+Source: manuscript p.12, equations (5.7)-(5.10). Real-part Taylor bounds on the homotopy give
+\[
+\mathrm{Re}\,E_\tau\le-\frac{n\beta}{2}S_2+\frac{V|\tau|}{24}|S_3|+\frac{V\tau^2}{16}S_4.
+\]
+Since |S3|<=d*S2 and S4<=d^2*S2, and d/24+d^2/16=2/75, this is bounded by -n*a*S2/2, where
+\[
+a=\beta-\frac4{75}v_0\ge\frac{269}{300}v_0>\left(\frac{15}{16}\right)^2v_0.
+\]
+The weighted Gaussian normalization has exponent 45/2, not 15/2. Its ratio to the absolute complex normalization is
+\[
+\left(\frac{|v|}{a}\right)^{45/2}=\left(\frac{|v|}{\beta}\right)^{45/2}\left(\frac{\beta}{\beta-4v_0/75}\right)^{45/2}<2\left(\frac{285}{269}\right)^{45/2}<8.
+\]
+For the middle bound, beta/(beta-4v0/75) is decreasing in beta; its largest allowed value comes from beta=19v0/20. Combining unrelated upper and lower bounds for beta would be wasteful and would not prove this constant. The final inequality is exactly (285/269)^45<16. This proves (5.7).
+
+Under the normalized H-weighted unit Gaussian, the orthonormal coordinates are independent with density x^2 exp(-x^2/2)/sqrt(2pi). Consequently E D^(2r)=(2r+1)!!*m^r and odd moments vanish. Leaf coordinates are the signed sum of ancestral D/m values. Thus every polynomial moment needed in P is an exact finite rational sum.
+
+The new standard-library program local/rederive_local.py generates P by the general complete-Bell recurrence, not by copying the submitted monomial receipt. It then derives the Cauchy-Schwarz moment requirements from the actual monomials. Odd powers of |S3| or |S5| are bounded using two moment labels whose average is the original label and whose S3 and S5 exponents are both even. The square root of the product is rounded upward to an integer. This procedure yields 89 positive terms and exactly 28 required moments; the correction and model-tail moments are already included.
+
+The independent evaluator uses a different algorithm from the submitted fifteen-variable bit-encoded polynomial expansion. It integrates a subtree's root contrast and its two independent child subtrees recursively. With scaled leaf coordinates X_i=16*eta_i, a node of size m decomposes as X_i=Y_i+(16/m)D on the left and X_i=Y_i-(16/m)D on the right. Binomial expansion expresses each power sum in the root D and the two child power sums; Q decomposes as D^2+Q_left+Q_right. At size two the leaves are +8D and -8D, giving an explicit base case. Independence and the exact D moments justify this algorithm by induction on tree size. Only the final scaling back to eta requires a rational denominator.
+
+For a monomial c*tau^p*V^l*A^a*B4^b*C^c5*D6^d6*Q^e, let q=3a+4b+5c5+6d6+2e. Every generated term has q-2l>=4. Scaling the real Gaussian of precision n*a and extending the nonnegative majorant to the whole tangent space gives the contribution to a V^(-2) bound
+\[
+8\,\frac{p!}{(p+4)!}\,c\,M\left(\frac{16}{15}\right)^q10^{2l-q+4}.
+\]
+Here M is its certified unit absolute-moment bound. The tau weight is exactly the integral of tau^p*(1-tau)^3/6. The power of ten comes from V>=100 and remains correct when the intermediate exponent of V is half-integral. The independently regenerated total is
+\[
+C_{100}=\frac{92329284077596045529773584373060993024}{2507581295866705477237701416015625}<36821.
+\]
+Thus the one-saddle local error (5.1) really bounds the original integral over the box, with its angular normalization and exponential prefactor included. It does not merely bound a formal series.
+
+## 6. Gaussian model restoration is a separate error
+
+Source: manuscript p.13, equations (5.11)-(5.13). The first correction obtained from J''(0)/2 is
+\[
+C(\eta)=-Q/12+n\kappa_4S_4/24-n^2\kappa_3^2S_3^2/72.
+\]
+Integration of its polynomial moments over the complex Gaussian gives A_n(s)*B1(s)/n, where
+\[
+B_1=-16/v+1685\kappa_4/(128v^2)-315\kappa_3^2/(32v^3).
+\]
+The moments E Q=192, E S4=5055/16, and E S3^2=2835/4 were independently regenerated. Using |v|>=beta>=19v0/20 gives
+\[
+|B_1|/n\le\frac{2173895}{41154V}<\frac{53}{V}.
+\]
+To replace the box Gaussian-plus-correction by its full-space value, take the REAL weighted Gaussian of precision n*beta. Its one-leaf moment-generating function is exactly
+\[
+\mathbb E e^{t\sqrt{n\beta}\eta_i}=e^{15t^2/32}\prod_{m=2,4,8,16}(1+t^2/m).
+\]
+Each leaf has four independent weighted coordinates with squared weights 1/2,1/4,1/8,1/16. The one-dimensional weighted Gaussian MGF is (1+t^2)exp(t^2/2), which proves this expression by multiplication. A union bound for sixteen leaves and two signs gives
+\[
+P_{\mathcal B^c}\le32e^{-td\sqrt{19V/20}+15t^2/32}\prod_{m=2,4,8,16}(1+t^2/m).
+\]
+The correction modulus is bounded by T=Q/12+(V/18)S4+(V^2/50)S3^2. After scaling by n*beta, the six independently recomputed moments of Q^2, S4^2, S3^4, Q*S4, Q*S3^2, and S4*S3^2 give
+\[
+\|T\|_2^2\le\frac1{V^2}\frac{7405704307825}{1693651716}<\frac{67^2}{V^2}.
+\]
+Cauchy-Schwarz and the ratio of the real Gaussian normalization to the modulus of the complex normalization, (|v|/beta)^(45/2)<2, therefore bound the restored model tail by 2|A|*(P+(67/V)sqrt(P)). This step bounds the Gaussian model on the whole tangent space; it says nothing by itself about the actual integrand on the torus complement.
+
+For V>=225, fix t=5. At V=225, sqrt(19V/20)>731/50. The negative exponential is therefore bounded above by the reciprocal of a positive Taylor partial sum at 2*(731/50)-375/32. The degree-80 partial sum already proves P<1/1000 using exact rationals. Since sqrt(1/1000)<4/125,
+\[
+2\{P+(67/V)\sqrt P\}<2\left(\frac1{1000}+\frac{67}{225}\frac4{125}\right)=\frac{2369}{112500}<\frac{11}{500}.
+\]
+All terms decrease for larger V. This supplies a short, independently reproducible proof of (5.13), using the same advertised bound. The code is auxiliary/verify_model_and_assembly.py.
+
+## 7. Complete cover of the actual torus complement
+
+Source: manuscript pp.13-15, equations (6.1)-(6.6). An angle is central if its representative has absolute value at most pi/3. Both local boxes lie entirely in the central range. Their representative angle sums are +pi and -pi, so they are disjoint even as subsets of the torus.
+
+After removing the two boxes, the following five classes cover everything: the two principal central sectors outside their boxes; the four nonprincipal central sectors; exactly one noncentral angle; exactly two noncentral angles; and at least three noncentral angles. For zero, one, or two noncentral angles the possible angle-sum magnitudes are at most (16/3)pi, 6pi, and (20/3)pi. The only possible odd multiples are -5pi,-3pi,-pi,pi,3pi,5pi. This proves the six-sector count in both external-angle cases.
+
+The representative boundaries, central/noncentral boundaries, box boundaries, and slab boundaries have measure zero in the constrained torus. They may instead be included on both sides when using positive upper bounds. Enlarging a centered Gaussian domain or an external-angle domain likewise increases only a nonnegative modulus majorant. No curvature inequality is asserted outside its valid central domain: it is first applied to actual central points, and only the resulting Gaussian upper bound is extended.
+
+Set h(alpha)=log(|p(s exp(i alpha))|/p(s)). If p vanishes at s=1 and a noncentral angle, take h=-infinity; the actual integrand is zero and all modulus upper bounds hold by continuity. All differentiations are in nonvanishing central domains. Put a_s=s(1+s^2)/p(s)^2 and b_s=4s^2/p(s)^2. Direct expansion gives
+\[
+\frac{|p(se^{i\alpha})|^2}{p(s)^2}=1-2a_s(1-\cos\alpha)-b_s(1-\cos^2\alpha),\qquad a_s+b_s=v_0.
+\]
+The inequality b_s<=2v0/3 is equivalent to 2s<=1+s^2. Writing c=cos(alpha), the loss is 2v0(1-c)-b_s(1-c)^2 and is therefore at least (2v0/3)(2-c-c^2). The bound log(1-y)<=-y then implies h(alpha)<=-v0*phi(alpha), where
+\[
+\phi(a)=\frac{2-\cos a-\cos^2a}{3}\ge\frac5{12}\quad(\pi/3\le a\le\pi).
+\]
+Also h<=0 everywhere by the triangle inequality, and the saddle loss satisfies
+\[
+-16h(\theta)\le\frac{\pi^2}{32(1-\pi^2/256)}v_0<\frac{40}{123}v_0.
+\]
+The denominator is positive. The bound v0<=1 follows directly from p(s)^2-s(1+4s+s^2)=1+s-s^2+s^3+s^4>0 on 0<s<=1. All pi comparisons are supported by Machin's identity and alternating rational arctangent sums in the new auxiliary code.
+
+## 8. Principal and nonprincipal central sectors
+
+In the +pi sector write eta_i=alpha_i-theta and define g(x)=[h(theta)+h'(theta)x-h(theta+x)]/v0. The sum of the linear terms vanishes. In the local range, g''(0)>=19/20, |g'''(0)|<=1/4, and g''''>=-3/2. Hence at d=2/5,
+\[
+g(\pm d)\ge269/3750,\qquad \left.\frac{d}{dr}g(\pm r)\right|_{r=d}\ge43/125.
+\]
+Beyond d, while the actual angle remains central, g''>=1/3. Integrating gives g(+/-r)>=269/3750+(43/125)(r-d)+(r-d)^2/6. Its quotient by r^2/2 is
+\[
+\gamma(r)=\frac13+\frac{158}{375r}-\frac{49}{625r^2}.
+\]
+This function is positive and decreasing on [2/5,5/4]. Inside d, the fourth-order bound gives 2g(+/-r)/r^2>=19/20-r/12-r^2/8>=269/300=gamma(d). Thus, at actual central points with |x|<=R, g(x)>=gamma(R)x^2/2. The maximum possible |eta_i| is 19pi/48<5/4, so seventeen consecutive slabs with endpoints ell_j=2/5+j/20 and R_j=ell_j+1/20 cover the entire principal complement.
+
+For one slab, K<=H and the actual product is bounded by the saddle modulus times exp(-gamma(R_j)*V*||eta||^2/2). Extending its positive majorant to max|eta_i|>=ell_j on the full tangent space and using the leaf MGF gives exactly
+\[
+64\left(\frac{17}{16\gamma(R_j)}\right)^{23}e^{-t_j\ell_j\sqrt{\gamma(R_j)V}+15t_j^2/32}\prod_{m=2,4,8,16}(1+t_j^2/m).
+\]
+The 64 is the union factor 32 times the conditioning factor two. Raising the normalization exponent from 45/2 to 23 is legitimate because 17/[16 gamma(R_j)]>1. The new rational calculation fixes the Chernoff parameters at V=250 and gets a one-sector upper bound 22262154269/200000000000, less than 9/80. Each term decreases with V. Both principal complements therefore contribute less than 9/40, relative to one saddle.
+
+The other central sectors have mean +/-3theta or +/-5theta. Strong concavity supplies Gaussian precision V/3. On [0,3theta], the wide fourth-cumulant bound implies Re(v(s exp(i a)))>=v0*(1-3a^2/2). Integrating twice gives
+\[
+h(\theta)-h(3\theta)\ge v_0(4\theta^2-10\theta^4)>v_0/8.
+\]
+The loss at 5theta is larger by monotonicity within the central interval; the wide-sector bound is not applied directly at 5theta. Sixteen leaves give a mean deficit greater than 2v0. With four sectors, the relative contribution is less than 8(51/16)^23 exp(-2V)<10^(-10) for every V>=250.
+
+## 9. One noncentral angle: every factor in (6.4)
+
+This is the place where the original notation should be expanded. Write the SIGNED external angle as b in [-pi,pi] and use a=|b| only in the loss function. Its two-sign domain has total length 4pi/3<=2pi. The fifteen central angles have mean mu satisfying 15mu=(2k+1)pi-b, so |mu|>=(pi-a)/15. Actual nonempty sectors also have |mu|<=pi/3.
+
+For x=(pi-a)/15 in [0,2pi/45], the wide fourth-cumulant bound gives h(x)<=-v0*x^2/2+v0*x^4/16<=-(49/100)v0*x^2. Evenness and central monotonicity give h(mu)<=h(x). Strong concavity around mu therefore controls the inlier fluctuations by exp(-V||eta||^2/6), and supplies the additional mean loss (49/1500)v0*(pi-a)^2.
+
+The combined angular loss is phi(a)+(49/1500)(pi-a)^2. On [pi/3,2pi/3], phi''<=-1/6 and the added second derivative is 49/750<1/6, so the sum is concave and its minimum is at an endpoint. Direct subtraction shows the first endpoint is smaller. On [2pi/3,pi], phi>=2/3 exceeds the value at the first endpoint. Thus the total loss is at least 5/12+49pi^2/3375. Subtracting the saddle loss and using pi^2>493/50 gives
+\[
+\delta_1=\frac5{12}+\frac{49}{3375}\frac{493}{50}-\frac{40}{123}=\frac{3246499}{13837500}.
+\]
+There are four ancestors of the external leaf. Bound only those four kernel factors by two. The other eleven contrasts are orthogonal in the fourteen-dimensional centered inlier space; their product of m/2 is 32. Hence K<=512 times the product of eleven squared orthonormal coordinates. Gaussian integration at precision V/3 gives 512(2pi)^7(3/V)^18.
+
+Fixing one signed external angle in the delta-measure representation gives the coarea factor 1/sqrt(15). Include the original (2pi)^(-15), the angle-length bound 2pi, at most sixteen leaves, and at most six sectors. Divide by one saddle amplitude. BEFORE conditioning, the exact resulting upper bound is
+\[
+96\sqrt{2\pi/15}\,3^{18}R^{45/2}V^{9/2}e^{-\delta_1V},\qquad R=|v(\zeta)|/v_0.
+\]
+Now R^(45/2)<2(17/16)^23 and sqrt(2pi/15)<2/3. The coefficient becomes 96*2*(2/3)=128, exactly the coefficient in (6.4). The new rational endpoint bound is 41550751/100000000000<1/2000. The logarithmic derivative 9/(2V)-delta1 is already negative at 250, proving the stated bound for all larger V.
+
+The original use of a for both magnitude and measure coordinate is compressed notation. Using signed b and a=|b| supplies a complete proof without increasing 128 or changing the theorem. There is no missing sign factor in the resulting inequality.
+
+## 10. Two or more noncentral angles: (6.5) and (6.6)
+
+Two root-to-leaf paths have at most seven distinct internal ancestors, since both include the root. At least eight contrasts involve only the fourteen central leaves. Keep eight of them; their node sizes are at most eight. The seven other kernel factors are bounded by two, giving K<=2^7*4^8 times eight squared orthonormal coordinates, or 2^23 times that product. These coordinates lie in the thirteen-dimensional centered inlier space.
+
+The two external angles cost at least 2*(5/12)*v0. The inlier mean term is at most zero, and the centered fluctuations have precision V/3. The relative mean deficit is 125/246. The Gaussian exponent is 13/2+8=29/2. Fixing two signed angles gives coarea 1/sqrt(14), their domain area is at most (2pi)^2, and there are at most C(16,2)*6=720 leaf-pair/sector choices. BEFORE conditioning, division by one saddle gives
+\[
+720\,2^{14}\frac{2\pi}{\sqrt{14}}\,3^{29/2}R^{45/2}V^8e^{-125V/246}.
+\]
+Using R^(45/2)<2(17/16)^23 and pi*sqrt(3/14)<2 yields exactly
+\[
+720\,2^{17}3^{14}(17/16)^{23}V^8e^{-125V/246}<10^{-10}.
+\]
+The endpoint check at V=250 is rational, and 8/V-125/246<0 there and afterward. This verifies (6.5). In particular the conditioning factor two cannot be omitted when passing between these two displayed expressions.
+
+With at least three external angles, every remaining angle still has h<=0, the deficit is at least 455/492, and K<=2^15. Use normalized total torus volume one, with no leaf-choice or sector multiplier. The direct one-saddle ratio is at most 64(2pi)^(15/2)R^(45/2)V^(45/2)exp(-455V/492). Conditioning, pi<22/7, and V>=1 give
+\[
+128(44/7)^8(17/16)^{23}V^{23}e^{-455V/492}<10^{-10}.
+\]
+The logarithmic derivative is 23/V-455/492<0 at 250 and afterward. This verifies (6.6).
+
+The code torus/verify_torus_constants.py derives rational pi bounds, outward square-root bounds, and negative-exponential bounds using positive Taylor partial sums. It also exhausts the fixed tree's sixteen one-leaf and 120 two-leaf choices to check retained contrasts and orthogonality. This is an exhaustive finite check of one fixed combinatorial object, not sampling in n or V. The infinite V range follows from the monotonicity arguments just proved.
+
+All actual-complement terms are relative to ONE saddle. Their sum is strictly less than 9/40+1/2000+3/10^10. A more precise rational upper bound produced independently is 223037050199/10^12; the proof retains the original advertised constants rather than promoting an incidental numerical improvement.
+
+## 11. Assembly of (7.1), phase points, and real-exponent extension
+
+Source: manuscript p.16. Split the exact torus integral into the two local boxes and their actual complement. At each box, first replace the exact integral by Gaussian plus first correction ON THE SAME BOX, paying at most 36821|A|/V^2. Then restore that model to the full tangent space, paying less than (11/500)|A|. Its value is A*(1+B1/n). The negative-saddle expressions are conjugates.
+
+The two first-correction terms together have modulus at most 2|A|*53/V. The actual torus complement is a different error and is added only once. Dividing the total error by 2|A| cancels the factor two on local/model/correction errors and divides the one-saddle complement bound by two. Thus
+\[
+\frac{|f_{n,4}(-s^{16})-2\mathrm{Re}\,A_n(s)|}{2|A_n(s)|}
+\]
+\[
+<\frac{36821}{250^2}+\frac{53}{250}+\frac{11}{500}+\frac12\left(\frac9{40}+\frac1{2000}+\frac3{10^{10}}\right)=\frac{18717720003}{20000000000}.
+\]
+The strict margin below 47/50 is 82279997/20000000000. Every term controls a precisely identified part of the exact integral. There is neither a Gaussian-for-torus substitution nor an uncovered transition region. This completes the accepted proof of (7.1).
+
+For the phase consequences, choose arg(v(zeta)) in the right half-plane, and define Psi=16n arg(p(zeta))-(45/2)arg(v(zeta)). Put m=z*p'/p and m_q=z*q'/q with q=1+4z+z^2. Direct algebra gives positive Im(m), and Im(m_q)<=4 Im(m): its numerator contains 1+s cos(theta)+s^2 instead of the larger 1+4s cos(theta)+s^2, while |q|^2>=|p|^2. Hence
+\[
+\frac{d\Psi_n}{d\log s}\ge(16n-45)\mathrm{Im}\,m(\zeta)>0\quad(n\ge3).
+\]
+At s down to zero, arg p tends to zero and arg v tends to theta, giving Psi(0+)=-45pi/32. At s=1, p(exp(i theta))=exp(i theta)(1+2cos theta), and v(exp(i theta))=(4+2cos theta)/(1+2cos theta)^2 is positive real. Thus Psi(1)=n*pi with no hidden branch multiple.
+
+For n>=1001, the following exact identities prove the threshold bridge:
+\[
+s v'(s)=\frac{s(1-s^2)(1+7s+s^2)}{p(s)^3},\qquad \frac{m(s)}{v(s)}-1=\frac{s(2s^2+2s-1)}{1+4s+s^2}.
+\]
+Thus v(s) increases strictly on (0,1), and 1001*v(7/20)>250; the unique s_star with n*v(s_star)=250 lies below 7/20, where m(s)<=v(s). For 0<=alpha<=theta put c=cos(alpha); direct algebra gives
+\[
+\mathrm{Im}\,v(se^{i\alpha})=\frac{s\sin\alpha(1-s^2)(4s^2c^2+8s^3c+8sc+s^4+5s^2+1)}{|p(se^{i\alpha})|^4}\ge0.
+\]
+This nonnegative numerator makes arg p concave in alpha, so arg p(zeta)<=theta*m(s), while arg v(zeta)>=0. Therefore Psi(s_star)<=250*pi. Phase monotonicity places every integer phase j*pi with 250<=j<=n in V>=250. At those points the accepted estimate gives (-1)^j*f(n,4)(-s_j^16)>0, including a nonzero value at -1. The six polynomial identities used here are independently checked by local/verify_phase_identities.py, and the detailed argument is in local/PHASE_AND_REAL_EXPONENT.txt.
+
+For real nu>0 and 0<s<1, p has no zero in the open unit disk and has a unique analytic logarithm normalized at zero. The coefficients of p^nu are real. On each compact smaller disk their series converges absolutely; each of four quadratic coefficient transforms has radius at least one. The nested constant-term integrals at radii s therefore converge absolutely and the same sixteen-leaf identity holds. Permutation symmetry, conjugation, modulus estimates, and local derivatives all persist. The proof depends on nu only through positive V and multiplicative derivatives, not integrality. This proves the stated analytic extension. Degree exhaustion and reciprocal root counting are not used for noninteger nu.
+
+## 12. Dependency table and boundaries of acceptance
+
+The accompanying dependency_table.json gives the complete table in a machine-readable form. Its rows are:
+
+D1: exact coefficient and sixteen-leaf identities, source (2.1)-(2.2), pp.7-8. Independent coefficient extraction and tree-swap induction. ACCEPTED.
+
+D2: contrast geometry, measure, complex Gaussian amplitude, source (2.3)-(2.4), (4.1), pp.8-10. Orthogonality, determinant 16, and Gaussian analytic continuation. ACCEPTED.
+
+D3: scalar inequalities, source (3.4)-(3.7), pp.9-10. New exact ring construction and full-domain Bernstein inequalities. ACCEPTED.
+
+D4: homotopy, derivative bounds, and local error, source (5.1)-(5.10), pp.11-12. Proof above plus independent subtree moments and generated requirement set. ACCEPTED.
+
+D5: first correction and restored Gaussian model tail, source (4.2)-(4.4), (5.11)-(5.13), pp.10,13. Regenerated polynomial moments, exact MGF, Cauchy-Schwarz, rational Chernoff bound. ACCEPTED.
+
+D6: actual torus complement, source (6.1)-(6.6), pp.13-15. Complete geometric cover, coarea, retained contrasts, rational endpoint inequalities, monotonicity. ACCEPTED.
+
+D7: uniform two-saddle estimate and bulk phase signs, source (7.1)-(7.4), p.16. D1-D6 plus explicit phase identities and branches. ACCEPTED.
+
+E: all edge signs and their sources, source Sections 8-10, pp.17-21. In particular every required moving node on all eight panels must have a proven strict sign with its actual enclosure provenance. NOT RE-REVIEWED OR ACCEPTED HERE. The user's separate reconstruction is not assumed complete.
+
+R: the fourth-layer all-negative-real-root theorem for every integer n>=4004. D7 alone supplies bulk signs; edge signs, final ordering/join, reciprocity and degree exhaustion are also needed. CONDITIONAL ON THOSE ADDITIONAL PREMISES; NOT AN UNCONDITIONAL CONCLUSION OF THIS REVIEW.
+
+T: all-iteration infinite log-concavity for every integer n>=10. Also needs the finite-exponent branch, initial three layers, and the classical Branden preservation theorem. NOT A FINAL ACCEPTANCE IN THIS REVIEW.
+
+There is no remaining unproved minimum lemma within the specified analytic core after merging the above dependencies. The missing acceptance of E, R, and T is a scope boundary, not a reason to downgrade the proven uniform estimate to an unspecified open analytic claim.
+
+## 13. Original text versus this report
+
+The numerical constants and target objects in the fixed manuscript have not been replaced. In particular 36821, 67, 11/500, 128, 720*2^17, and 47/50 remain valid. No hypothetical counterexample or fatal gap was found.
+
+This report expands four compressed pieces of exposition: (i) a single local logarithm branch and differentiation under a compact-domain integral; (ii) the monotonically decreasing beta/(beta-4v0/75) ratio in (5.7); (iii) signed external angles and the two intermediate unconditioned ratios behind (6.4) and (6.5); and (iv) why endpoint arithmetic extends to all V>=250. All are full derivations of the existing valid inequalities. They should be distinguished from a repair that changes the proof's mathematical content.
+
+The new subtree moment algorithm, the independently generated scalar polynomials, and the new rational tail calculations are review evidence. They are not asserted to be novel research results, and their finite check counts are not presented as the main mathematical contribution.
+
+## 14. Three separate priority questions
+
+Full target. Medina and Straub [S1], printed p.11, Conjecture 5.2 and Example 5.3, distinguish the general positive-coefficient convolution-power conjecture from the exact trinomial target. The latter is an explicitly posed problem. The original PDF says lambda>=10 (not lambda>10) and reports a proof for 10<=lambda<=500. The integer interpretation comes from its polynomial/convolution-power context, not an extra explicit integer quantifier in that sentence. The sources examined do not supply a ready-made proof covering every integer n>=10, but absence of a search hit is not evidence of priority or an exhaustive proof of present openness. The full target's final priority remains UNDETERMINED.
+
+Fourth-layer structure. The assertion that f(n,4) has only negative real zeros for all n>=4004 is stronger than the corresponding infinite log-concavity conclusion. Branden [S2], Section 3, preserves real-rootedness once it is present; it does not create it from the nonreal roots of p^n. The Xie-Zhang-Zhang curvature criteria [S3], Theorem 2.3, Corollary 2.6 and Theorems 8.1-8.2, concern positivity and stopping times, not real-rootedness of a fixed layer; their application to the trinomial family would itself require substantial new work. No direct covering theorem was identified in the checked sources. Priority remains UNDETERMINED; 4004 is an effective proof threshold, not a proven optimal threshold.
+
+Finite-layer entry into the real-rooted class is not itself a new general strategy. Xie and Philip Zhang [S4], p.3 Theorem 1.1 and Corollary 1.2, give a public proof that the first transform of Boros-Moll rows has simple negative roots, then invoke Branden. Their Narayana/Abel-summation method and sequence are different; this is a method precedent, not coverage of the trinomial theorem. This review checked the cited statements and reduction, not every proof detail of that separate recent preprint.
+
+Sixteen-leaf method. Fill, Flajolet and Kapur [S5], author-version p.21 equations (37)-(38), explicitly state the classical Hadamard contour integral for coefficientwise products. Iterating the quadratic transform naturally yields a binary tree; sixteen leaves mean fifteen integration variables, not sixteen. The finite child-swap averaging and Gaussian moments are classical operations. The title 'Tree Recurrences' in [S5] concerns algorithmic/random-tree recurrences and must not be mistaken for the present log-concavity tree.
+
+Pemantle and Wilson [S6], p.5 Theorem 2.3, pp.6-7 Lemma 3.3 and Theorem 3.4, and p.8 Theorem 4.1, provide explicit precedents for complex-phase multivariate saddle expansions, sums of saddle contributions, and vanishing amplitudes. Those fixed-phase asymptotics do not directly supply uniform explicit constants as s approaches zero with V=n*v(s)>=250. Nor do they by themselves establish all roots, where the two conjugate leading terms can cancel. The potentially substantive method contribution is the effective parameter-uniform control for this tree kernel and its application to the full root problem. The precise tree-kernel formula's first publication has not been finally established.
+
+Access limits. The full Csordas 2011 chapter 'Iterated Turan Inequalities and a Conjecture of P. Branden', DOI 10.1007/978-3-0348-0142-3_7, was not obtained; only publisher metadata/abstract material was available. The Cardon-Rich 2008 full PDF also could not be read. No claim about absence of a specific integral formula in either unread source is made. The literature appendix lists further checked sources and the search boundary. This was not an exhaustive citation-database review or expert confirmation.
+
+## 15. Reproduction and source locations
+
+Run from the root of the supplied review package, with assertions enabled:
+
+    python3 local/rederive_local.py
+    python3 local/verify_phase_identities.py
+    python3 torus/verify_torus_constants.py
+    python3 auxiliary/verify_model_and_assembly.py
+    python3 auxiliary/rederive_scalar_premises.py
+
+The first four commands require only the Python standard library. The last uses SymPy 1.14.0 in the checked environment and exact rational arithmetic. No command imports the author's programs or expected certificate files. All acceptance decisions are exact; optional decimal displays are outward-rounded explanatory values. This package does not run the excluded finite-exponent or edge tasks.
+
+The local JSON records all 28 moments, all 89 monomial contributions, and every Cauchy-Schwarz pairing. The scalar JSON records domains, cancellation powers, polynomial bidegrees, and every rectangle's exact minimum Bernstein control. The torus JSON records the seventeen slab parameters, rigorous upper bounds, geometry checks and monotonicity obligations. The model/assembly JSON records the exact L2 and final budget. Hashes identify source and output versions; they are not correctness arguments.
+
+Fixed source entry:
+https://github.com/Aurantium-47/eventual-infinite-log-concavity/tree/68f4c920606ad239fbc3a8195bc0987b790f5905/research/trinomial-all-n-ge10
+
+[S1] Medina and Straub, On multiple and infinite log-concavity, arXiv:1405.1765v1. Printed p.11, Conjecture 5.2 and Example 5.3. Annals of Combinatorics 20 (2016), 125-138.
+https://arxiv.org/abs/1405.1765v1
+
+[S2] Branden, Iterated sequences and the geometry of zeros, arXiv:0909.1927v3. Section 3, Proof of Conjecture 1.1, printed pp.4-5. Journal fuer die reine und angewandte Mathematik 658 (2011), 115-131.
+https://arxiv.org/abs/0909.1927v3
+
+[S3] Xie, Candice Zhang and Philip Zhang, A unified approach to infinite log-concavity of combinatorial sequences, arXiv:2610.12237v1. Theorem 2.3 pp.6-7, Corollary 2.6 p.8, Theorems 8.1-8.2 pp.40-41.
+https://arxiv.org/abs/2610.12237v1
+
+[S4] Xie and Philip Zhang, Infinite log-concavity of the Boros-Moll sequences, arXiv:2609.20653v1. Printed p.3 Theorem 1.1 and Corollary 1.2; pp.4-6 for the reduction.
+https://arxiv.org/abs/2609.20653v1
+
+[S5] Fill, Flajolet and Kapur, Singularity Analysis, Hadamard Products, and Tree Recurrences. Author version dated 2003-06-12, printed p.21, equations (37)-(38). Journal of Computational and Applied Mathematics 174 (2005), 271-313.
+https://www.ams.jhu.edu/~fill/papers/Hadamard.pdf
+
+[S6] Pemantle and Wilson, Asymptotic expansions of oscillatory integrals with complex phase, arXiv:0903.3585v1. Printed pp.5-8, Theorems 2.3, 3.4, 4.1 and Lemma 3.3. Contemporary Mathematics 520 (2010).
+https://arxiv.org/abs/0903.3585v1

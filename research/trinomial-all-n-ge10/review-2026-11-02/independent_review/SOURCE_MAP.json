@@ -1,0 +1,134 @@
+{
+  "input_archive_name": "trinomial_final_dependency_review_20261102.zip",
+  "input_archive_sha256": "d5464c194665d5a773d6844149547f29eb669e653195fbd3ee0e64e91145edad",
+  "assessed_commit": "68f4c920606ad239fbc3a8195bc0987b790f5905",
+  "scope": "Selected public reproducible review evidence, not the whole original review archive. Historical outputs are not claimed as new runs. Only assembly CLI path plumbing changed; compare exact old/new identities below.",
+  "files": [
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/REPORT.txt",
+      "published_path": "analytic_core_review/REPORT.txt",
+      "source_sha256": "278f377267edc8d9173545bef8b9a6880a3bc31a1e336a729aea71adaec8ae5e",
+      "published_sha256": "278f377267edc8d9173545bef8b9a6880a3bc31a1e336a729aea71adaec8ae5e",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/source_identity.json",
+      "published_path": "analytic_core_review/source_identity.json",
+      "source_sha256": "bc41236cee196dcb03cfec4846f5ee19b966685f6f8ec6bc9d51358d5040c538",
+      "published_sha256": "bc41236cee196dcb03cfec4846f5ee19b966685f6f8ec6bc9d51358d5040c538",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/local/rederive_local.py",
+      "published_path": "analytic_core_review/local/rederive_local.py",
+      "source_sha256": "5a2d3e6c65102094943af32c4520ec52e071ab9ac2f4a30115714de9998c5bc0",
+      "published_sha256": "5a2d3e6c65102094943af32c4520ec52e071ab9ac2f4a30115714de9998c5bc0",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/local/verify_phase_identities.py",
+      "published_path": "analytic_core_review/local/verify_phase_identities.py",
+      "source_sha256": "01ed27106d9e2f1c1bbada080605a91ef23c501106876c6735aeb18b859ecfad",
+      "published_sha256": "01ed27106d9e2f1c1bbada080605a91ef23c501106876c6735aeb18b859ecfad",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/local/local_independent_results.json",
+      "published_path": "analytic_core_review/local/local_independent_results.json",
+      "source_sha256": "f94890fa1d4af2011f8946f8bb78e2ad5dd2b172530acd295902c13f72579fa2",
+      "published_sha256": "f94890fa1d4af2011f8946f8bb78e2ad5dd2b172530acd295902c13f72579fa2",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/local/phase_identity_results.json",
+      "published_path": "analytic_core_review/local/phase_identity_results.json",
+      "source_sha256": "50878184ed6d067ffa13b4b9fe719ca5f61448b31474ef3f67f8250c41b01c30",
+      "published_sha256": "50878184ed6d067ffa13b4b9fe719ca5f61448b31474ef3f67f8250c41b01c30",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/torus/verify_torus_constants.py",
+      "published_path": "analytic_core_review/torus/verify_torus_constants.py",
+      "source_sha256": "fa944ea9076916546ab69dff61ae0aa196a9220873967a42dc53aca8d66fd698",
+      "published_sha256": "fa944ea9076916546ab69dff61ae0aa196a9220873967a42dc53aca8d66fd698",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/torus/torus_exact_checks.json",
+      "published_path": "analytic_core_review/torus/torus_exact_checks.json",
+      "source_sha256": "1fd2784cf2a693588b11570540aca7af5c00bcc714ffb2e190e86814c3d59f7a",
+      "published_sha256": "1fd2784cf2a693588b11570540aca7af5c00bcc714ffb2e190e86814c3d59f7a",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/auxiliary/verify_model_and_assembly.py",
+      "published_path": "analytic_core_review/auxiliary/verify_model_and_assembly.py",
+      "source_sha256": "5cf61dcc7c99321135f4ee96147b085e461caa29eaebcf5e23afcfae69731eb4",
+      "published_sha256": "5cf61dcc7c99321135f4ee96147b085e461caa29eaebcf5e23afcfae69731eb4",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/auxiliary/model_and_assembly_results.json",
+      "published_path": "analytic_core_review/auxiliary/model_and_assembly_results.json",
+      "source_sha256": "e7eb5ccb0d0a0b8b47e3f998f61e79a4c24edb649746e6359ea805f396092cbe",
+      "published_sha256": "e7eb5ccb0d0a0b8b47e3f998f61e79a4c24edb649746e6359ea805f396092cbe",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/auxiliary/rederive_scalar_premises.py",
+      "published_path": "analytic_core_review/auxiliary/rederive_scalar_premises.py",
+      "source_sha256": "01646f5320349d480cd205df4efb664be90be2a3cdbd55efcb250197a60ed65c",
+      "published_sha256": "01646f5320349d480cd205df4efb664be90be2a3cdbd55efcb250197a60ed65c",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/analytic_core_review/auxiliary/scalar_premises_results.json",
+      "published_path": "analytic_core_review/auxiliary/scalar_premises_results.json",
+      "source_sha256": "808fc60bc12ca97cfa99fad5e27323457e792a5de08cad067e93c11134a67d65",
+      "published_sha256": "808fc60bc12ca97cfa99fad5e27323457e792a5de08cad067e93c11134a67d65",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/review_bundle/independent_finite.py",
+      "published_path": "review_bundle/independent_finite.py",
+      "source_sha256": "f07270c09dca3bae5a909a0890797931e471b28d8da124a0f9880e4c5e4067f9",
+      "published_sha256": "f07270c09dca3bae5a909a0890797931e471b28d8da124a0f9880e4c5e4067f9",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/review_bundle/independent_finite_result.json",
+      "published_path": "review_bundle/independent_finite_result.json",
+      "source_sha256": "728d141f55857067b3938c95796bd3d6774a1b19d2947c38024e86d47965900c",
+      "published_sha256": "728d141f55857067b3938c95796bd3d6774a1b19d2947c38024e86d47965900c",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/final_dependency_review/assembly/verify_assembly_inputs.py",
+      "published_path": "final_dependency_review/assembly/verify_assembly_inputs.py",
+      "source_sha256": "333a1cdf7cacc09157509b0254219f81fbcc69bd78ee6d324285a74cc9c3e6ba",
+      "published_sha256": "c21f7cd09ac255dc1bd3c4dc204a8e54a506c9dc0196c6d8d1206eba8296bed8",
+      "transformation": "Portability only: replace fixed package-root source path with explicit edge-directory CLI argument. Mathematical operations unchanged."
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/final_dependency_review/assembly/assembly_input_results.json",
+      "published_path": "final_dependency_review/assembly/assembly_input_results.json",
+      "source_sha256": "0f3acfebc789e879f5beaebd370cc43e1f0f7f7a0cdc852f61733c099e91b875",
+      "published_sha256": "0f3acfebc789e879f5beaebd370cc43e1f0f7f7a0cdc852f61733c099e91b875",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/final_dependency_review/edge_math/independent_minimum.py",
+      "published_path": "final_dependency_review/edge_math/independent_minimum.py",
+      "source_sha256": "0f1e2061b4095fe6b3accd546799345b2dcac587a633cf48f285549218c31a68",
+      "published_sha256": "0f1e2061b4095fe6b3accd546799345b2dcac587a633cf48f285549218c31a68",
+      "transformation": "byte-identical historical source or result"
+    },
+    {
+      "source_member": "trinomial_final_review_20261102/final_dependency_review/edge_math/independent_minimum_result.json",
+      "published_path": "final_dependency_review/edge_math/independent_minimum_result.json",
+      "source_sha256": "757ee87cca7c9b6896b97aa1a3b37e2f0782432cd04c8804740b0f8a5d08048a",
+      "published_sha256": "757ee87cca7c9b6896b97aa1a3b37e2f0782432cd04c8804740b0f8a5d08048a",
+      "transformation": "byte-identical historical source or result"
+    }
+  ]
+}

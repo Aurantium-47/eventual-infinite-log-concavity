@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "literal_full_regeneration_terminal": true,
+  "git_commit": "68f4c920606ad239fbc3a8195bc0987b790f5905",
+  "git_status": "?? research/trinomial-all-n-ge10/certificate_package/edge/__pycache__/\n",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "flint_version": "0.9.0",
+  "panel_counts": [
+    246,
+    245,
+    243,
+    241,
+    240,
+    239,
+    238,
+    237
+  ],
+  "jets": 1929,
+  "bypasses": 63,
+  "coverage": "exact1929+63=8x249",
+  "canonical_saved_jets_digest": "22c038b14345430607d71e0eb7e599dd06338b2a453419d8d0b8fe15ade8904c",
+  "canonical_digest_interpretation": "Source-data digest; literal --full terminal PASS separately establishes exact regeneration equality for every m/rad/e/p. Not a separately captured regenerated stream.",
+  "source_sha256": {
+    "bulk_bounds.py": "c81c89ca56bfbc21dbc44f267a8d44de32b2a8d6ac677988f23a7c2a6322ffdb",
+    "certificate_math.py": "8ddac8fe35708cc56dcb8bdc8fa5f1219e085af44910bf16d9491a2b44003ce7",
+    "replay_saved_inequalities.py": "14d409f48af4b2ac0ac69bb94e0e04eef6254c1f42b0d04dac5c9140d65e04c1",
+    "integer_polynomial.py": "18789e5e5a0347a69d26ff059317b9d376b22d5b0871667e45c34366bac76941",
+    "interval_jets.py": "a4d9fc6e2fba515ad334bd832e154b4c3af7223075e040632fa618287c7819a9",
+    "regenerate.py": "0ef351840a720dcb3bb42d675d0fdc3e848a42f1d2edf2694512afe3ef50bf38"
+  },
+  "input_sha256": {
+    "jets_panel6.jsonl.gz": "ee32dc850992bc664ea04d9d88d7f56c45b51491ed719212cc896ae5fc1b5082",
+    "data_manifest.json": "dd61dfa83e1c75ac8cc7fffe6b5b4dc2e78319ff2520787d45a4f493cf0b6b34",
+    "VALIDATION.json": "8425cd86aba3847e5585062de253b350fdc22692826c9e715ffd4899babc0555",
+    "nodes.json": "7d78d040e87f964ed18e972269950d5eb59e871e748631cabb4bc494a824b708",
+    "jets_panel4.jsonl.gz": "d051bb42b7077d7cfcbb186d3d8eb370e41ea001590f9d8c06ebabecd63c72c0",
+    "jets_panel1.jsonl.gz": "943c09753a4a231fa79728a0fe58aa6024aed16b29204e98290b76200196d493",
+    "jets_panel3.jsonl.gz": "539eed68485589a93444b3a58aa32d88d8b29935c6a39a1f1116132572166c92",
+    "jets_panel5.jsonl.gz": "294e51d5346d33cf71a3ed29c712d62801037618fff4162b0ca9a4bf70431208",
+    "jets_panel7.jsonl.gz": "3e119dd4972c7033352b125bf4615b02884bee330521fe59acea3a93211f266d",
+    "FILES.json": "e02e62033ee0a8da3151cab8cdc00e5b6888b5af707b85e31a37b7eec7e43858",
+    "jets_panel2.jsonl.gz": "929f27c018112e909d2180d4f2b0ebffbe1e0873092673fae46fae6e94c9c23b",
+    "jets_panel0.jsonl.gz": "0b1156f0bbd445ab03afd98164bbd5b8319aa5649a8c59000a34c9a679f677ea"
+  },
+  "full_log_sha256": "f552e314b4acda4e9e8566ec9b00e4abc928c94e0c2701bfa7ad42dd39c946a8",
+  "wheel_sha256": {
+    "python_flint-0.9.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "limitations": [
+    "Unchanged released algorithm reproduction, not a wholly independent full generator.",
+    "Boundary enclosure provenance does not by itself prove analytic bounds, PF4, finite range, root assembly or preservation theorem.",
+    "No external peer review or formal proof claim."
+  ]
+}
