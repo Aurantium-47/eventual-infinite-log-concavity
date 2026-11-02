@@ -10,8 +10,8 @@ field agreed exactly. This is one workload and one observed run per backend,
 not a statistical speedup estimate or a universal multiplication algorithm.
 
 **Mathematical scope:** node 200, panel 0, K=600, degree=360, precision=2048.
-The sharper trinomial infinite-log-concavity target for all exponents n≥10
-remains unresolved. This benchmark does not prove that target or certify a
+This benchmark does not itself establish or independently audit the sharper
+trinomial infinite-log-concavity theorem for all exponents n≥10, or certify a
 whole chain. It does not change the scope of the parent project's theorems.
 
 ## Reproduce
@@ -83,4 +83,12 @@ See [BENCHMARK.md](BENCHMARK.md) for evidence and timing limitations and
 
 这里公开的是后端集成、可复现实验和逐项一致性检查。加速来自成熟的 FLINT
 精确算术实现；不宣称发明通用乘法算法，也不宣称解决了三项式锐界猜想。
-更强的全部 n≥10 目标仍未完成，单节点证书不能替代完整证明链。
+本基准本身不证明或独立审查全部 n≥10 的数学定理，单节点证书不能替代完整证明链。
+
+## Repeated validation (2 November 2026)
+
+A later [three-pair alternating-order replay](repeat-results/2026-11-02/README.md)
+of this same workload observed paired ratios of **20.34–20.45×**, with exact
+fixture and pair agreement on every run. Raw times, shared-cloud limitations,
+release provenance and output checks are retained there. This does not replace
+the original single-pair evidence above or establish a universal speedup.

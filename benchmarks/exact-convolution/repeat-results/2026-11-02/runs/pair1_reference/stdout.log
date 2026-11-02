@@ -1,0 +1,8 @@
+parameters 0 600 360 2048 B 304
+generated 100 seconds 10.781605583999408
+generated 200 seconds 57.22622926599979
+generated 300 seconds 122.8938697679987
+generated 400 seconds 183.38450768599978
+generated 500 seconds 225.44680904099914
+generated 600 seconds 254.02987430199937
+{'certified_negative': False, 'certified_positive': True, 'seconds': 287.7189437699999, 'jet_multiplications': 5420}

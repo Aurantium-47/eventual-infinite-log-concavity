@@ -1,0 +1,10 @@
+test_ambiguous_json_rejected (test_exact.ExactTests.test_ambiguous_json_rejected) ... ok
+test_big_signed_coefficients (test_exact.ExactTests.test_big_signed_coefficients) ... ok
+test_comparator_rejects_changes (test_exact.ExactTests.test_comparator_rejects_changes) ... ok
+test_signed_zero_truncated (test_exact.ExactTests.test_signed_zero_truncated) ... ok
+test_type_mismatches_rejected (test_exact.ExactTests.test_type_mismatches_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.032s
+
+OK
