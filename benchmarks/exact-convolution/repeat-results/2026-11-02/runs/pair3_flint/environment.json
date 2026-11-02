@@ -1,0 +1,7 @@
+{
+  "backend": "flint",
+  "python": "3.12.14",
+  "machine": "x86_64",
+  "system": "Linux",
+  "python_flint": "0.9.0"
+}

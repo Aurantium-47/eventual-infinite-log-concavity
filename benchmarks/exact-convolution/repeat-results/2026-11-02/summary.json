@@ -1,0 +1,34 @@
+{
+  "pairs": 3,
+  "all_fixture_checks_pass": true,
+  "all_pair_checks_pass": true,
+  "ratio_by_pair": [
+    20.424131659651824,
+    20.445800219067923,
+    20.343937454066218
+  ],
+  "reference": {
+    "raw_seconds": [
+      287.7189437699999,
+      291.17434208800114,
+      301.2355525950006
+    ],
+    "median_seconds": 291.17434208800114,
+    "min_seconds": 287.7189437699999,
+    "max_seconds": 301.2355525950006,
+    "sample_stdev_seconds": 7.022184471733023
+  },
+  "flint": {
+    "raw_seconds": [
+      14.08720569199977,
+      14.241278842999236,
+      14.807141108998621
+    ],
+    "median_seconds": 14.241278842999236,
+    "min_seconds": 14.08720569199977,
+    "max_seconds": 14.807141108998621,
+    "sample_stdev_seconds": 0.37908786241674297
+  },
+  "ratio_of_medians": 20.445800219067923,
+  "median_paired_ratio": 20.424131659651824
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "pair": 1,
+    "position": 1,
+    "backend": "reference",
+    "seconds": 287.7189437699999,
+    "external_process_wall_seconds": 287.76759884999956,
+    "peak_rss_kib": 25540,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:09:16.537453+00:00",
+      "loadavg": [
+        0.4423828125,
+        0.4130859375,
+        0.30517578125
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:14:04.305120+00:00",
+      "loadavg": [
+        1.69677734375,
+        1.099609375,
+        0.62744140625
+      ]
+    }
+  },
+  {
+    "pair": 1,
+    "position": 2,
+    "backend": "flint",
+    "seconds": 14.08720569199977,
+    "external_process_wall_seconds": 14.155305958000099,
+    "peak_rss_kib": 40216,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:14:04.307370+00:00",
+      "loadavg": [
+        1.69677734375,
+        1.099609375,
+        0.62744140625
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:14:18.462730+00:00",
+      "loadavg": [
+        1.54150390625,
+        1.09375,
+        0.634765625
+      ]
+    }
+  },
+  {
+    "pair": 2,
+    "position": 1,
+    "backend": "flint",
+    "seconds": 14.241278842999236,
+    "external_process_wall_seconds": 14.304794184999992,
+    "peak_rss_kib": 39288,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:14:18.466209+00:00",
+      "loadavg": [
+        1.54150390625,
+        1.09375,
+        0.634765625
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:14:32.771053+00:00",
+      "loadavg": [
+        1.4208984375,
+        1.087890625,
+        0.64111328125
+      ]
+    }
+  },
+  {
+    "pair": 2,
+    "position": 2,
+    "backend": "reference",
+    "seconds": 291.17434208800114,
+    "external_process_wall_seconds": 291.2396860280005,
+    "peak_rss_kib": 25544,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:14:32.774606+00:00",
+      "loadavg": [
+        1.4208984375,
+        1.087890625,
+        0.64111328125
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:19:24.014370+00:00",
+      "loadavg": [
+        1.1005859375,
+        1.181640625,
+        0.82421875
+      ]
+    }
+  },
+  {
+    "pair": 3,
+    "position": 1,
+    "backend": "reference",
+    "seconds": 301.2355525950006,
+    "external_process_wall_seconds": 301.33226142199965,
+    "peak_rss_kib": 25460,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:19:24.018888+00:00",
+      "loadavg": [
+        1.1005859375,
+        1.181640625,
+        0.82421875
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:24:25.351212+00:00",
+      "loadavg": [
+        1.04296875,
+        1.18896484375,
+        0.94970703125
+      ]
+    }
+  },
+  {
+    "pair": 3,
+    "position": 2,
+    "backend": "flint",
+    "seconds": 14.807141108998621,
+    "external_process_wall_seconds": 14.861281926001539,
+    "peak_rss_kib": 40200,
+    "fixture_exact_match": true,
+    "midpoints_checked": 361,
+    "receipt_nonperformance_fields_checked": 21,
+    "final_jet_sha256": "4dfdadc447233dd5b0ea5a4e3da10cf7c7f7e4c1e77ee43bddb9233bbdf2acb5",
+    "before": {
+      "utc": "2026-11-02T04:24:25.353724+00:00",
+      "loadavg": [
+        1.04296875,
+        1.18896484375,
+        0.94970703125
+      ]
+    },
+    "after": {
+      "utc": "2026-11-02T04:24:40.215062+00:00",
+      "loadavg": [
+        1.03271484375,
+        1.1787109375,
+        0.951171875
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "seeded_small_exact_cases": 160,
+    "large_integer_cases": 2,
+    "comparator_accepts_timing_changes": true,
+    "comparator_rejects_midpoint_radius_and_sign_changes": true,
+    "portable_flint_full_output_matches_recorded_reference": true,
+    "unittest_methods_passed": 5,
+    "comparator_rejects_integer_float_and_boolean_coercion": true,
+    "parser_rejects_duplicate_keys_and_nonstandard_constants": true,
+    "strict_comparator_rechecked_portable_output": true
+  },
+  "portable_flint_validation_seconds": 14.270369644000311,
+  "scope": "one additional accelerated portability check; no new paired baseline timing or median",
+  "environment": {
+    "backend": "flint",
+    "python": "3.12.14",
+    "machine": "x86_64",
+    "system": "Linux",
+    "python_flint": "0.9.0"
+  }
+}

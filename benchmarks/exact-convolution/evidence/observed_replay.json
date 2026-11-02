@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "backend": "released python-flint0.9.0 fmpz_poly.mul_low",
+  "small_exact_cases": 160,
+  "microbench": [
+    {
+      "d": 120,
+      "bits": 1024,
+      "byte_seconds": 0.008934046998547274,
+      "flint_mul_low_seconds": 0.0006667939996987116,
+      "ratio": 13.398511388200989
+    },
+    {
+      "d": 220,
+      "bits": 2048,
+      "byte_seconds": 0.0670691640007135,
+      "flint_mul_low_seconds": 0.0020048080004926305,
+      "ratio": 33.45415819581375
+    },
+    {
+      "d": 360,
+      "bits": 2048,
+      "byte_seconds": 0.1787872389995755,
+      "flint_mul_low_seconds": 0.005662112000209163,
+      "ratio": 31.576068963837336
+    }
+  ],
+  "all_final_midpoints_and_radius_identical": true,
+  "all_nonperformance_receipt_fields_identical": true,
+  "old_seconds": 283.53291749954224,
+  "new_seconds": 13.777135133743286,
+  "new_peak_rss_kib": 40624,
+  "scope": "independent exact multiplication backend full replay of existing v2 logic; NOT independently reimplemented entire jet algorithm or full chain"
+}
