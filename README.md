@@ -10,6 +10,14 @@ The paper also contains an explicit cofinite theorem for trinomial powers and a 
 
 The complete proofs and formulas are included, with the general positive-polynomial theorem highlighted in the introduction. The original shrinking-disk and local stopping machinery is credited to Xie, Zhang and Zhang and its cited antecedents; the conjectural context is credited to Medina and Straub. The paper does not claim these methods as newly invented. See [REFERENCES.md](REFERENCES.md).
 
+## Independent review · 2–3 November 2026
+
+| Scope | Review evidence |
+|---|---|
+| Existing Theorem B: every fixed full-support positive-real-coefficient p, all integer n>=N(p), all iterations | AI-assisted independent mathematical audit; 2047 exact Poisson certificates and a second Fraction/dependency-cone reconstruction. [Review](research/general-positive-polynomial-powers/review-2026-11-02/REVIEW.md) · [中文摘要](research/general-positive-polynomial-powers/review-2026-11-02/SUMMARY.zh-CN.md) · [Local wording erratum](research/general-positive-polynomial-powers/review-2026-11-02/ERRATUM.md) |
+
+The analytic closure was reviewed mathematically, not machine-verified; the exact computations verify only the finite certificates. This audits the existing October 14 theorem, with a local Lemma 1 wording correction: it is not a new theorem, a sharp n>=10 result, human peer review, or formal verification.
+
 ## Exact data and reproduction
 
 Python 3.10 or later, standard library only:

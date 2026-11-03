@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "counts": [
+    0,
+    0,
+    2,
+    6,
+    13,
+    27,
+    56,
+    115,
+    231,
+    464,
+    930,
+    1862,
+    2047
+  ],
+  "maximum_stopping_time": 12,
+  "all_first_certified_times_obey_ceil_log2_8k": true,
+  "strict_certificates_matched_pinned_data": 2047,
+  "all_layer_records_match": true,
+  "direct_ratio_comparisons": 540,
+  "direct_endpoint_comparisons": 9,
+  "direct_interior_comparisons": 531,
+  "direct_layers": [
+    {
+      "depth": 0,
+      "last_coefficient_index": 64,
+      "compared_ratio_indices": [
+        0,
+        63
+      ],
+      "comparisons": 64,
+      "max_coefficient_bits": 296
+    },
+    {
+      "depth": 1,
+      "last_coefficient_index": 63,
+      "compared_ratio_indices": [
+        0,
+        62
+      ],
+      "comparisons": 63,
+      "max_coefficient_bits": 592
+    },
+    {
+      "depth": 2,
+      "last_coefficient_index": 62,
+      "compared_ratio_indices": [
+        0,
+        61
+      ],
+      "comparisons": 62,
+      "max_coefficient_bits": 1184
+    },
+    {
+      "depth": 3,
+      "last_coefficient_index": 61,
+      "compared_ratio_indices": [
+        0,
+        60
+      ],
+      "comparisons": 61,
+      "max_coefficient_bits": 2368
+    },
+    {
+      "depth": 4,
+      "last_coefficient_index": 60,
+      "compared_ratio_indices": [
+        0,
+        59
+      ],
+      "comparisons": 60,
+      "max_coefficient_bits": 4736
+    },
+    {
+      "depth": 5,
+      "last_coefficient_index": 59,
+      "compared_ratio_indices": [
+        0,
+        58
+      ],
+      "comparisons": 59,
+      "max_coefficient_bits": 9472
+    },
+    {
+      "depth": 6,
+      "last_coefficient_index": 58,
+      "compared_ratio_indices": [
+        0,
+        57
+      ],
+      "comparisons": 58,
+      "max_coefficient_bits": 18944
+    },
+    {
+      "depth": 7,
+      "last_coefficient_index": 57,
+      "compared_ratio_indices": [
+        0,
+        56
+      ],
+      "comparisons": 57,
+      "max_coefficient_bits": 37888
+    },
+    {
+      "depth": 8,
+      "last_coefficient_index": 56,
+      "compared_ratio_indices": [
+        0,
+        55
+      ],
+      "comparisons": 56,
+      "max_coefficient_bits": 75775
+    }
+  ],
+  "source_commit": "68f4c920606ad239fbc3a8195bc0987b790f5905",
+  "reference_url": "https://github.com/Aurantium-47/eventual-infinite-log-concavity/blob/68f4c920606ad239fbc3a8195bc0987b790f5905/data/poisson_certificates.json.gz",
+  "reference_sha256": "d8191c9e9971d795a663212e88558fd82453e4335687590cb960abaa5091e31d"
+}
