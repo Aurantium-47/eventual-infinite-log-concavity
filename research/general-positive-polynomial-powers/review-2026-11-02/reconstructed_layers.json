@@ -1,0 +1,106 @@
+[
+  {
+    "depth": 0,
+    "retained_max_index": 2064,
+    "maximum_upper": "115736015586353814699394921577690964556488740121008292579874311570136900521467",
+    "minimum_positive_index_lower": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "maximum_interval_width": "1",
+    "number_of_certified_target_indices": 0
+  },
+  {
+    "depth": 1,
+    "retained_max_index": 2063,
+    "maximum_upper": "115679941935391433975218858146694021259707495576376021120291039132360671404777",
+    "minimum_positive_index_lower": "38597363079105398474523661669562635951089994888546854679819194669304376546645",
+    "maximum_interval_width": "8251",
+    "number_of_certified_target_indices": 0
+  },
+  {
+    "depth": 2,
+    "retained_max_index": 2062,
+    "maximum_upper": "115567821814102136598957946051268722617331037143701217547445184161043707082008",
+    "minimum_positive_index_lower": "14474011154664524427946373126085988481658748083205070504932198000989141204991",
+    "maximum_interval_width": "33994163",
+    "number_of_certified_target_indices": 2
+  },
+  {
+    "depth": 3,
+    "retained_max_index": 2061,
+    "maximum_upper": "115343798957307640423045441092209638190770024944121288517974560760597806470417",
+    "minimum_positive_index_lower": "1732942832123099523345960319857914267191795688873532250930657719846318946991",
+    "maximum_interval_width": "69900799191",
+    "number_of_certified_target_indices": 6
+  },
+  {
+    "depth": 4,
+    "retained_max_index": 2060,
+    "maximum_upper": "114896838753461514471748282394936846703227620740935152533214688905031397454427",
+    "minimum_positive_index_lower": "24796369953772669745077689682902722857455426762610560791469113055325403685",
+    "maximum_interval_width": "71662473930403",
+    "number_of_certified_target_indices": 13
+  },
+  {
+    "depth": 5,
+    "retained_max_index": 2059,
+    "maximum_upper": "114007677648006347635470380905877716975032931211672781541978701337076963020984",
+    "minimum_positive_index_lower": "5285069725670921796403961974204653716858749266273767989235448489444459",
+    "maximum_interval_width": "36557529556178071",
+    "number_of_certified_target_indices": 27
+  },
+  {
+    "depth": 6,
+    "retained_max_index": 2058,
+    "maximum_upper": "112249097796806942869563388418360572559704561212072649170848460238483204330990",
+    "minimum_positive_index_lower": "241218878382546005134902702385411724769414612796612811570675604",
+    "maximum_interval_width": "9243701455843046492",
+    "number_of_certified_target_indices": 56
+  },
+  {
+    "depth": 7,
+    "retained_max_index": 2057,
+    "maximum_upper": "108811253863796388943026554664341231569570139334126331611742728195686357317115",
+    "minimum_positive_index_lower": "502508829679319142420826938616296609010006950166",
+    "maximum_interval_width": "1149567857691988293802",
+    "number_of_certified_target_indices": 115
+  },
+  {
+    "depth": 8,
+    "retained_max_index": 2056,
+    "maximum_upper": "102245119175457038509197355522375821346528974071317304032703700569331176965989",
+    "minimum_positive_index_lower": "2180763172760002245",
+    "maximum_interval_width": "69239749532856497574289",
+    "number_of_certified_target_indices": 231
+  },
+  {
+    "depth": 9,
+    "retained_max_index": 2055,
+    "maximum_upper": "90272156910267603666903097342325784766461050662579749982398307877642362832153",
+    "minimum_positive_index_lower": "0",
+    "maximum_interval_width": "1959119372132943451733679",
+    "number_of_certified_target_indices": 464
+  },
+  {
+    "depth": 10,
+    "retained_max_index": 2054,
+    "maximum_upper": "70359642091120633575513070135745443520195116892961697362337945976484223133811",
+    "minimum_positive_index_lower": "0",
+    "maximum_interval_width": "24518345420745240898721477",
+    "number_of_certified_target_indices": 930
+  },
+  {
+    "depth": 11,
+    "retained_max_index": 2053,
+    "maximum_upper": "42732450146056528923890006951425977656080708679782122038969516253054390481448",
+    "minimum_positive_index_lower": "0",
+    "maximum_interval_width": "120840884083850991867725930",
+    "number_of_certified_target_indices": 1862
+  },
+  {
+    "depth": 12,
+    "retained_max_index": 2052,
+    "maximum_upper": "15754879331122321331094887594277283171922709296443895260132830814109679512787",
+    "minimum_positive_index_lower": "0",
+    "maximum_interval_width": "189870754923178846296350779",
+    "number_of_certified_target_indices": 2047
+  }
+]
